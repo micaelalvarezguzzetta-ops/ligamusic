@@ -1272,4 +1272,25 @@ function switchTab(t,btn){
 function toggleFaq(el){
   const item=el.parentElement,was=item.classList.contains('open');
   document.querySelectorAll('.faqitem.open').forEach(i=>i.classList.remove('open'));
-  if(!was)item.clas
+  if(!was)item.classList.add('open');
+}
+
+function openModal(id){
+  event.preventDefault();
+  document.getElementById('m'+id).classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id){
+  document.getElementById('m'+id).classList.remove('open');
+  document.body.style.overflow='';
+}
+
+window.addEventListener('scroll',()=>document.getElementById('bkt').classList.toggle('on',scrollY>400));
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})
+},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
