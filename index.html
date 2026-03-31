@@ -116,73 +116,68 @@ section{position:relative;overflow:hidden;padding:7rem 2rem}
 .muted{color:var(--dim);line-height:1.75}
 
 /* ══════════════════════════════════
-   HERO — concert stage atmosphere
+   HERO — editorial clean style
 ══════════════════════════════════ */
 #home{
   min-height:100vh;display:flex;align-items:center;
   justify-content:center;text-align:center;
   padding:120px 2rem 5rem;
-  background:#07070a;
-  isolation:isolate;
+  background:#000;
+  isolation:isolate;overflow:hidden;
+  position:relative;
 }
-/* ── CSS Concert atmosphere layers ── */
-.hero-bg-base{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 120% 80% at 50% -10%,#0d1a0d 0%,#07070a 70%)}
-/* Animated spotlight beams from top */
-.hero-beam1,.hero-beam2,.hero-beam3{position:absolute;top:0;width:0;height:0;z-index:1;pointer-events:none}
-.hero-beam1{
-  left:18%;
-  border-left:180px solid transparent;
-  border-right:180px solid transparent;
-  border-top:85vh solid rgba(29,185,84,.11);
-  animation:beam1 8s ease-in-out infinite alternate;
-  transform-origin:top center;filter:blur(8px)
+/* Fondo geométrico con barras EQ animadas */
+.hero-eq{position:absolute;bottom:0;left:0;right:0;height:55%;z-index:1;display:flex;align-items:flex-end;justify-content:center;gap:6px;padding:0 5%;opacity:.07;pointer-events:none}
+.hero-eq span{display:block;background:var(--g);border-radius:3px 3px 0 0;animation:eq 1.4s ease-in-out infinite alternate;flex-shrink:0}
+.hero-eq span:nth-child(1){width:14px;height:38%;animation-delay:0s}
+.hero-eq span:nth-child(2){width:14px;height:65%;animation-delay:.1s}
+.hero-eq span:nth-child(3){width:14px;height:45%;animation-delay:.2s}
+.hero-eq span:nth-child(4){width:14px;height:80%;animation-delay:.05s}
+.hero-eq span:nth-child(5){width:14px;height:55%;animation-delay:.15s}
+.hero-eq span:nth-child(6){width:14px;height:90%;animation-delay:.25s}
+.hero-eq span:nth-child(7){width:14px;height:70%;animation-delay:.0s}
+.hero-eq span:nth-child(8){width:14px;height:100%;animation-delay:.2s}
+.hero-eq span:nth-child(9){width:14px;height:85%;animation-delay:.1s}
+.hero-eq span:nth-child(10){width:14px;height:60%;animation-delay:.3s}
+.hero-eq span:nth-child(11){width:14px;height:75%;animation-delay:.05s}
+.hero-eq span:nth-child(12){width:14px;height:50%;animation-delay:.18s}
+.hero-eq span:nth-child(13){width:14px;height:88%;animation-delay:.08s}
+.hero-eq span:nth-child(14){width:14px;height:62%;animation-delay:.22s}
+.hero-eq span:nth-child(15){width:14px;height:42%;animation-delay:.12s}
+.hero-eq span:nth-child(16){width:14px;height:78%;animation-delay:.28s}
+.hero-eq span:nth-child(17){width:14px;height:55%;animation-delay:.04s}
+.hero-eq span:nth-child(18){width:14px;height:95%;animation-delay:.16s}
+.hero-eq span:nth-child(19){width:14px;height:68%;animation-delay:.24s}
+.hero-eq span:nth-child(20){width:14px;height:40%;animation-delay:.06s}
+@keyframes eq{0%{transform:scaleY(.3)}100%{transform:scaleY(1)}}
+/* Gran número decorativo */
+.hero-deco-num{
+  position:absolute;right:-2%;top:50%;transform:translateY(-50%);
+  font-family:'Bebas Neue','Arial Black',Impact,sans-serif;
+  font-size:clamp(200px,28vw,380px);line-height:1;letter-spacing:-.02em;
+  color:rgba(29,185,84,.04);pointer-events:none;z-index:1;user-select:none;
+  white-space:nowrap
 }
-.hero-beam2{
-  left:46%;
-  border-left:220px solid transparent;
-  border-right:220px solid transparent;
-  border-top:90vh solid rgba(255,255,220,.06);
-  animation:beam2 11s ease-in-out infinite alternate;
-  transform-origin:top center;filter:blur(12px)
+/* Línea diagonal decorativa */
+.hero-line{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.hero-line::before{
+  content:'';position:absolute;
+  top:0;left:55%;width:2px;height:100%;
+  background:linear-gradient(to bottom,transparent,rgba(29,185,84,.12) 30%,rgba(29,185,84,.18) 50%,rgba(29,185,84,.12) 70%,transparent);
+  transform:rotate(15deg);transform-origin:top center
 }
-.hero-beam3{
-  right:15%;
-  border-left:150px solid transparent;
-  border-right:150px solid transparent;
-  border-top:80vh solid rgba(29,185,84,.09);
-  animation:beam3 9s ease-in-out infinite alternate;
-  transform-origin:top center;filter:blur(8px)
+/* Dot grid */
+.hero-dots{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(29,185,84,.2) 1px,transparent 1px);
+  background-size:40px 40px;opacity:.08
 }
-@keyframes beam1{0%{transform:rotate(-8deg)}100%{transform:rotate(8deg)}}
-@keyframes beam2{0%{transform:rotate(6deg)}100%{transform:rotate(-6deg)}}
-@keyframes beam3{0%{transform:rotate(10deg)}100%{transform:rotate(-10deg)}}
-/* Stage floor glow */
-.hero-stage{
-  position:absolute;bottom:0;left:0;right:0;height:280px;z-index:2;
-  background:radial-gradient(ellipse 90% 60% at 50% 100%,rgba(29,185,84,.28) 0%,rgba(29,185,84,.08) 40%,transparent 70%)
-}
-/* Crowd silhouette */
-.hero-crowd{
-  position:absolute;bottom:0;left:0;right:0;height:220px;z-index:3;
-  background:linear-gradient(to top,#07070a 0%,#07070a 35%,rgba(7,7,10,.85) 65%,transparent 100%);
-  clip-path:polygon(
-    0% 100%,0% 78%,
-    0.5% 72%,1% 78%,1.5% 68%,2% 73%,2.5% 62%,3% 55%,3.5% 60%,4% 50%,4.3% 54%,4.6% 47%,5% 53%,5.5% 43%,6% 49%,6.5% 38%,7% 44%,7.3% 36%,7.6% 42%,8% 32%,8.3% 38%,8.6% 28%,9% 35%,9.5% 45%,10% 37%,10.5% 30%,11% 36%,11.5% 26%,12% 33%,12.3% 22%,12.6% 30%,13% 38%,13.5% 30%,14% 24%,14.5% 31%,15% 38%,15.5% 30%,16% 22%,16.5% 29%,17% 35%,17.5% 28%,18% 20%,18.5% 27%,19% 33%,19.5% 27%,20% 20%,20.5% 26%,21% 32%,21.5% 26%,22% 18%,22.5% 25%,23% 32%,23.5% 24%,24% 30%,24.5% 20%,25% 27%,25.5% 35%,26% 28%,26.5% 20%,27% 27%,27.5% 34%,28% 26%,28.5% 18%,29% 25%,29.5% 32%,30% 24%,30.5% 17%,31% 24%,31.5% 30%,32% 22%,32.5% 28%,33% 20%,33.5% 26%,34% 32%,34.5% 24%,35% 18%,35.5% 24%,36% 30%,36.5% 22%,37% 16%,37.5% 22%,38% 28%,38.5% 22%,39% 15%,39.5% 22%,40% 29%,40.5% 22%,41% 16%,41.5% 22%,42% 28%,42.5% 20%,43% 26%,43.5% 18%,44% 24%,44.5% 30%,45% 22%,45.5% 16%,46% 22%,46.5% 29%,47% 21%,47.5% 27%,48% 20%,48.5% 26%,49% 18%,49.5% 24%,50% 30%,50.5% 22%,51% 16%,51.5% 22%,52% 28%,52.5% 20%,53% 26%,53.5% 18%,54% 24%,54.5% 31%,55% 23%,55.5% 29%,56% 21%,56.5% 15%,57% 21%,57.5% 28%,58% 20%,58.5% 26%,59% 18%,59.5% 24%,60% 30%,60.5% 22%,61% 16%,61.5% 22%,62% 28%,62.5% 20%,63% 27%,63.5% 19%,64% 26%,64.5% 32%,65% 25%,65.5% 32%,66% 24%,66.5% 18%,67% 24%,67.5% 30%,68% 22%,68.5% 28%,69% 20%,69.5% 26%,70% 32%,70.5% 24%,71% 30%,71.5% 22%,72% 16%,72.5% 22%,73% 28%,73.5% 20%,74% 27%,74.5% 34%,75% 26%,75.5% 20%,76% 26%,76.5% 33%,77% 25%,77.5% 31%,78% 23%,78.5% 29%,79% 21%,79.5% 28%,80% 34%,80.5% 26%,81% 20%,81.5% 26%,82% 32%,82.5% 24%,83% 30%,83.5% 22%,84% 28%,84.5% 20%,85% 26%,85.5% 32%,86% 24%,86.5% 30%,87% 22%,87.5% 29%,88% 36%,88.5% 28%,89% 34%,89.5% 26%,90% 32%,90.5% 24%,91% 30%,91.5% 22%,92% 28%,92.5% 35%,93% 28%,93.5% 22%,94% 28%,94.5% 35%,95% 42%,95.5% 35%,96% 42%,96.5% 50%,97% 43%,97.5% 50%,98% 58%,98.5% 65%,99% 72%,99.5% 78%,100% 78%,
-    100% 100%
-  )
-}
-/* Horizontal scan lines */
-.hero-scan{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.025;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(29,185,84,.8) 3px,rgba(29,185,84,.8) 4px)}
-/* Top glow */
-.hero-glow-top{position:absolute;top:0;left:50%;transform:translateX(-50%);width:1000px;height:500px;background:radial-gradient(ellipse,rgba(29,185,84,.25) 0%,transparent 65%);pointer-events:none;z-index:1}
-.hero-grid{position:absolute;inset:0;z-index:1;opacity:.03;background-image:linear-gradient(rgba(29,185,84,.8) 1px,transparent 1px),linear-gradient(90deg,rgba(29,185,84,.8) 1px,transparent 1px);background-size:80px 80px}
-/* ── Artist stage scene ── */
-.hero-artist{position:absolute;inset:0;z-index:5;pointer-events:none;overflow:hidden}
-.hero-artist svg{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100%;height:100%;min-width:800px}
+/* Bottom gradient fade */
+.hero-fade{position:absolute;bottom:0;left:0;right:0;height:200px;z-index:2;background:linear-gradient(to top,#000,transparent);pointer-events:none}
+.hero-c{position:relative;z-index:10;max-width:940px}
 /* ── Playlist cover art ── */
 .plthumb{font-size:0!important}
 .plthumb svg{width:100%;height:100%;display:block;position:absolute;inset:0}
-.hero-c{position:relative;z-index:10;max-width:940px}
 .hero-badge{
   display:inline-flex;align-items:center;gap:.6rem;
   background:rgba(7,7,10,.7);border:1px solid rgba(29,185,84,.4);
@@ -566,146 +561,40 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:3rem 2rem}
 
 <!-- HERO -->
 <section id="home">
-  <div class="hero-bg-base"></div>
-  <div class="hero-beam1"></div>
-  <div class="hero-beam2"></div>
-  <div class="hero-beam3"></div>
-  <div class="hero-glow-top"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-stage"></div>
-  <div class="hero-crowd"></div>
-  <div class="hero-scan"></div>
-  <!-- Artist on stage SVG -->
-  <div class="hero-artist">
-    <svg viewBox="0 0 1400 820" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="sg" cx="50%" cy="100%" r="45%"><stop offset="0%" stop-color="rgba(29,185,84,.38)"/><stop offset="100%" stop-color="rgba(29,185,84,0)"/></radialGradient>
-        <radialGradient id="ash" cx="50%" cy="100%" r="50%"><stop offset="0%" stop-color="rgba(29,185,84,.25)"/><stop offset="60%" stop-color="rgba(29,185,84,.06)"/><stop offset="100%" stop-color="rgba(29,185,84,0)"/></radialGradient>
-        <radialGradient id="wspot" cx="50%" cy="60%" r="40%"><stop offset="0%" stop-color="rgba(255,255,200,.1)"/><stop offset="100%" stop-color="rgba(255,255,200,0)"/></radialGradient>
-        <filter id="gbl"><feGaussianBlur stdDeviation="6"/></filter>
-        <filter id="gbl2"><feGaussianBlur stdDeviation="16"/></filter>
-      </defs>
-
-      <!-- Spotlight beams from rigging above -->
-      <polygon points="140,0 195,0 560,780 490,780" fill="rgba(29,185,84,.07)" filter="url(#gbl)"/>
-      <polygon points="580,0 640,0 680,780 580,780" fill="rgba(255,255,210,.05)" filter="url(#gbl)"/>
-      <polygon points="680,-10 720,-10 820,780 580,780" fill="rgba(255,255,200,.07)" filter="url(#gbl2)"/>
-      <polygon points="760,0 820,0 820,780 680,780" fill="rgba(255,255,210,.05)" filter="url(#gbl)"/>
-      <polygon points="1205,0 1260,0 910,780 840,780" fill="rgba(29,185,84,.07)" filter="url(#gbl)"/>
-      <polygon points="1320,0 1370,0 1010,780 950,780" fill="rgba(29,185,84,.04)" filter="url(#gbl)"/>
-
-      <!-- Warm spotlight on artist -->
-      <ellipse cx="700" cy="400" rx="300" ry="400" fill="url(#wspot)" filter="url(#gbl2)"/>
-
-      <!-- Haze layers at stage level -->
-      <rect x="0" y="700" width="1400" height="80" fill="rgba(29,185,84,.06)"/>
-      <rect x="0" y="730" width="1400" height="50" fill="rgba(29,185,84,.05)"/>
-
-      <!-- Stage floor glow -->
-      <ellipse cx="700" cy="780" rx="450" ry="55" fill="url(#sg)"/>
-
-      <!-- Stage edge -->
-      <rect x="0" y="778" width="1400" height="4" fill="rgba(29,185,84,.5)"/>
-      <rect x="0" y="778" width="1400" height="4" fill="rgba(29,185,84,.3)" filter="url(#gbl)"/>
-
-      <!-- Artist ground shadow -->
-      <ellipse cx="700" cy="780" rx="90" ry="16" fill="rgba(0,0,0,.7)" filter="url(#gbl)"/>
-
-      <!-- ═══ ARTIST SILHOUETTE ═══ -->
-      <!-- Head -->
-      <circle cx="700" cy="528" r="36" fill="rgba(4,4,7,.95)"/>
-
-      <!-- Body + arms -->
-      <path fill="rgba(4,4,7,.95)" d="
-        M 686 562
-        L 648 598
-        L 558 498
-        L 544 510
-        L 630 614
-        L 610 710
-        L 592 778
-        L 634 778
-        L 644 718
-        L 656 712
-        L 696 712
-        L 696 778
-        L 738 778
-        L 738 712
-        L 748 718
-        L 758 778
-        L 800 778
-        L 782 710
-        L 762 614
-        L 848 510
-        L 834 498
-        L 752 598
-        L 714 562
-        Z
-      "/>
-
-      <!-- Microphone (tip of raised left arm) -->
-      <rect x="536" y="492" width="15" height="28" rx="7" fill="rgba(4,4,7,.95)"/>
-      <!-- Mic stand/grip -->
-      <rect x="542" y="518" width="4" height="24" fill="rgba(30,30,40,.7)"/>
-
-      <!-- Mic cable draping -->
-      <path d="M 544 520 C 560 555 575 562 598 552 C 615 544 622 528 638 528" stroke="rgba(4,4,7,.6)" stroke-width="2.5" fill="none"/>
-
-      <!-- ═══ CROWD SILHOUETTE ═══ -->
-      <path fill="rgba(4,4,7,.96)" d="
-        M 0,820 L 0,792
-        L 18,782 L 28,790 L 40,778 L 52,786 L 64,772 L 76,780 L 88,766 L 100,774
-        L 112,760 L 124,768 L 136,754 L 148,762 L 160,748 L 172,756 L 184,742
-        L 196,750 L 208,736 L 220,744 L 232,730 L 244,738 L 256,724 L 268,732
-        L 280,718 L 292,726 L 304,712 L 316,720 L 328,706 L 340,714 L 352,700
-        L 364,708 L 376,694 L 388,702 L 400,688 L 412,696 L 424,682 L 436,690
-        L 448,676 L 460,684 L 472,670 L 484,678 L 496,664 L 508,672 L 520,658
-        L 532,666 L 544,652 L 556,660 L 568,646 L 580,654 L 592,640 L 604,648
-        L 616,634 L 628,642 L 640,628 L 652,636 L 664,622 L 676,630 L 688,618
-        L 700,628 L 712,616 L 724,626 L 736,614 L 748,622 L 760,610 L 772,618
-        L 784,606 L 796,614 L 808,600 L 820,608 L 832,596 L 844,604 L 856,592
-        L 868,600 L 880,588 L 892,596 L 904,584 L 916,592 L 928,580 L 940,588
-        L 952,576 L 964,584 L 976,572 L 988,580 L 1000,568 L 1012,576 L 1024,564
-        L 1036,572 L 1048,560 L 1060,568 L 1072,556 L 1084,564 L 1096,552
-        L 1108,560 L 1120,548 L 1132,556 L 1144,564 L 1156,556 L 1168,568
-        L 1180,578 L 1192,570 L 1204,582 L 1216,590 L 1228,582 L 1240,592
-        L 1252,600 L 1264,610 L 1276,620 L 1288,630 L 1300,642 L 1312,654
-        L 1324,666 L 1336,678 L 1348,690 L 1360,704 L 1372,718 L 1384,732
-        L 1400,750 L 1400,820 Z
-      "/>
-
-      <!-- Crowd raised hands / arms (tiny silhouettes) -->
-      <g fill="rgba(4,4,7,.96)" opacity="0.9">
-        <rect x="185" y="762" width="4" height="18" rx="2"/>
-        <rect x="265" y="752" width="4" height="20" rx="2"/>
-        <rect x="345" y="742" width="4" height="16" rx="2"/>
-        <rect x="425" y="732" width="4" height="20" rx="2"/>
-        <rect x="485" y="724" width="4" height="18" rx="2"/>
-        <rect x="545" y="714" width="4" height="22" rx="2"/>
-        <rect x="605" y="706" width="4" height="18" rx="2"/>
-        <rect x="795" y="704" width="4" height="20" rx="2"/>
-        <rect x="855" y="712" width="4" height="18" rx="2"/>
-        <rect x="915" y="720" width="4" height="22" rx="2"/>
-        <rect x="975" y="730" width="4" height="18" rx="2"/>
-        <rect x="1055" y="742" width="4" height="20" rx="2"/>
-        <rect x="1155" y="754" width="4" height="16" rx="2"/>
-        <rect x="1235" y="764" width="4" height="18" rx="2"/>
-      </g>
-
-      <!-- Stage monitor speakers on floor -->
-      <polygon points="580,778 620,778 614,760 586,760" fill="rgba(15,15,20,.9)"/>
-      <polygon points="780,778 820,778 814,760 786,760" fill="rgba(15,15,20,.9)"/>
-    </svg>
+  <!-- Decorative EQ bars background -->
+  <div class="hero-eq">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
   </div>
+  <!-- Dot grid -->
+  <div class="hero-dots"></div>
+  <!-- Diagonal line -->
+  <div class="hero-line"></div>
+  <!-- Big decorative number -->
+  <div class="hero-deco-num">01</div>
+  <!-- Bottom fade -->
+  <div class="hero-fade"></div>
+
   <div class="hero-c">
-    <div class="hero-badge"><div class="pulse"></div>Sin bots · Oyentes reales · Revisión manual</div>
-    <h1 class="ht">HAZ CRECER<br>TU <span class="green">MÚSICA</span><br>EN SPOTIFY</h1>
-    <p class="hero-sub">Añadimos tus canciones a playlists activas con público real. Si tu música no encaja, devolvemos el importe íntegro — sin preguntas.</p>
+    <!-- Eyebrow label -->
+    <div style="display:inline-flex;align-items:center;gap:.75rem;margin-bottom:2rem;animation:up .7s ease both">
+      <span style="display:block;width:36px;height:2px;background:var(--g)"></span>
+      <span style="font-family:'Raleway',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--g)">Promoción musical real</span>
+      <span style="display:block;width:36px;height:2px;background:var(--g)"></span>
+    </div>
+
+    <h1 class="ht" style="margin-bottom:1.25rem">HAZ CRECER<br>TU <span class="green">MÚSICA</span><br>EN SPOTIFY</h1>
+
+    <p class="hero-sub">Añadimos tus canciones a playlists activas con público real.<br>Si tu música no encaja, devolvemos el importe íntegro — sin preguntas.</p>
+
     <div class="hero-btns">
       <a href="#planes" class="btn btn-g">Ver planes ↓</a>
       <a href="#promo" class="btn btn-outline">Promo prueba 4,99€</a>
       <a href="https://wa.me/34699247704" target="_blank" class="btn btn-wa">💬 WhatsApp</a>
     </div>
+
     <div class="hstats">
       <div class="st"><div class="sn">100<span>%</span></div><div class="sl">Oyentes reales</div></div>
       <div class="st"><div class="sn">0<span>€</span></div><div class="sl">Si no encaja</div></div>
