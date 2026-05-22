@@ -236,6 +236,73 @@ h1.ht .green{
 .at{font-size:.72rem;color:var(--dim)}
 .stars{color:var(--gold);font-size:.9rem;margin-bottom:.55rem;letter-spacing:.05em}
 
+
+.recc{border-color:rgba(100,160,250,.4);background:linear-gradient(160deg,rgba(100,160,250,.12),rgba(100,160,250,.04),rgba(255,255,255,.02))}
+.pc.recc::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#64a0fa 30%,#64a0fa 70%,transparent)}
+.prec{background:rgba(100,160,250,.15);border:1px solid rgba(100,160,250,.3);border-radius:6px;padding:.2rem .75rem;font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#64a0fa}
+.pico-combo{font-size:2rem;line-height:1;margin-bottom:.35rem;display:flex;align-items:center;gap:.4rem;}
+
+
+/* ══ PACK COMPLETO PREMIUM ══ */
+.premium-pack{
+  grid-column:1/-1;
+  background:linear-gradient(135deg,#07090f 0%,#0a0f1c 50%,#070a12 100%);
+  border:1px solid rgba(100,160,250,.3);
+  border-radius:22px;padding:2.5rem;
+  position:relative;overflow:hidden;
+  margin-bottom:2rem;
+}
+.premium-pack::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -5%,rgba(100,160,250,.1) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 60% at 0% 100%,rgba(29,185,84,.05) 0%,transparent 50%),
+    radial-gradient(ellipse 40% 60% at 100% 100%,rgba(240,180,41,.04) 0%,transparent 50%);
+  pointer-events:none;
+}
+.premium-pack::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,#3a7bd5 20%,#64a0fa 50%,#3a7bd5 80%,transparent);
+}
+.pp-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(100,160,250,.15);border:1px solid rgba(100,160,250,.3);border-radius:100px;padding:.45rem 1.2rem;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#64a0fa;margin-bottom:1rem;}
+.pp-title{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);color:#fff;letter-spacing:.03em;line-height:.92;margin-bottom:.8rem;}
+.pp-title em{color:#64a0fa;font-style:normal;}
+.pp-intro{font-size:.92rem;color:rgba(255,255,255,.5);line-height:1.7;max-width:560px;margin-bottom:2rem;}
+.pp-platforms{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.9rem;margin-bottom:2rem;position:relative;z-index:1;}
+.pp-plat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:1rem 1.1rem;}
+.pp-plat-head{display:flex;align-items:center;gap:.55rem;margin-bottom:.7rem;padding-bottom:.6rem;border-bottom:1px solid rgba(255,255,255,.06);}
+.pp-plat-icon{font-size:1.3rem;line-height:1;}
+.pp-plat-name{font-size:.82rem;font-weight:800;color:#e8e8f0;letter-spacing:.02em;}
+.pp-plat-detail{font-size:.75rem;color:rgba(255,255,255,.35);margin-left:auto;font-weight:700;}
+.pp-plat-list{list-style:none;display:flex;flex-direction:column;gap:.35rem;}
+.pp-plat-list li{font-size:.77rem;color:rgba(255,255,255,.45);display:flex;align-items:flex-start;gap:.5rem;line-height:1.4;}
+.pp-plat-list li span.chk{font-weight:900;font-size:.78rem;flex-shrink:0;margin-top:.05rem;}
+.pp-roi{background:rgba(100,160,250,.06);border:1px solid rgba(100,160,250,.15);border-radius:14px;padding:1.3rem 1.5rem;margin-bottom:2rem;display:flex;gap:1rem;align-items:flex-start;position:relative;z-index:1;}
+.pp-roi-ico{font-size:2rem;flex-shrink:0;line-height:1;}
+.pp-roi-body strong{display:block;font-size:.92rem;font-weight:800;color:#64a0fa;margin-bottom:.45rem;}
+.pp-roi-body p{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.65;}
+.pp-price-row{display:flex;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:1.5rem;position:relative;z-index:1;}
+.pp-price-box{text-align:center;}
+.pp-price-label{font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.2rem;}
+.pp-price-amount{font-family:'Bebas Neue',Impact,sans-serif;font-size:3.5rem;color:#64a0fa;line-height:1;letter-spacing:-.01em;}
+.pp-price-amount sup{font-size:1.3rem;vertical-align:top;margin-top:.5rem;display:inline-block;font-family:'Raleway',sans-serif;font-weight:900;}
+.pp-price-amount sub{font-size:.95rem;font-family:'Raleway',sans-serif;font-weight:600;vertical-align:baseline;color:rgba(255,255,255,.35);}
+.pp-price-save{font-size:.72rem;color:#1DB954;font-weight:700;margin-top:.2rem;}
+.pp-divider{width:1px;height:70px;background:rgba(255,255,255,.08);align-self:center;}
+.pp-btns{display:flex;flex-direction:column;gap:.7rem;position:relative;z-index:1;}
+.pp-btns-row{display:flex;gap:.7rem;flex-wrap:wrap;}
+.btn-premium-stripe{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:linear-gradient(135deg,#3a7bd5 0%,#2361c4 100%);color:#fff !important;border-radius:12px;padding:.95rem 1.6rem;font-family:'Raleway',sans-serif;font-size:.88rem;font-weight:800;cursor:pointer;text-decoration:none !important;transition:.25s;letter-spacing:.04em;flex:1;min-width:180px;border:none;}
+.btn-premium-stripe:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 8px 28px rgba(58,123,213,.4);}
+.btn-premium-wa{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.3);color:#25D366 !important;border-radius:12px;padding:.95rem 1.6rem;font-family:'Raleway',sans-serif;font-size:.88rem;font-weight:800;cursor:pointer;text-decoration:none !important;transition:.25s;letter-spacing:.04em;flex:1;min-width:180px;}
+.btn-premium-wa:hover{background:rgba(37,211,102,.15);border-color:rgba(37,211,102,.55);transform:translateY(-2px);}
+.pp-pay-note{font-size:.72rem;color:rgba(255,255,255,.22);text-align:center;}
+@media(max-width:640px){
+  .premium-pack{padding:1.5rem 1.2rem;}
+  .pp-btns-row{flex-direction:column;}
+  .btn-premium-stripe,.btn-premium-wa{min-width:unset;width:100%;}
+  .pp-divider{display:none;}
+}
+
 /* ══════════════════════════════════
    PLANES — dark stage
 ══════════════════════════════════ */
@@ -559,7 +626,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:3rem 2rem}
 <nav>
   <a href="#home" class="logo">🎧 LIGA<span class="logo-g">MUSIC</span></a>
   <div class="nav-links">
-    <a href="#envio" style="color:var(--g);font-weight:800;">Envío 1,50€</a><a href="#planes">Planes</a>
+    <a href="#pack-premium" style="color:#64a0fa;font-weight:800;">Pack Premium</a><a href="#envio" style="color:var(--g);font-weight:800;">Envío 1,50€</a><a href="#planes">Planes</a>
     <a href="#ofrecemos">Servicios</a>
     <a href="#playlists">Playlists</a>
     <a href="#tiktok">TikTok</a>
@@ -1143,6 +1210,166 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:3rem 2rem}
       <button class="tb" onclick="switchPlan('3meses',this)">3 Meses</button>
     </div>
     <div class="pcards">
+
+
+      <!-- NEW: Pack Spotify + Apple Music — MÁS RECOMENDADO -->
+      <div class="pc recc reveal" style="order:-1;position:relative;">
+        <div class="pbadge" style="background:rgba(100,160,250,.2);color:#64a0fa;border:1px solid rgba(100,160,250,.3);">⭐ Más recomendado</div>
+        <div class="pico-combo">🎧<span style="font-size:1.2rem;opacity:.5">+</span>🍎</div>
+        <div class="pname" style="color:#fff;">Pack Spotify<span style="color:#64a0fa;"> + Apple Music</span></div>
+        <div class="pdesc">La combinación perfecta. Apple Music paga hasta 7× más por stream que Spotify — recuperas parte de tu inversión mientras creces en dos plataformas.</div>
+
+        <div class="ppri">
+          <div class="ptag" id="duo-p1"><div class="pamt">35€</div><div class="pper">1 mes</div></div>
+          <div class="ptag" id="duo-p3" style="display:none"><div class="pamt">67€</div><div class="pper">3 meses</div><div class="psav">Ahorras 38€</div></div>
+        </div>
+
+        <!-- Why recommended box -->
+        <div style="background:rgba(100,160,250,.07);border:1px solid rgba(100,160,250,.15);border-radius:10px;padding:1rem 1.1rem;margin:.5rem 0 .8rem;font-size:.82rem;line-height:1.65;color:rgba(255,255,255,.6);">
+          <div style="font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#64a0fa;margin-bottom:.5rem;">¿Por qué este pack?</div>
+          🎵 Apple Music paga <strong style="color:#fff;">7× más por stream</strong> que Spotify<br>
+          📈 Mueves el algoritmo de Apple → <strong style="color:#fff;">más oyentes orgánicos</strong><br>
+          💰 Parte de la inversión se <strong style="color:#fff;">recupera vía regalías</strong><br>
+          🌍 Presencia en <strong style="color:#fff;">dos plataformas líderes</strong> a la vez
+        </div>
+
+        <ul class="pf">
+          <li>🎧 4 canciones en Spotify (15–20 playlists)</li>
+          <li>🍎 5 canciones en Apple Music</li>
+          <li>Escuchas desde España, LATAM y USA</li>
+          <li>Genera regalías en ambas plataformas</li>
+          <li>Resultados en Apple for Artists</li>
+          <li>Sin bots ni automatizaciones</li>
+          <li>Soporte humano 24/7</li>
+        </ul>
+
+        <div class="pbts">
+          <a href="https://tally.so/r/XXXXXXX" target="_blank" class="btn btn-g" id="duo-b1" style="background:linear-gradient(135deg,#3a7bd5,#2563c4);">Contratar 1 mes – 35€</a>
+          <a href="https://tally.so/r/XXXXXXX" target="_blank" class="btn btn-outline" id="duo-b3" style="display:none">Contratar 3 meses – 67€</a>
+        </div>
+      </div>
+
+
+      <!-- PACK COMPLETO PREMIUM -->
+      <div class="premium-pack reveal" id="pack-premium">
+
+        <div class="pp-badge">🌟 Pack Completo Premium · Máximo Rendimiento</div>
+
+        <div class="pp-title">Spotify + YouTube<br>+ Apple Music + <em>Tidal</em></div>
+        <p class="pp-intro">El pack más completo del mercado. Presencia simultánea en las 4 principales plataformas de streaming, algoritmos activos en todas ellas y regalías que compensan parte de tu inversión desde el primer mes.</p>
+
+        <!-- Platform breakdown -->
+        <div class="pp-platforms">
+          <div class="pp-plat">
+            <div class="pp-plat-head">
+              <span class="pp-plat-icon">🎧</span>
+              <span class="pp-plat-name">Spotify</span>
+              <span class="pp-plat-detail" style="color:#1DB954;">3 canciones</span>
+            </div>
+            <ul class="pp-plat-list">
+              <li><span class="chk" style="color:#1DB954;">✓</span>20 playlists activas</li>
+              <li><span class="chk" style="color:#1DB954;">✓</span>Escuchas verificadas</li>
+              <li><span class="chk" style="color:#1DB954;">✓</span>Algoritmo activo</li>
+              <li><span class="chk" style="color:#1DB954;">✓</span>Genera regalías</li>
+            </ul>
+          </div>
+          <div class="pp-plat">
+            <div class="pp-plat-head">
+              <span class="pp-plat-icon">▶️</span>
+              <span class="pp-plat-name">YouTube</span>
+              <span class="pp-plat-detail" style="color:#FF0000;">2 canciones</span>
+            </div>
+            <ul class="pp-plat-list">
+              <li><span class="chk" style="color:#FF0000;">✓</span>Aumento de streams</li>
+              <li><span class="chk" style="color:#FF0000;">✓</span>Visualizaciones reales</li>
+              <li><span class="chk" style="color:#FF0000;">✓</span>Mejora posicionamiento</li>
+              <li><span class="chk" style="color:#FF0000;">✓</span>Sin bots</li>
+            </ul>
+          </div>
+          <div class="pp-plat">
+            <div class="pp-plat-head">
+              <span class="pp-plat-icon">🍎</span>
+              <span class="pp-plat-name">Apple Music</span>
+              <span class="pp-plat-detail" style="color:#fc5c7d;">5 canciones</span>
+            </div>
+            <ul class="pp-plat-list">
+              <li><span class="chk" style="color:#fc5c7d;">✓</span>5 listas activas</li>
+              <li><span class="chk" style="color:#fc5c7d;">✓</span>Paga 7× más que Spotify</li>
+              <li><span class="chk" style="color:#fc5c7d;">✓</span>Oyentes premium</li>
+              <li><span class="chk" style="color:#fc5c7d;">✓</span>Apple for Artists</li>
+            </ul>
+          </div>
+          <div class="pp-plat">
+            <div class="pp-plat-head">
+              <span class="pp-plat-icon">🌊</span>
+              <span class="pp-plat-name">Tidal</span>
+              <span class="pp-plat-detail" style="color:#64a0fa;">10 canciones</span>
+            </div>
+            <ul class="pp-plat-list">
+              <li><span class="chk" style="color:#64a0fa;">✓</span>5 cuentas activas</li>
+              <li><span class="chk" style="color:#64a0fa;">✓</span>Paga hasta 10× más</li>
+              <li><span class="chk" style="color:#64a0fa;">✓</span>Calidad HiFi</li>
+              <li><span class="chk" style="color:#64a0fa;">✓</span>Mayor regalía por stream</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ROI highlight -->
+        <div class="pp-roi">
+          <div class="pp-roi-ico">💰</div>
+          <div class="pp-roi-body">
+            <strong>Recuperas parte de tu inversión en regalías</strong>
+            <p>Apple Music paga 7× más por stream que Spotify y Tidal hasta 10×. Con las 19 canciones activas en paralelo en las 4 plataformas, las regalías generadas compensan una parte significativa del coste del pack — a la vez que haces crecer tu audiencia de forma real y permanente.</p>
+          </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="pp-price-row" id="pp-price-wrap">
+          <!-- 1 mes -->
+          <div class="pp-price-box" id="pp-p1">
+            <div class="pp-price-label">1 mes</div>
+            <div class="pp-price-amount"><sup>€</sup>49<sub>,90</sub></div>
+          </div>
+          <!-- 3 meses -->
+          <div class="pp-price-box" id="pp-p3" style="display:none;">
+            <div class="pp-price-label">3 meses</div>
+            <div class="pp-price-amount"><sup>€</sup>99</div>
+            <div class="pp-price-save">Ahorras 51€ vs mes a mes</div>
+          </div>
+          <div class="pp-divider"></div>
+          <div style="font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.7;max-width:240px;align-self:center;">
+            Sin permanencia · Cancelas cuando quieras<br>
+            Soporte personalizado 24/7<br>
+            Respuesta en menos de 48h
+          </div>
+        </div>
+
+        <!-- Payment buttons -->
+        <div class="pp-btns">
+          <!-- Stripe / Tally buttons -->
+          <div class="pp-btns-row">
+            <a href="https://tally.so/r/A7jdPW" target="_blank" class="btn-premium-stripe" id="pp-b1">
+              💳 Contratar 1 mes — 49,90€
+            </a>
+            <a href="https://tally.so/r/Bz2XEY" target="_blank" class="btn-premium-stripe" id="pp-b3" style="display:none;">
+              💳 Contratar 3 meses — 99€
+            </a>
+          </div>
+          <!-- WhatsApp Bizum/PayPal -->
+          <div class="pp-btns-row">
+            <a href="https://wa.me/34699247704?text=Hola%2C%20quiero%20contratar%20el%20Pack%20Completo%20Premium%201%20mes%20(49%2C90%E2%82%AC)%20y%20pagar%20por%20Bizum%2FPayPal" target="_blank" class="btn-premium-wa" id="pp-wa1">
+              💬 Pagar por Bizum / PayPal vía WhatsApp
+            </a>
+            <a href="https://wa.me/34699247704?text=Hola%2C%20quiero%20contratar%20el%20Pack%20Completo%20Premium%203%20meses%20(99%E2%82%AC)%20y%20pagar%20por%20Bizum%2FPayPal" target="_blank" class="btn-premium-wa" id="pp-wa3" style="display:none;">
+              💬 Pagar por Bizum / PayPal vía WhatsApp
+            </a>
+          </div>
+          <div class="pp-pay-note">
+            Pago seguro · Stripe · Bizum · PayPal · Los datos de tu pago nunca se almacenan
+          </div>
+        </div>
+
+      </div>
 
       <div class="pc feat reveal">
         <div class="pbadge pbg">Más popular</div>
@@ -1854,10 +2081,21 @@ function closeMob(){document.getElementById('mob').classList.remove('open')}
 document.addEventListener('click',e=>{if(!e.target.closest('nav')&&!e.target.closest('#mob'))closeMob()});
 
 function switchPlan(m,btn){
+  const is3m=m==='3meses';
+  // Toggle premium WA buttons
+  const wa1=document.getElementById('pp-wa1');
+  const wa3=document.getElementById('pp-wa3');
+  if(wa1) wa1.style.display=is3m?'none':'flex';
+  if(wa3) wa3.style.display=is3m?'flex':'none';
+  // Toggle premium price boxes
+  const pp1=document.getElementById('pp-p1');
+  const pp3=document.getElementById('pp-p3');
+  if(pp1) pp1.style.display=is3m?'none':'block';
+  if(pp3) pp3.style.display=is3m?'block':'none';
   document.querySelectorAll('.tb').forEach(b=>b.classList.remove('on'));
   btn.classList.add('on');
   const is3=m==='3meses';
-  [['sp','sp-p1','sp-p3','sp-b1','sp-b3'],['ap','ap-p1','ap-p3','ap-b1','ap-b3'],['trio','trio-p1','trio-p3','trio-b1','trio-b3']].forEach(([,p1,p3,b1,b3])=>{
+  [['duo','duo-p1','duo-p3','duo-b1','duo-b3'],['pp','pp-p1','pp-p3','pp-b1','pp-b3'],['sp','sp-p1','sp-p3','sp-b1','sp-b3'],['ap','ap-p1','ap-p3','ap-b1','ap-b3'],['trio','trio-p1','trio-p3','trio-b1','trio-b3']].forEach(([,p1,p3,b1,b3])=>{
     document.getElementById(p1).style.display=is3?'none':'block';
     document.getElementById(p3).style.display=is3?'block':'none';
     document.getElementById(b1).style.display=is3?'none':'flex';
