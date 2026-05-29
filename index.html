@@ -548,6 +548,12 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:3rem 2rem}
 @media(max-width:960px){.nav-links{display:none}.ham{display:flex}.proof-grid,.tt-in,.co-in{grid-template-columns:1fr}.og{grid-template-columns:1fr}}
 @media(max-width:640px){section{padding:5rem 1.25rem}h1.ht{font-size:clamp(3.2rem,16vw,5.5rem)}.pcards,.trust-grid{grid-template-columns:1fr}.hws:not(:last-child)::after{display:none}.hstats{flex-direction:column}.st:not(:last-child)::after{right:auto;bottom:0;top:auto;width:60%;height:1px;left:20%}.promo-card{padding:2.5rem 1.5rem}.prbig{font-size:4.5rem}}
 
+
+/* ══ META ADS ══ */
+@media(max-width:700px){
+  .meta-grid{grid-template-columns:1fr !important;}
+}
+
 </style>
 </head>
 <body>
@@ -557,7 +563,7 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:3rem 2rem}
   <a href="#home" class="logo">🎧 LIGA<span class="logo-g">MUSIC</span></a>
   <div class="nav-links">
     <a href="#pack-premium" style="color:#64a0fa;font-weight:800;">Pack Premium</a><a href="#planes">Planes</a>
-    <a href="#ofrecemos">Servicios</a>
+    <a href="#ofrecemos">Servicios</a><a href="#meta-ads" style="color:#1877F2;font-weight:800;">Meta Ads</a>
     
     <a href="#tiktok">TikTok</a>
     <a href="#webservice" style="color:var(--gold)!important">💻 Web Pro</a>
@@ -747,10 +753,14 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:3rem 2rem}
     <div style="text-align:center;margin-bottom:1rem">
       <div class="tag" style="margin:0 auto 1.2rem">💳 Planes de promoción mensual</div>
       <h2 class="h2" style="font-size:clamp(2rem,4.5vw,3.2rem)">Elige tu <em>plan</em></h2>
-      <p class="muted" style="margin:.75rem auto 0;max-width:560px;line-height:1.7">
+      <p class="muted" style="margin:.75rem auto 0;max-width:580px;line-height:1.75">
         Playlists activas · Escuchas verificadas · Regalías reales.<br>
-        <strong style="color:rgba(255,255,255,.7)">Solo 30 artistas al mes</strong> para garantizar la máxima calidad.
+        <strong style="color:rgba(255,255,255,.7)">Cupo limitado a 30 artistas al mes</strong> para garantizar la máxima calidad de cada promoción.
       </p>
+      <div style="display:inline-flex;align-items:center;gap:.6rem;margin-top:1.2rem;background:rgba(100,160,250,.1);border:1px solid rgba(100,160,250,.2);border-radius:100px;padding:.45rem 1.2rem;">
+        <span style="width:8px;height:8px;border-radius:50%;background:#64a0fa;box-shadow:0 0 8px #64a0fa;animation:pulse 2s infinite;display:inline-block;"></span>
+        <span style="font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#64a0fa;font-family:'Raleway',sans-serif;">Pack Premium · Máximo rendimiento · 4 plataformas</span>
+      </div>
     </div>
     <div class="ptog">
       <button class="tb on" onclick="switchPlan('1mes',this)">1 Mes</button>
@@ -878,6 +888,12 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:3rem 2rem}
           </div>
         </div>
 
+      </div>
+
+
+      <!-- Individual plans separator -->
+      <div style="grid-column:1/-1;text-align:center;padding:.5rem 0 1rem;border-top:1px solid rgba(255,255,255,.06);margin-top:.5rem;">
+        <span style="font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);font-family:'Raleway',sans-serif;">— O elige por plataforma individual —</span>
       </div>
 
       <div class="pc feat reveal">
@@ -1009,42 +1025,6 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:3rem 2rem}
 </section>
 
 <!-- TIKTOK -->
-<section id="tiktok">
-  <div class="w">
-    <div class="tt-in">
-      <div class="tt-left">
-        <div class="tag" style="border-color:rgba(255,0,80,.25);background:rgba(255,0,80,.08);color:#ff375f">📲 Nueva campaña</div>
-        <h2 class="h2" style="font-size:clamp(2rem,4vw,2.6rem)">Promoción en<br><span style="color:#ff0050;text-shadow:0 0 30px rgba(255,0,80,.5)">TikTok</span></h2>
-        <p class="muted">TikTok es una herramienta muy efectiva para dar visibilidad a tu música. Un video bien dirigido puede generar tráfico hacia tu perfil en las plataformas de streaming.</p>
-        <p class="muted">Tu video quedará publicado <strong style="color:var(--txt)">de por vida</strong> en el TikTok oficial de LigaMusic, redirigiendo al público a la plataforma que elijas.</p>
-        <ol class="tt-steps">
-          <li class="ttsi"><div class="ttsn">1</div><div class="ttst">Rellenas el formulario con tu email, WhatsApp y enlace de plataforma</div></li>
-          <li class="ttsi"><div class="ttsn">2</div><div class="ttst">Nos envías tu video por WhatsApp</div></li>
-          <li class="ttsi"><div class="ttsn">3</div><div class="ttst">Lo publicamos en el TikTok oficial de LigaMusic</div></li>
-          <li class="ttsi"><div class="ttsn">4</div><div class="ttst">El público es redirigido directamente a tu música</div></li>
-        </ol>
-      </div>
-      <div class="tt-card reveal">
-        <div style="font-family:'Raleway',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)">Pago único · Sin suscripciones</div>
-        <div class="tt-price">17€</div>
-        <ul class="tt-perks">
-          <li>Pago único, sin cuotas</li>
-          <li>Video publicado en nuestro perfil</li>
-          <li>Sin caducidad establecida</li>
-          <li>Escuchas verificadas, sin automatizaciones</li>
-          <li>Tráfico directo a tu música</li>
-          <li>Sin costes ocultos</li>
-        </ul>
-        <div class="tt-btns">
-          <a href="https://wa.me/34699247704?text=Quiero%20la%20promoci%C3%B3n%20de%20tiktok" target="_blank" class="btn btn-wa">💬 WhatsApp</a>
-          <a href="https://www.tiktok.com/@trapyrapconsciente" target="_blank" class="btn btn-tt2">Ver TikTok</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- QUE OFRECEMOS -->
 <section id="ofrecemos">
   <div class="w">
     <div class="tag">💡 Transparencia total</div>
@@ -1080,6 +1060,177 @@ footer{background:var(--bg);border-top:1px solid var(--bdr);padding:3rem 2rem}
         <div class="hws"><div class="hwc">2</div><h4>Revisamos</h4><p>Verificamos si encaja con nuestras playlists</p></div>
         <div class="hws"><div class="hwc">3</div><h4>La añadimos</h4><p>La incorporamos a playlists activas seleccionadas</p></div>
         <div class="hws"><div class="hwc">4</div><h4>Crecimiento</h4><p>Recibes oyentes y regalías reales desde el primer día</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUE OFRECEMOS -->
+<section id="meta-ads" style="padding:5rem 0;background:linear-gradient(180deg,#07070a 0%,#090510 60%,#07070a 100%);position:relative;overflow:hidden;">
+
+  <!-- Background decoration -->
+  <div style="position:absolute;inset:0;pointer-events:none;z-index:0;">
+    <div style="position:absolute;top:-80px;right:-80px;width:420px;height:420px;background:radial-gradient(ellipse,rgba(24,119,242,.12) 0%,transparent 70%);border-radius:50%;"></div>
+    <div style="position:absolute;bottom:-60px;left:-60px;width:360px;height:360px;background:radial-gradient(ellipse,rgba(229,57,53,.08) 0%,transparent 70%);border-radius:50%;"></div>
+    <div style="position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);width:600px;height:2px;background:linear-gradient(90deg,transparent,rgba(24,119,242,.15),transparent);"></div>
+  </div>
+
+  <div class="w" style="position:relative;z-index:1;">
+
+    <!-- Header -->
+    <div style="text-align:center;margin-bottom:3.5rem;" class="reveal">
+      <div style="display:inline-flex;align-items:center;gap:.75rem;margin-bottom:1.4rem;">
+        <span style="display:block;width:36px;height:2px;background:#1877F2"></span>
+        <span style="font-family:'Raleway',sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#1877F2;">Meta Ads · Facebook & Instagram</span>
+        <span style="display:block;width:36px;height:2px;background:#1877F2"></span>
+      </div>
+      <h2 style="font-family:'Bebas Neue','Arial Black',Impact,sans-serif;font-size:clamp(2.8rem,7vw,5rem);line-height:.93;color:#fff;margin-bottom:1.2rem;letter-spacing:.02em;">
+        Promoción Musical<br><span style="color:#1877F2;">con Meta Ads</span>
+      </h2>
+      <p style="font-size:1.05rem;color:rgba(255,255,255,.6);max-width:580px;margin:0 auto 2rem;line-height:1.75;font-family:'Raleway',sans-serif;font-weight:500;">
+        Lleva tu canción a nuevos oyentes con campañas estratégicas en Instagram y Facebook.
+      </p>
+
+      <!-- Platform pills -->
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;">
+        <span style="background:rgba(29,185,84,.1);border:1px solid rgba(29,185,84,.25);border-radius:100px;padding:.4rem 1.1rem;font-size:.75rem;font-weight:700;color:#1DB954;letter-spacing:.06em;font-family:'Raleway',sans-serif;">🎵 Spotify</span>
+        <span style="background:rgba(252,100,120,.1);border:1px solid rgba(252,100,120,.25);border-radius:100px;padding:.4rem 1.1rem;font-size:.75rem;font-weight:700;color:#fc6478;letter-spacing:.06em;font-family:'Raleway',sans-serif;">🍎 Apple Music</span>
+        <span style="background:rgba(255,0,0,.1);border:1px solid rgba(255,0,0,.2);border-radius:100px;padding:.4rem 1.1rem;font-size:.75rem;font-weight:700;color:#ff4444;letter-spacing:.06em;font-family:'Raleway',sans-serif;">▶ YouTube</span>
+        <span style="background:rgba(24,119,242,.1);border:1px solid rgba(24,119,242,.25);border-radius:100px;padding:.4rem 1.1rem;font-size:.75rem;font-weight:700;color:#1877F2;letter-spacing:.06em;font-family:'Raleway',sans-serif;">🔗 Song.link</span>
+      </div>
+    </div>
+
+    <!-- Main grid -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2.5rem;" class="reveal meta-grid" class="reveal">
+
+      <!-- Description block -->
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:2rem;">
+        <div style="font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1.2rem;font-family:'Raleway',sans-serif;">¿Qué hacemos?</div>
+        <p style="font-size:.92rem;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:1.5rem;font-family:'Raleway',sans-serif;">
+          Creamos campañas publicitarias personalizadas para artistas que quieren promocionar sus canciones y <strong style="color:rgba(255,255,255,.85);">llegar a público real interesado en su estilo musical</strong>. Segmentamos por género musical, ciudad, edad e intereses para atraer oyentes hacia Spotify, Apple Music, YouTube y más plataformas.
+        </p>
+
+        <!-- Benefits list -->
+        <div style="display:flex;flex-direction:column;gap:.7rem;">
+          <div style="display:flex;align-items:flex-start;gap:.75rem;">
+            <span style="color:#1877F2;font-weight:900;font-size:.85rem;flex-shrink:0;margin-top:.1rem;">✓</span>
+            <span style="font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.5;font-family:'Raleway',sans-serif;">Campañas configuradas en Facebook e Instagram Ads</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;">
+            <span style="color:#1877F2;font-weight:900;font-size:.85rem;flex-shrink:0;margin-top:.1rem;">✓</span>
+            <span style="font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.5;font-family:'Raleway',sans-serif;">Segmentación por ciudades y estilos musicales</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;">
+            <span style="color:#1877F2;font-weight:900;font-size:.85rem;flex-shrink:0;margin-top:.1rem;">✓</span>
+            <span style="font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.5;font-family:'Raleway',sans-serif;">Tráfico hacia Spotify, Apple Music, YouTube o Song.link</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;">
+            <span style="color:#1877F2;font-weight:900;font-size:.85rem;flex-shrink:0;margin-top:.1rem;">✓</span>
+            <span style="font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.5;font-family:'Raleway',sans-serif;">Optimización para clics y visitas reales</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;">
+            <span style="color:#1877F2;font-weight:900;font-size:.85rem;flex-shrink:0;margin-top:.1rem;">✓</span>
+            <span style="font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.5;font-family:'Raleway',sans-serif;">Análisis básico de resultados</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;">
+            <span style="color:#1877F2;font-weight:900;font-size:.85rem;flex-shrink:0;margin-top:.1rem;">✓</span>
+            <span style="font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.5;font-family:'Raleway',sans-serif;">Recomendaciones para mejorar futuras campañas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: Ideal para + Precio -->
+      <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+        <!-- Ideal para -->
+        <div style="background:rgba(24,119,242,.06);border:1px solid rgba(24,119,242,.2);border-radius:20px;padding:1.75rem;">
+          <div style="font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#1877F2;margin-bottom:1.1rem;font-family:'Raleway',sans-serif;">🎯 Ideal para</div>
+          <div style="display:flex;flex-direction:column;gap:.55rem;">
+            <div style="display:flex;align-items:center;gap:.65rem;font-size:.85rem;color:rgba(255,255,255,.6);font-family:'Raleway',sans-serif;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#1877F2;flex-shrink:0;"></span>Artistas independientes
+            </div>
+            <div style="display:flex;align-items:center;gap:.65rem;font-size:.85rem;color:rgba(255,255,255,.6);font-family:'Raleway',sans-serif;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#1877F2;flex-shrink:0;"></span>Raperos, traperos y artistas urbanos
+            </div>
+            <div style="display:flex;align-items:center;gap:.65rem;font-size:.85rem;color:rgba(255,255,255,.6);font-family:'Raleway',sans-serif;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#1877F2;flex-shrink:0;"></span>Lanzamientos nuevos
+            </div>
+            <div style="display:flex;align-items:center;gap:.65rem;font-size:.85rem;color:rgba(255,255,255,.6);font-family:'Raleway',sans-serif;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#1877F2;flex-shrink:0;"></span>Canciones que necesitan más visibilidad
+            </div>
+            <div style="display:flex;align-items:center;gap:.65rem;font-size:.85rem;color:rgba(255,255,255,.6);font-family:'Raleway',sans-serif;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#1877F2;flex-shrink:0;"></span>Artistas que quieren probar qué ciudades responden mejor
+            </div>
+          </div>
+        </div>
+
+        <!-- Price card -->
+        <div style="background:linear-gradient(135deg,rgba(24,119,242,.1),rgba(24,119,242,.04));border:1px solid rgba(24,119,242,.3);border-radius:20px;padding:1.75rem;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#1877F2 30%,#1877F2 70%,transparent);"></div>
+          <div style="font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#1877F2;margin-bottom:.5rem;font-family:'Raleway',sans-serif;">💰 Precio orientativo</div>
+          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.8rem;color:#fff;letter-spacing:.04em;margin-bottom:.3rem;">Pack Campaña Básica</div>
+          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:2.8rem;color:#1877F2;line-height:1;margin-bottom:.5rem;">Desde 29€ <span style="font-size:1.1rem;color:rgba(255,255,255,.4);font-family:'Raleway',sans-serif;font-weight:600;">+ presupuesto publicitario</span></div>
+          <div style="display:flex;flex-direction:column;gap:.4rem;margin:.9rem 0 1.2rem;">
+            <div style="font-size:.8rem;color:rgba(255,255,255,.5);font-family:'Raleway',sans-serif;display:flex;align-items:center;gap:.5rem;"><span style="color:#1877F2;">✓</span> Configuración de campaña</div>
+            <div style="font-size:.8rem;color:rgba(255,255,255,.5);font-family:'Raleway',sans-serif;display:flex;align-items:center;gap:.5rem;"><span style="color:#1877F2;">✓</span> Segmentación de público</div>
+            <div style="font-size:.8rem;color:rgba(255,255,255,.5);font-family:'Raleway',sans-serif;display:flex;align-items:center;gap:.5rem;"><span style="color:#1877F2;">✓</span> Enlace a plataformas</div>
+            <div style="font-size:.8rem;color:rgba(255,255,255,.5);font-family:'Raleway',sans-serif;display:flex;align-items:center;gap:.5rem;"><span style="color:#1877F2;">✓</span> Revisión de resultados</div>
+          </div>
+          <a href="https://wa.me/34699247704?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20campañas%20Meta%20Ads%20para%20mi%20música" target="_blank"
+            style="display:block;text-align:center;background:linear-gradient(135deg,#1877F2,#0d65d9);color:#fff;text-decoration:none;font-family:'Raleway',sans-serif;font-size:.88rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.95rem 1.5rem;border-radius:12px;box-shadow:0 0 24px rgba(24,119,242,.35);transition:.2s;">
+            📣 Quiero promocionar mi canción
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div style="text-align:center;padding:1.2rem 1.5rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;max-width:640px;margin:0 auto;" class="reveal">
+      <p style="font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.7;font-family:'Raleway',sans-serif;">
+        Los anuncios de Meta aumentan la <strong style="color:rgba(255,255,255,.45);">visibilidad y el alcance</strong> de tu canción. Los resultados dependen del presupuesto publicitario, la calidad del contenido y el público objetivo. No garantizamos streams ni reproducciones concretas.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Mobile responsive style -->
+  
+
+</section>
+
+
+<!-- META ADS -->
+<section id="tiktok">
+  <div class="w">
+    <div class="tt-in">
+      <div class="tt-left">
+        <div class="tag" style="border-color:rgba(255,0,80,.25);background:rgba(255,0,80,.08);color:#ff375f">📲 Nueva campaña</div>
+        <h2 class="h2" style="font-size:clamp(2rem,4vw,2.6rem)">Promoción en<br><span style="color:#ff0050;text-shadow:0 0 30px rgba(255,0,80,.5)">TikTok</span></h2>
+        <p class="muted">TikTok es una herramienta muy efectiva para dar visibilidad a tu música. Un video bien dirigido puede generar tráfico hacia tu perfil en las plataformas de streaming.</p>
+        <p class="muted">Tu video quedará publicado <strong style="color:var(--txt)">de por vida</strong> en el TikTok oficial de LigaMusic, redirigiendo al público a la plataforma que elijas.</p>
+        <ol class="tt-steps">
+          <li class="ttsi"><div class="ttsn">1</div><div class="ttst">Rellenas el formulario con tu email, WhatsApp y enlace de plataforma</div></li>
+          <li class="ttsi"><div class="ttsn">2</div><div class="ttst">Nos envías tu video por WhatsApp</div></li>
+          <li class="ttsi"><div class="ttsn">3</div><div class="ttst">Lo publicamos en el TikTok oficial de LigaMusic</div></li>
+          <li class="ttsi"><div class="ttsn">4</div><div class="ttst">El público es redirigido directamente a tu música</div></li>
+        </ol>
+      </div>
+      <div class="tt-card reveal">
+        <div style="font-family:'Raleway',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)">Pago único · Sin suscripciones</div>
+        <div class="tt-price">17€</div>
+        <ul class="tt-perks">
+          <li>Pago único, sin cuotas</li>
+          <li>Video publicado en nuestro perfil</li>
+          <li>Sin caducidad establecida</li>
+          <li>Escuchas verificadas, sin automatizaciones</li>
+          <li>Tráfico directo a tu música</li>
+          <li>Sin costes ocultos</li>
+        </ul>
+        <div class="tt-btns">
+          <a href="https://wa.me/34699247704?text=Quiero%20la%20promoci%C3%B3n%20de%20tiktok" target="_blank" class="btn btn-wa">💬 WhatsApp</a>
+          <a href="https://www.tiktok.com/@trapyrapconsciente" target="_blank" class="btn btn-tt2">Ver TikTok</a>
+        </div>
       </div>
     </div>
   </div>
