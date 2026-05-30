@@ -516,7 +516,9 @@ h1.ht .green{
 /* ══════════════════════════════════
    FOOTER
 ══════════════════════════════════ */
-footer{background:var(--bg);border-top:1px solid var(--bdr);padding:3rem 2rem}
+footer{background:var(--bg);border-top:1px solid var(--bdr);padding:2rem}
+body{padding-bottom:0!important}
+html,body{min-height:unset}
 .fo{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem}
 .flogo{font-family:'Bebas Neue','Arial Black',Impact,sans-serif;font-size:1.25rem;letter-spacing:.05em}
 .flogo em{color:var(--g);font-style:normal;text-shadow:0 0 14px var(--gd)}
@@ -1688,54 +1690,13 @@ const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})
 },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Prevent chat widget from adding bottom space
+window.addEventListener('load',()=>{
+  document.body.style.removeProperty('padding-bottom');
+  const fix=()=>{ if(document.body.style.paddingBottom) document.body.style.paddingBottom='0'; };
+  new MutationObserver(fix).observe(document.body,{attributes:true,attributeFilter:['style']});
+});
 </script>
 </body>
 </html>
-
-      <!-- NEW: Pack Spotify + Apple Music — MÁS RECOMENDADO -->
-      <div class="pc recc reveal" style="order:-1;position:relative;">
-        <div class="pbadge" style="background:rgba(100,160,250,.2);color:#64a0fa;border:1px solid rgba(100,160,250,.3);">⭐ Más recomendado</div>
-        <div class="pico-combo">🎧<span style="font-size:1.2rem;opacity:.5">+</span>🍎</div>
-        <div class="pname" style="color:#fff;">Pack Spotify<span style="color:#64a0fa;"> + Apple Music</span></div>
-        <div class="pdesc">La combinación perfecta. Apple Music paga hasta 7× más por stream que Spotify — recuperas parte de tu inversión mientras creces en dos plataformas.</div>
-
-        <div class="ppri">
-          <div class="ptag" id="duo-p1"><div class="pamt">35€</div><div class="pper">1 mes</div></div>
-          <div class="ptag" id="duo-p3" style="display:none"><div class="pamt">67€</div><div class="pper">3 meses</div><div class="psav">Ahorras 38€</div></div>
-        </div>
-
-        <!-- Why recommended box -->
-        <div style="background:rgba(100,160,250,.07);border:1px solid rgba(100,160,250,.15);border-radius:10px;padding:1rem 1.1rem;margin:.5rem 0 .8rem;font-size:.82rem;line-height:1.65;color:rgba(255,255,255,.6);">
-          <div style="font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#64a0fa;margin-bottom:.5rem;">¿Por qué este pack?</div>
-          🎵 Apple Music paga <strong style="color:#fff;">7× más por stream</strong> que Spotify<br>
-          📈 Mueves el algoritmo de Apple → <strong style="color:#fff;">más oyentes orgánicos</strong><br>
-          💰 Parte de la inversión se <strong style="color:#fff;">recupera vía regalías</strong><br>
-          🌍 Presencia en <strong style="color:#fff;">dos plataformas líderes</strong> a la vez
-        </div>
-
-        <ul class="pf">
-          <li>🎧 4 canciones en Spotify (15–20 playlists)</li>
-          <li>🍎 5 canciones en Apple Music</li>
-          <li>Escuchas desde España, LATAM y USA</li>
-          <li>Genera regalías en ambas plataformas</li>
-          <li>Resultados en Apple for Artists</li>
-          <li>Sin bots ni automatizaciones</li>
-          <li>Soporte humano 24/7</li>
-        </ul>
-
-        <div class="pbts">
-          <a href="https://tally.so/r/Xx2MxY" target="_blank" class="btn btn-g" id="duo-b1" style="background:linear-gradient(135deg,#3a7bd5,#2563c4);">Contratar 1 mes – 35€</a>
-          <a href="https://tally.so/r/Xx2MxY" target="_blank" class="btn btn-outline" id="duo-b3" style="display:none">Contratar 3 meses – 67€</a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- CTA planes -->
-    <div class="reveal" style="text-align:center;margin-top:3rem">
-      <p style="color:rgba(255,255,255,.5);margin-bottom:1.2rem;font-size:.95rem">¿Tienes dudas? Escríbenos y te ayudamos a elegir el plan ideal para tu música.</p>
-      <a href="https://wa.me/34699247704" target="_blank" class="btn btn-wa">💬 Hablar con un asesor</a>
-    </div>
-
-  </div>
-</section>
