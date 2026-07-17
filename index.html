@@ -281,7 +281,7 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
 
 /* ═══════════ RESPONSIVE ═══════════ */
-@media(max-width:1050px){#campanas .camp-grid{grid-template-columns:repeat(3,1fr)!important}} @media(max-width:700px){#campanas .camp-grid{grid-template-columns:1fr 1fr!important}} @media(max-width:900px){.pgrid{grid-template-columns:1fr 1fr}.ab-grid{grid-template-columns:1fr;gap:2rem}}
+@media(max-width:900px){.pgrid{grid-template-columns:1fr 1fr}.ab-grid{grid-template-columns:1fr;gap:2rem}}
 @media(max-width:700px){
   .nl{display:none}.ham{display:flex}
   h1.ht{font-size:clamp(3rem,15vw,5.5rem)}
@@ -292,6 +292,21 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
   .hbtns{flex-direction:column;align-items:stretch}.hbtns .btn{width:100%}
 }
 @media(max-width:480px){.steps{grid-template-columns:1fr}}
+
+
+/* ── CAMPAÑAS RESPONSIVE ── */
+@media(max-width:1100px){
+  .camp-grid{grid-template-columns:repeat(3,1fr)!important}
+}
+@media(max-width:660px){
+  .camp-grid{grid-template-columns:1fr 1fr!important}
+  .camp-how{grid-template-columns:1fr!important}
+  #campanas .rv > div > div[style*="gap:.7rem"]{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:420px){
+  .camp-grid{grid-template-columns:1fr!important}
+}
+
 </style>
 </head>
 <body>
@@ -345,7 +360,7 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
     </h1>
     <p class="hsub">Tu canción junto a los grandes del rap y trap en playlists activas con oyentes reales. Sin bots, sin atajos. Solo curación humana y el algoritmo de Spotify trabajando para ti.</p>
     <div class="hbtns">
-      <a href="#planes" class="btn btn-g btn-lg">🎵 Ver planes desde 20€/mes</a>
+      <a href="#planes" class="btn btn-g btn-lg">🎵 Ver planes desde 25€/mes</a>
       <a href="https://wa.me/34699247704?text=Hola%2C%20quiero%20entrar%20en%20las%20playlists%20de%20LigaMusic" target="_blank" class="btn btn-ol btn-lg">💬 Hablar por WhatsApp</a>
     </div>
     <div class="hstats">
@@ -406,7 +421,7 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
         <div class="ptier t-bronze">🥉 Plan Bronce</div>
         <div class="pname">Iniciación</div>
         <div class="pprice-wrap">
-          <div class="pprice bronze-p"><sup>€</sup>20<sub>/mes</sub></div>
+          <div class="pprice bronze-p"><sup>€</sup>25<sub>/mes</sub></div>
         </div>
         <div class="pideal bi">Ideal para artistas que están testeando su sonido o acaban de empezar.</div>
         <div class="pdiv"></div>
@@ -489,7 +504,7 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
     <!-- How it works note -->
     <div class="rv" style="max-width:760px;margin:0 auto 3rem;background:rgba(61,127,255,.07);border:1px solid rgba(61,127,255,.18);border-radius:16px;padding:1.6rem 2rem;">
       <div style="font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--b);margin-bottom:1rem">📋 Cómo funciona</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem;">
+      <div class="camp-how" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem;">
         <div style="display:flex;align-items:flex-start;gap:.7rem">
           <span style="font-size:1.4rem;flex-shrink:0">📱</span>
           <div>
@@ -515,7 +530,7 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
     </div>
 
     <!-- Budget cards -->
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-bottom:2.5rem;" class="rv">
+    <div class="camp-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-bottom:2.5rem;width:100%" class="rv">
 
       <!-- 10€ -->
       <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:16px;padding:1.5rem 1.2rem;text-align:center;transition:all .3s ease;position:relative;overflow:hidden" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='rgba(61,127,255,.35)';this.style.boxShadow='0 20px 50px rgba(61,127,255,.1)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)';this.style.boxShadow='none'">
@@ -705,7 +720,7 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
       <h2>¿Listo para sonar<br><em>donde importa</em>?</h2>
       <p>Elige tu plan, envía tu canción y en 48 horas estás en rotación en playlists reales junto a los grandes del rap y trap.</p>
       <div style="display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center">
-        <a href="#planes" class="btn btn-g btn-lg">🎵 Ver planes desde 20€/mes</a>
+        <a href="#planes" class="btn btn-g btn-lg">🎵 Ver planes desde 25€/mes</a>
         <a href="https://wa.me/34699247704?text=Hola%2C%20quiero%20entrar%20en%20las%20playlists%20de%20LigaMusic" target="_blank" class="btn btn-wa btn-lg">💬 Hablar por WhatsApp</a>
       </div>
     </div>
