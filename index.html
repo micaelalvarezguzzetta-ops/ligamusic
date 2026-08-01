@@ -315,7 +315,7 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
     <a href="#home" class="logo">🎧 LigaMusic<em>España</em></a>
     <div class="nl">
       <a href="#como">Cómo funciona</a>
-      <a href="#planes">Planes</a><a href="#promos-extras" style="color:var(--gold2);font-weight:700">Promos Extras</a>
+      <a href="#planes">Planes</a><a href="#promos-extras" style="color:var(--gold2);font-weight:700">Promos Extras</a><a href="#promos-express" style="color:#ef4444;font-weight:700;animation:flashPill 2s ease-in-out infinite">⚡ Express</a>
       <a href="#antibots">¿Por qué nosotros?</a>
       
       <a href="#faq">FAQ</a>
@@ -332,6 +332,7 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
   <a href="#planes" onclick="this.closest('#mob').classList.remove('open')">Planes</a>
   <a href="#antibots" onclick="this.closest('#mob').classList.remove('open')">¿Por qué nosotros?</a>
   <a href="#promos-extras" onclick="this.closest('#mob').classList.remove('open')" style="color:var(--gold2);font-weight:700">Promos Extras</a>
+  <a href="#promos-express" onclick="this.closest('#mob').classList.remove('open')" style="color:#ef4444;font-weight:700">⚡ Promos Express</a>
   <a href="#faq" onclick="this.closest('#mob').classList.remove('open')">FAQ</a>
   <a href="https://wa.me/34699247704" target="_blank">💬 WhatsApp</a>
   <a href="#planes" onclick="this.closest('#mob').classList.remove('open')">→ Ver planes</a>
@@ -757,6 +758,116 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
 </section>
 
 
+
+<!-- PROMOS EXPRESS -->
+<section id="promos-express" style="padding:5rem 0;background:var(--ink);position:relative;overflow:hidden;">
+
+  <!-- Animated background -->
+  <div style="position:absolute;inset:0;pointer-events:none;z-index:0;">
+    <div style="position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(232,160,32,.12) 0%,transparent 65%);border-radius:50%"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(232,160,32,.2),transparent)"></div>
+    <!-- Flash lines decoration -->
+    <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:.04" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <line x1="0" y1="0" x2="300" y2="400" stroke="#f0b429" stroke-width="1"/>
+      <line x1="200" y1="0" x2="500" y2="400" stroke="#f0b429" stroke-width="1"/>
+      <line x1="700" y1="0" x2="1000" y2="400" stroke="#f0b429" stroke-width="1"/>
+      <line x1="900" y1="0" x2="1200" y2="400" stroke="#f0b429" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="w" style="position:relative;z-index:1;">
+
+    <!-- Header -->
+    <div class="sec rv" style="margin-bottom:3rem">
+      <div style="display:inline-flex;align-items:center;gap:.6rem;background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.35);border-radius:100px;padding:.4rem 1.1rem;margin-bottom:1rem;animation:flashPill 2.5s ease-in-out infinite">
+        <span style="font-size:.9rem">⚡</span>
+        <span style="font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2)">Lanzamientos oportunos · Plazas limitadas</span>
+      </div>
+      <h2 class="h2">Promos <em class="grad-gold">Express</em></h2>
+      <p class="sub" style="margin-top:.7rem">Lanzamos packs especiales por menos de 20€ de forma sorpresa, sin fecha previa. Solo 5 plazas por promoción. Síguenos en redes para no perderte ninguna.</p>
+    </div>
+
+    <!-- ESTADO STANDBY — visible cuando no hay promo activa -->
+    <div id="express-standby" class="rv" style="max-width:700px;margin:0 auto;">
+      <div style="background:linear-gradient(135deg,rgba(232,160,32,.08),rgba(255,200,60,.05),rgba(255,255,255,.02));border:1.5px solid rgba(232,160,32,.3);border-radius:24px;padding:3rem 2.5rem;text-align:center;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold2) 70%,transparent)"></div>
+
+        <!-- Icon -->
+        <div style="width:72px;height:72px;background:rgba(232,160,32,.1);border:1.5px solid rgba(232,160,32,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:2.2rem;animation:rocketBounce 3s ease-in-out infinite">🚀</div>
+
+        <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(1.6rem,4vw,2.4rem);color:#fff;letter-spacing:.05em;margin-bottom:.7rem">Próxima promo: sorpresa</div>
+        <p style="font-size:.9rem;color:var(--dim);line-height:1.75;max-width:480px;margin:0 auto 2rem">Aún no hay ninguna promo activa. Cuando lancemos la próxima, aparecerá aquí y lo anunciaremos en redes. Activa las notificaciones para ser el primero.</p>
+
+        <!-- Social follow CTA -->
+        <div style="display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-bottom:2rem">
+          <a href="https://www.instagram.com/algoritmoenmovimientomusic" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,rgba(193,53,132,.15),rgba(253,29,29,.1));border:1px solid rgba(193,53,132,.35);border-radius:100px;padding:.55rem 1.3rem;font-size:.8rem;font-weight:700;color:#e1306c;text-decoration:none;transition:.2s" onmouseover="this.style.background='linear-gradient(135deg,rgba(193,53,132,.28),rgba(253,29,29,.18))'" onmouseout="this.style.background='linear-gradient(135deg,rgba(193,53,132,.15),rgba(253,29,29,.1))'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#e1306c"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Seguir en Instagram
+          </a>
+          <a href="https://wa.me/34699247704?text=Hola%2C%20quiero%20que%20me%20avises%20cuando%20lance%20la%20próxima%20Promo%20Express" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.28);border-radius:100px;padding:.55rem 1.3rem;font-size:.8rem;font-weight:700;color:#25D366;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(37,211,102,.18)'" onmouseout="this.style.background='rgba(37,211,102,.08)'">
+            💬 Avísame por WhatsApp
+          </a>
+        </div>
+
+        <!-- What to expect -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem">
+          <div style="text-align:center">
+            <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.8rem;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.3rem">&lt;20€</div>
+            <div style="font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2)">Precio máximo</div>
+          </div>
+          <div style="text-align:center;border-left:1px solid rgba(255,255,255,.06);border-right:1px solid rgba(255,255,255,.06)">
+            <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.8rem;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.3rem">5</div>
+            <div style="font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2)">Plazas por promo</div>
+          </div>
+          <div style="text-align:center">
+            <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.8rem;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.3rem">⚡</div>
+            <div style="font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2)">Sin fecha previa</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESTADO ACTIVO — descomentar y rellenar cuando haya promo -->
+    <!--
+    <div id="express-active" style="max-width:760px;margin:0 auto;" class="rv">
+      <div style="background:linear-gradient(135deg,rgba(232,160,32,.12),rgba(255,60,60,.06));border:2px solid rgba(232,160,32,.5);border-radius:24px;padding:2.5rem;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#ef4444,var(--gold),var(--gold2),#ef4444);animation:flashBar 1.5s linear infinite"></div>
+
+        <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem;flex-wrap:wrap">
+          <div style="display:inline-flex;align-items:center;gap:.5rem;background:#ef4444;border-radius:100px;padding:.4rem 1rem">
+            <span style="width:8px;height:8px;border-radius:50%;background:#fff;animation:pulse 1s infinite;display:block"></span>
+            <span style="font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff">Promo activa ahora</span>
+          </div>
+          <span style="font-size:.8rem;color:var(--dim)">Solo quedan <strong style="color:#ef4444">X plazas</strong></span>
+        </div>
+
+        <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(2rem,5vw,3.5rem);color:#fff;letter-spacing:.04em;line-height:1;margin-bottom:.5rem">NOMBRE DE LA PROMO</div>
+        <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(3rem,8vw,5.5rem);background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:1rem">XX€</div>
+
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.5rem">
+          <li style="font-size:.88rem;color:var(--dim);display:flex;align-items:center;gap:.6rem"><span style="color:var(--gold2)">✓</span> Incluye...</li>
+          <li style="font-size:.88rem;color:var(--dim);display:flex;align-items:center;gap:.6rem"><span style="color:var(--gold2)">✓</span> Incluye...</li>
+        </ul>
+
+        <a href="LINK_TALLY_PROMO" target="_blank" style="display:block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;border-radius:14px;padding:1.1rem;font-size:1rem;font-weight:800;text-align:center;text-decoration:none;box-shadow:0 0 30px rgba(232,160,32,.4);animation:ctaPulseGold 2.5s ease-in-out infinite">⚡ Reservar plaza ahora</a>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1rem">
+          <span style="font-size:.75rem;color:var(--dim2)">5 plazas · Sin permanencia</span>
+          <span style="font-size:.75rem;color:#ef4444;font-weight:700">Expira pronto</span>
+        </div>
+      </div>
+    </div>
+    -->
+
+  </div>
+</section>
+
+<style>
+@keyframes flashPill{0%,100%{box-shadow:0 0 0 rgba(232,160,32,0)}50%{box-shadow:0 0 18px rgba(232,160,32,.3)}}
+@keyframes rocketBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes flashBar{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+@keyframes ctaPulseGold{0%,100%{box-shadow:0 0 24px rgba(232,160,32,.35)}50%{box-shadow:0 0 48px rgba(232,160,32,.65)}}
+</style>
 
 <div class="sdiv"></div>
 
