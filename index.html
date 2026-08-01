@@ -982,7 +982,7 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
     </div>
 
     <!-- ARTISTS GRID -->
-    <div id="artists-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;" class="rv">
+    <div id="artists-grid" style="display:none;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;" class="rv">
 
       <!-- ARTISTA: ARES -->
       <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;transition:all .3s ease;position:relative;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(61,127,255,.3)';this.style.boxShadow='0 24px 60px rgba(61,127,255,.08)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)';this.style.boxShadow='none'">
@@ -1181,7 +1181,7 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
     </div>
 
     <!-- CTA -->
-    <div style="text-align:center;margin-top:3rem" class="rv">
+    <div id="artists-cta" style="display:none;text-align:center;margin-top:3rem" class="rv">
       <p style="font-size:.9rem;color:var(--dim);margin-bottom:1.2rem">¿Quieres que tu música suene en nuestras playlists? Elige tu plan y empieza hoy.</p>
       <a href="#planes" class="btn btn-g btn-lg">🎵 Ver planes y entrar en rotación</a>
     </div>
@@ -1297,6 +1297,22 @@ window.addEventListener('load',()=>{document.body.style.removeProperty('padding-
 
 // FAQ
 function toggleFaq(btn){const i=btn.closest('.fi');document.querySelectorAll('.fi.open').forEach(el=>{if(el!==i)el.classList.remove('open')});i.classList.toggle('open')}
+
+// Radar de Novedades — acceso por código en URL
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const hash = window.location.hash;
+  // Check both ?acceso= and #artistas?acceso= patterns
+  const code = params.get('acceso') || new URLSearchParams(hash.split('?')[1] || '').get('acceso');
+  if(code && code.toLowerCase() === 'liga2026'){
+    const gate = document.getElementById('radar-gate');
+    const grid = document.getElementById('artists-grid');
+    const cta  = document.getElementById('artists-cta');
+    if(gate) gate.style.display = 'none';
+    if(grid){ grid.style.display = 'grid'; grid.classList.add('v'); }
+    if(cta)  cta.style.display  = 'block';
+  }
+})();
 
 // Reveal
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')}),{threshold:.07,rootMargin:'0px 0px -20px 0px'});
