@@ -276,12 +276,9 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
 
 /* ═══════════ RESPONSIVE ═══════════ */
 @media(max-width:900px){.pgrid{grid-template-columns:1fr 1fr}}
-@media(max-width:750px){#contacto [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}} @media(max-width:900px){.ab-grid{grid-template-columns:1fr;gap:2rem}}
+} @media(max-width:900px){.ab-grid{grid-template-columns:1fr;gap:2rem}}
 @media(max-width:700px){
-  #contacto .w > .rv > div:first-child + div{order:1} #contacto form{order:2}
-  .nl{display:none!important}.nav-r{display:none!important}.ham{display:flex!important}
-  h1.ht{font-size:clamp(3rem,15vw,5.5rem)}
-  .hstats{flex-direction:column;padding:1.2rem 1.5rem}.hs{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding:.8rem 0}.hs:last-child{border-bottom:none}
+  padding:1.2rem 1.5rem}.hs{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding:.8rem 0}.hs:last-child{border-bottom:none}
   .pgrid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr}
   .cta-box{padding:2.5rem 1.5rem}
@@ -316,12 +313,11 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
       <a href="#antibots">¿Por qué nosotros?</a>
       
       <a href="#artistas">Radar de Novedades</a>
-      <a href="#contacto" style="color:var(--g);font-weight:700">Contacto</a>
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-r">
       
-      <a href="#contacto" class="nc">Solicitar Estrategia</a>
+      <a href="https://tally.so/r/aQJBr2" target="_blank" class="nc">Solicitar Estrategia</a>
     </div>
     <button class="ham" onclick="document.getElementById('mob').classList.toggle('open')" aria-label="Menú"><span></span><span></span><span></span></button>
   </div>
@@ -333,7 +329,6 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
   <a href="#promos-extras" onclick="this.closest('#mob').classList.remove('open')" style="color:var(--gold2);font-weight:700">Promos Extras</a>
   <a href="#promos-express" onclick="this.closest('#mob').classList.remove('open')" style="color:#ef4444;font-weight:700">⚡ Promos Express</a>
   <a href="#artistas" onclick="this.closest('#mob').classList.remove('open')">Radar de Novedades</a>
-  <a href="#contacto" onclick="this.closest('#mob').classList.remove('open')" style="color:var(--g);font-weight:700">Contacto</a>
   <a href="#faq" onclick="this.closest('#mob').classList.remove('open')">FAQ</a>
   <a href="#planes" onclick="this.closest('#mob').classList.remove('open')">→ Ver planes</a>
 </div>
@@ -483,7 +478,7 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
     <div class="pcta rv" style="margin-top:3rem">
       <p style="font-size:.95rem;color:var(--dim);margin-bottom:1.5rem;max-width:560px;margin-left:auto;margin-right:auto;text-align:center;line-height:1.75">¿No sabes cuál encaja con tu situación? Cuéntanos tu proyecto y te decimos exactamente qué necesitas.</p>
       <div style="display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center">
-        <a href="#contacto" class="btn btn-g btn-lg">🚀 Solicitar Estudio de Mi Proyecto</a>
+        <a href="https://tally.so/r/aQJBr2" target="_blank" class="btn btn-g btn-lg">🚀 Solicitar Estudio de Mi Proyecto</a>
         
       </div>
       <div class="pnote">Sin compromisos · Presupuesto a medida · Estratega real, no un bot</div>
@@ -1199,102 +1194,13 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
       <h2>Tu proyecto merece<br>una <em>estrategia real</em>.</h2>
       <p>Cuéntanos dónde estás y hacia dónde quieres llegar. En 24 horas te respondemos con un análisis honesto de tu situación y qué podemos hacer juntos.</p>
       <div style="display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center">
-        <a href="#contacto" class="btn btn-g btn-lg">🚀 Solicitar Estudio de Mi Proyecto</a>
+        <a href="https://tally.so/r/aQJBr2" target="_blank" class="btn btn-g btn-lg">🚀 Solicitar Estudio de Mi Proyecto</a>
         
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACTO / FORMULARIO DE PROYECTO -->
-<section id="contacto" style="padding:7rem 0;background:var(--ink3);position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 55% at 50% 50%,rgba(29,185,84,.07) 0%,transparent 65%)"></div>
-  <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(29,185,84,.3),transparent)"></div>
-  <div class="w" style="position:relative;z-index:1;">
-    <div class="sec rv" style="margin-bottom:3.5rem">
-      <div class="pill pill-g" style="margin-bottom:.9rem">📋 Cuéntanos tu proyecto</div>
-      <h2 class="h2">Solicita el estudio<br>de <em class="grad-g">tu caso</em></h2>
-      <p class="sub" style="margin-top:.7rem">Rellena el formulario en 2 minutos. En menos de 24 horas un estratega real te responde con un análisis honesto y sin compromiso.</p>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;max-width:1000px;margin:0 auto;" class="rv">
-
-      <!-- LEFT: Form -->
-      <div>
-        <form id="contact-form" onsubmit="submitContact(event)" style="display:flex;flex-direction:column;gap:1.2rem;">
-
-          <div>
-            <label style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dim2);display:block;margin-bottom:.5rem">🎤 Nombre artístico *</label>
-            <input type="text" id="cf-name" required placeholder="Tu nombre o nombre del proyecto" style="width:100%;background:rgba(255,255,255,.04);border:1px solid var(--bdr2);border-radius:10px;padding:.85rem 1rem;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:.9rem;outline:none;transition:.2s" onfocus="this.style.borderColor='rgba(29,185,84,.5)';this.style.background='rgba(29,185,84,.05)'" onblur="this.style.borderColor='var(--bdr2)';this.style.background='rgba(255,255,255,.04)'">
-          </div>
-
-          <div>
-            <label style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dim2);display:block;margin-bottom:.5rem">🎵 Link de Spotify o Instagram *</label>
-            <input type="url" id="cf-link" required placeholder="https://open.spotify.com/artist/..." style="width:100%;background:rgba(255,255,255,.04);border:1px solid var(--bdr2);border-radius:10px;padding:.85rem 1rem;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:.9rem;outline:none;transition:.2s" onfocus="this.style.borderColor='rgba(29,185,84,.5)';this.style.background='rgba(29,185,84,.05)'" onblur="this.style.borderColor='var(--bdr2)';this.style.background='rgba(255,255,255,.04)'">
-          </div>
-
-          <div>
-            <label style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dim2);display:block;margin-bottom:.5rem">💰 Presupuesto mensual estimado *</label>
-            <select id="cf-budget" required style="width:100%;background:rgba(255,255,255,.04);border:1px solid var(--bdr2);border-radius:10px;padding:.85rem 1rem;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:.9rem;outline:none;transition:.2s;cursor:pointer;appearance:none" onfocus="this.style.borderColor='rgba(29,185,84,.5)'" onblur="this.style.borderColor='var(--bdr2)'">
-              <option value="" disabled selected style="background:#0c0c1e">Selecciona tu presupuesto mensual</option>
-              <option value="<50" style="background:#0c0c1e">Menos de 50€/mes</option>
-              <option value="50-150" style="background:#0c0c1e">Entre 50€ y 150€/mes</option>
-              <option value="150-300" style="background:#0c0c1e">Entre 150€ y 300€/mes</option>
-              <option value="300-500" style="background:#0c0c1e">Entre 300€ y 500€/mes</option>
-              <option value="+500" style="background:#0c0c1e">Más de 500€/mes</option>
-            </select>
-          </div>
-
-          <div>
-            <label style="font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--dim2);display:block;margin-bottom:.5rem">🎯 ¿Cuál es tu mayor reto ahora mismo? *</label>
-            <div style="display:flex;flex-direction:column;gap:.5rem;">
-              <label style="display:flex;align-items:center;gap:.7rem;cursor:pointer;font-size:.86rem;color:var(--dim);padding:.55rem .8rem;background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:8px;transition:.2s" onmouseover="this.style.borderColor='rgba(29,185,84,.3)'" onmouseout="this.style.borderColor='var(--bdr)'"><input type="radio" name="challenge" value="oyentes" style="accent-color:var(--g)"> Llegar a nuevos oyentes</label>
-              <label style="display:flex;align-items:center;gap:.7rem;cursor:pointer;font-size:.86rem;color:var(--dim);padding:.55rem .8rem;background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:8px;transition:.2s" onmouseover="this.style.borderColor='rgba(29,185,84,.3)'" onmouseout="this.style.borderColor='var(--bdr)'"><input type="radio" name="challenge" value="ads" style="accent-color:var(--g)"> Configurar campañas de Meta Ads</label>
-              <label style="display:flex;align-items:center;gap:.7rem;cursor:pointer;font-size:.86rem;color:var(--dim);padding:.55rem .8rem;background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:8px;transition:.2s" onmouseover="this.style.borderColor='rgba(29,185,84,.3)'" onmouseout="this.style.borderColor='var(--bdr)'"><input type="radio" name="challenge" value="algoritmo" style="accent-color:var(--g)"> Activar el algoritmo de Spotify</label>
-              <label style="display:flex;align-items:center;gap:.7rem;cursor:pointer;font-size:.86rem;color:var(--dim);padding:.55rem .8rem;background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:8px;transition:.2s" onmouseover="this.style.borderColor='rgba(29,185,84,.3)'" onmouseout="this.style.borderColor='var(--bdr)'"><input type="radio" name="challenge" value="lanzamiento" style="accent-color:var(--g)"> Planificar mi próximo lanzamiento</label>
-              <label style="display:flex;align-items:center;gap:.7rem;cursor:pointer;font-size:.86rem;color:var(--dim);padding:.55rem .8rem;background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:8px;transition:.2s" onmouseover="this.style.borderColor='rgba(29,185,84,.3)'" onmouseout="this.style.borderColor='var(--bdr)'"><input type="radio" name="challenge" value="todo" style="accent-color:var(--g)"> Todo lo anterior</label>
-            </div>
-          </div>
-
-          <button type="submit" class="btn btn-g btn-lg" style="width:100%;justify-content:center;margin-top:.5rem">🚀 Enviar y Solicitar Estudio</button>
-          <p style="font-size:.74rem;color:var(--dim2);text-align:center">Sin compromiso · Respuesta en menos de 24h · Estratega real</p>
-        </form>
-
-        <!-- Success message -->
-        <div id="cf-success" style="display:none;background:rgba(29,185,84,.08);border:1px solid rgba(29,185,84,.3);border-radius:16px;padding:2rem;text-align:center">
-          <div style="font-size:2.5rem;margin-bottom:.8rem">✅</div>
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.6rem;color:#fff;letter-spacing:.04em;margin-bottom:.5rem">¡Recibido!</div>
-          <p style="font-size:.88rem;color:var(--dim);line-height:1.7">Tu proyecto está en nuestras manos. Un estratega te responderá en menos de 24 horas. También puedes escribirnos directamente por WhatsApp para una respuesta más rápida.</p>
-          
-        </div>
-      </div>
-
-      <!-- RIGHT: Why contact us -->
-      <div style="display:flex;flex-direction:column;gap:1.5rem;">
-        <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:16px;padding:1.8rem;">
-          <div style="font-size:1.5rem;margin-bottom:.8rem">🧠</div>
-          <div style="font-size:.92rem;font-weight:700;color:#fff;margin-bottom:.4rem">Diagnóstico honesto</div>
-          <p style="font-size:.83rem;color:var(--dim);line-height:1.7">Si tu proyecto no encaja con lo que hacemos, te lo decimos directamente. No cobramos por algo que no vamos a hacer bien.</p>
-        </div>
-        <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:16px;padding:1.8rem;">
-          <div style="font-size:1.5rem;margin-bottom:.8rem">📊</div>
-          <div style="font-size:.92rem;font-weight:700;color:#fff;margin-bottom:.4rem">Estrategia antes de invertir</div>
-          <p style="font-size:.83rem;color:var(--dim);line-height:1.7">Nunca recomendamos meter dinero en publicidad sin antes validar que la estrategia funciona. El diagnóstico siempre va primero.</p>
-        </div>
-        <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:16px;padding:1.8rem;">
-          <div style="font-size:1.5rem;margin-bottom:.8rem">💬</div>
-          <div style="font-size:.92rem;font-weight:700;color:#fff;margin-bottom:.4rem">Respuesta en menos de 24h</div>
-          <p style="font-size:.83rem;color:var(--dim);line-height:1.7">Trabajamos directamente por WhatsApp. Sin tickets, sin chatbots, sin esperas. Una persona real que conoce tu proyecto de punta a punta.</p>
-        </div>
-        <div style="background:rgba(29,185,84,.06);border:1px solid rgba(29,185,84,.2);border-radius:16px;padding:1.5rem;text-align:center">
-          <div style="font-size:.8rem;font-weight:700;color:var(--g);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.6rem">¿Prefieres WhatsApp directo?</div>
-          
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer>
@@ -1371,8 +1277,7 @@ function toggleFaq(btn){const i=btn.closest('.fi');document.querySelectorAll('.f
 // Reveal
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')}),{threshold:.07,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
-// Contact Form
-function submitContact(e){
+// 
   e.preventDefault();
   const name     = document.getElementById('cf-name').value;
   const link     = document.getElementById('cf-link').value;
