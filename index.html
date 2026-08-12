@@ -9,296 +9,314 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18029971323');</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6567755987358873" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ═══════════ TOKENS ═══════════ */
+/* ═══ TOKENS ═══ */
 :root{
-  --ink:#03030a;--ink2:#07071a;--ink3:#0b0b22;
-  --g:#1DB954;--g2:#16a347;
-  --b:#3d7fff;--p:#7c3aed;
-  --gold:#e8a020;--gold2:#f5c842;
-  --bronze:#b87333;--bronze2:#d4956a;
-  --silver:#64748b;--silver2:#94a3b8;
-  --txt:#f0f0fa;--dim:rgba(255,255,255,.55);--dim2:rgba(255,255,255,.3);
-  --bdr:rgba(255,255,255,.07);--bdr2:rgba(255,255,255,.14);
-  --r:12px;--rl:20px;
+  --white:#ffffff;
+  --off:#f7f7f5;
+  --soft:#efefed;
+  --ink:#111111;
+  --ink2:#333333;
+  --dim:#777777;
+  --dim2:#aaaaaa;
+  --rule:rgba(0,0,0,.1);
+  --rule2:rgba(0,0,0,.06);
+  --g:#1DB954;
+  --r:0px;
+  --rl:4px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--txt);font-family:'Space Grotesk',system-ui,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{background:var(--white);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--ink)}::-webkit-scrollbar-thumb{background:var(--g);border-radius:2px}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--off)}::-webkit-scrollbar-thumb{background:var(--ink)}
 
-/* ═══════════ UTIL ═══════════ */
-.w{max-width:1140px;margin:0 auto;padding:0 2rem}
-.bb{font-family:'Bebas Neue',Impact,sans-serif;letter-spacing:.04em}
-.grad-g{background:linear-gradient(135deg,var(--g),#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.grad-gold{background:linear-gradient(135deg,var(--bronze2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.pill{display:inline-flex;align-items:center;gap:.5rem;border-radius:100px;padding:.35rem 1rem;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-.pill-g{background:rgba(29,185,84,.1);border:1px solid rgba(29,185,84,.25);color:var(--g)}
-.pill-b{background:rgba(61,127,255,.1);border:1px solid rgba(61,127,255,.25);color:var(--b)}
-.pill-gold{background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.3);color:var(--gold2)}
-.h2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(2.6rem,5vw,4rem);letter-spacing:.04em;line-height:.92;color:#fff;margin:.7rem 0 .6rem}
-.sub{color:var(--dim);font-size:.95rem;line-height:1.75;max-width:540px;margin:0 auto}
-.sec{text-align:center;margin-bottom:.5rem}
-.sdiv{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.07),transparent)}
+/* ═══ UTIL ═══ */
+.w{max-width:1160px;margin:0 auto;padding:0 2.5rem}
+.serif{font-family:'Instrument Serif',Georgia,serif}
+.eyebrow{font-size:.65rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);display:block;margin-bottom:.9rem}
+.h2{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(2.4rem,4.5vw,3.8rem);line-height:1.05;color:var(--ink);font-weight:400;letter-spacing:-.02em}
+.h2 em{font-style:italic;color:var(--ink)}
+.sub{color:var(--dim);font-size:.95rem;line-height:1.78;max-width:500px}
+.rule{height:1px;background:var(--rule);margin:0}
+.rule-v{width:1px;background:var(--rule);align-self:stretch}
 
-/* ═══════════ BUTTONS ═══════════ */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .2s ease;border:none;white-space:nowrap;text-decoration:none;border-radius:var(--r);position:relative;overflow:hidden}
-.btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.12);opacity:0;transition:.18s}
-.btn:hover::after{opacity:1}
+/* ═══ BUTTONS ═══ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .18s ease;border:none;white-space:nowrap;text-decoration:none;letter-spacing:.01em}
 .btn:active{transform:scale(.97)!important}
-.btn-g{background:linear-gradient(135deg,var(--g),var(--g2));color:#000;padding:.92rem 2rem;font-weight:800;box-shadow:0 0 28px rgba(29,185,84,.4),0 4px 16px rgba(0,0,0,.3)}
-.btn-g:hover{transform:translateY(-2px);box-shadow:0 0 52px rgba(29,185,84,.55),0 8px 24px rgba(0,0,0,.4)}
-.btn-ol{background:rgba(255,255,255,.06);border:1.5px solid var(--bdr2);color:var(--txt);padding:.9rem 2rem;backdrop-filter:blur(10px)}
-.btn-ol:hover{border-color:var(--g);color:var(--g);transform:translateY(-2px)}
-.btn-wa{background:rgba(37,211,102,.08);border:1.5px solid rgba(37,211,102,.28);color:#25D366;padding:.9rem 2rem}
-.btn-wa:hover{background:rgba(37,211,102,.18);transform:translateY(-2px)}
-.btn-gold{background:linear-gradient(135deg,var(--bronze2),var(--gold2));color:#000;padding:.92rem 2rem;font-weight:800;box-shadow:0 0 24px rgba(232,160,32,.35)}
-.btn-gold:hover{filter:brightness(1.1);transform:translateY(-2px)}
-.btn-lg{padding:1.1rem 2.5rem;font-size:1rem;border-radius:16px}
-.btn-sm{padding:.55rem 1.2rem;font-size:.8rem;border-radius:9px}
-@keyframes gPulse{0%,100%{box-shadow:0 0 28px rgba(29,185,84,.4),0 4px 16px rgba(0,0,0,.3)}50%{box-shadow:0 0 60px rgba(29,185,84,.65),0 8px 28px rgba(0,0,0,.4)}}
-.btn-g.btn-lg{animation:gPulse 3s ease-in-out infinite}
+.btn-blk{background:var(--ink);color:var(--white);padding:.9rem 2rem;border-radius:var(--r)}
+.btn-blk:hover{background:#2a2a2a;transform:translateY(-1px)}
+.btn-ol{background:transparent;border:1.5px solid var(--ink);color:var(--ink);padding:.88rem 2rem;border-radius:var(--r)}
+.btn-ol:hover{background:var(--ink);color:var(--white);transform:translateY(-1px)}
+.btn-g{background:var(--g);color:var(--ink);padding:.9rem 2rem;border-radius:var(--r);font-weight:700}
+.btn-g:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-sm{padding:.55rem 1.2rem;font-size:.78rem}
+.btn-lg{padding:1.1rem 2.5rem;font-size:.95rem}
 
-/* ═══════════ NAV ═══════════ */
-#nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:62px;display:flex;align-items:center;background:rgba(3,3,10,.9);backdrop-filter:blur(22px);border-bottom:1px solid rgba(255,255,255,.05);transition:.3s}
-.ni{max-width:1140px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;width:100%;gap:1rem}
-.logo{font-family:'Bebas Neue',Impact,sans-serif;font-size:1.45rem;letter-spacing:.07em;color:#fff;display:flex;align-items:center;gap:.4rem;white-space:nowrap}
-.logo em{font-style:normal;background:linear-gradient(135deg,var(--g),#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.nl{display:flex;align-items:center;gap:.1rem;flex:1;justify-content:center}
-.nl a{font-size:.8rem;font-weight:500;color:var(--dim);padding:.42rem .85rem;border-radius:8px;transition:.2s}
-.nl a:hover{color:#fff;background:rgba(255,255,255,.06)}
-.nl .highlight{color:var(--gold2)!important;font-weight:700!important}
-.nav-r{display:flex;align-items:center;gap:.6rem;justify-content:flex-end}
-.nc{background:var(--g)!important;color:#000!important;font-weight:800!important;padding:.48rem 1.2rem!important;border-radius:9px;font-size:.8rem!important;box-shadow:0 0 16px rgba(29,185,84,.4);transition:.2s!important}
-.nc:hover{filter:brightness(1.1);transform:translateY(-1px)}
-.ham{display:none;background:none;border:1px solid var(--bdr2);cursor:pointer;padding:.48rem .55rem;border-radius:8px;flex-direction:column;gap:4px}
-.ham span{display:block;width:18px;height:1.5px;background:#fff;border-radius:2px}
-#mob{display:none;position:fixed;top:62px;left:0;right:0;z-index:999;background:rgba(3,3,10,.98);backdrop-filter:blur(22px);padding:1.5rem 2rem 2rem;border-bottom:1px solid var(--bdr)}
-#mob.open{display:flex;flex-direction:column;gap:.6rem}
-#mob a{font-size:.97rem;font-weight:500;color:var(--dim);padding:.52rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
-#mob a:last-child{border-bottom:none;color:var(--g);font-weight:700}
+/* ═══ NAV ═══ */
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;display:flex;align-items:center;background:rgba(255,255,255,.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);transition:.3s}
+.ni{max-width:1160px;margin:0 auto;padding:0 2.5rem;display:flex;align-items:center;width:100%;gap:2rem}
+.logo{font-family:'Instrument Serif',Georgia,serif;font-size:1.35rem;color:var(--ink);white-space:nowrap;letter-spacing:-.01em;flex-shrink:0}
+.logo span{font-style:italic}
+.nl{display:flex;align-items:center;gap:.05rem;flex:1;justify-content:center}
+.nl a{font-size:.78rem;font-weight:500;color:var(--dim);padding:.4rem .8rem;border-radius:2px;transition:.15s}
+.nl a:hover{color:var(--ink);background:var(--soft)}
+.nav-r{display:flex;align-items:center;gap:.7rem;flex-shrink:0}
+.nc{background:var(--ink);color:var(--white);padding:.5rem 1.25rem;border-radius:2px;font-size:.78rem;font-weight:600;transition:.18s}
+.nc:hover{background:#2a2a2a}
+.ham{display:none;background:none;border:1px solid var(--rule);cursor:pointer;padding:.45rem .52rem;border-radius:2px;flex-direction:column;gap:4px}
+.ham span{display:block;width:18px;height:1.2px;background:var(--ink);border-radius:0}
+#mob{display:none;position:fixed;top:60px;left:0;right:0;z-index:999;background:var(--white);padding:1.5rem 2.5rem 2rem;border-bottom:1px solid var(--rule)}
+#mob.open{display:flex;flex-direction:column;gap:.5rem}
+#mob a{font-size:.95rem;font-weight:500;color:var(--dim);padding:.5rem 0;border-bottom:1px solid var(--rule2)}
+#mob a:last-child{border-bottom:none;color:var(--ink);font-weight:700}
 
-/* ═══════════ HERO ═══════════ */
-#home{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 2rem 4rem;position:relative;overflow:hidden}
-.slides{position:absolute;inset:0;z-index:0}
-.sl{position:absolute;inset:0;opacity:0;background-size:cover;background-position:center;transition:opacity 2.5s ease-in-out}
-.sl.on{opacity:1}
-.sl1{background-image:url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1600&q=75&auto=format')}
-.sl2{background-image:url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&q=75&auto=format')}
-.sl3{background-image:url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1600&q=75&auto=format')}
-.sl4{background-image:url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1600&q=75&auto=format')}
-.sl-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(3,3,10,.96) 0%,rgba(3,3,10,.62) 45%,rgba(3,3,10,.78) 100%)}
-.hero-mesh{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 75% 55% at 50% -5%,rgba(29,185,84,.15) 0%,transparent 60%),radial-gradient(ellipse 50% 45% at 10% 80%,rgba(61,127,255,.08) 0%,transparent 55%)}
-.hc{position:relative;z-index:3;max-width:920px;width:100%}
-.hbadge{display:inline-flex;align-items:center;gap:.7rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);backdrop-filter:blur(14px);border-radius:100px;padding:.5rem 1.4rem;margin-bottom:1.8rem;animation:fadeUp .8s ease both}
-.hdot{width:7px;height:7px;border-radius:50%;background:var(--g);box-shadow:0 0 10px var(--g);animation:dPulse 2s ease-in-out infinite}
-@keyframes dPulse{0%,100%{transform:scale(1)}50%{transform:scale(.55);opacity:.4}}
-.hbadge span{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.8)}
-h1.ht{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(3.2rem,9.5vw,8.5rem);letter-spacing:.02em;line-height:.87;color:#fff;margin-bottom:1.5rem;animation:fadeUp .9s .1s ease both;text-shadow:0 4px 40px rgba(0,0,0,.4)}
-h1.ht .line-g{display:block;background:linear-gradient(135deg,#1DB954 0%,#4ade80 50%,#06d6c8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 22px rgba(29,185,84,.45))}
-.hsub{font-size:clamp(.97rem,2vw,1.15rem);color:rgba(255,255,255,.65);max-width:600px;margin:0 auto 2.2rem;line-height:1.78;animation:fadeUp .9s .2s ease both}
-.hbtns{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;animation:fadeUp .9s .3s ease both}
-/* Social proof strip */
-.hstats{display:flex;flex-wrap:wrap;justify-content:center;gap:0;margin-top:3.5rem;background:rgba(255,255,255,.04);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:1.3rem 2rem;animation:fadeUp .9s .5s ease both;max-width:680px;margin-left:auto;margin-right:auto}
-.hs{flex:1;min-width:100px;text-align:center;padding:0 1.1rem;border-right:1px solid rgba(255,255,255,.06)}
-.hs:last-child{border-right:none}
-.hsn{font-family:'Bebas Neue',Impact,sans-serif;font-size:1.9rem;background:linear-gradient(135deg,var(--g),#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;display:block;margin-bottom:.2rem}
-.hsl{font-size:.63rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+/* ═══ HERO — VIDEO ═══ */
+#home{position:relative;height:100vh;min-height:600px;display:flex;align-items:flex-end;overflow:hidden}
+.hero-video{position:absolute;inset:0;z-index:0}
+.hero-video video{width:100%;height:100%;object-fit:cover;display:block}
+.hero-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.35) 50%,rgba(0,0,0,.2) 100%)}
+.hero-c{position:relative;z-index:2;padding:0 2.5rem 5rem;max-width:1160px;margin:0 auto;width:100%}
+.hero-eyebrow{font-size:.62rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.6);display:block;margin-bottom:1.5rem}
+h1.ht{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(3.2rem,7vw,7rem);color:#fff;line-height:.95;letter-spacing:-.03em;font-weight:400;margin-bottom:1.8rem}
+h1.ht em{font-style:italic;color:rgba(255,255,255,.7)}
+.hero-sub{font-size:clamp(.9rem,1.5vw,1.05rem);color:rgba(255,255,255,.65);max-width:520px;line-height:1.72;margin-bottom:2.5rem}
+.hero-btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.hero-stat-row{display:flex;gap:0;margin-top:3.5rem;border-top:1px solid rgba(255,255,255,.12);padding-top:2rem}
+.hstat{flex:1;padding-right:2rem;border-right:1px solid rgba(255,255,255,.1)}
+.hstat:last-child{border-right:none;padding-left:2rem;padding-right:0}
+.hstat-n{font-family:'Instrument Serif',Georgia,serif;font-size:2.2rem;color:#fff;line-height:1;display:block;margin-bottom:.2rem}
+.hstat-l{font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45)}
 
-/* ═══════════ SOCIAL STRIP ═══════════ */
-.sstrip{padding:1.2rem 0;background:linear-gradient(90deg,rgba(29,185,84,.07),rgba(61,127,255,.07),rgba(29,185,84,.07));border-top:1px solid rgba(29,185,84,.15);border-bottom:1px solid rgba(29,185,84,.1)}
-.sstrip-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0;max-width:800px;margin:0 auto;padding:0 2rem}
-.ss{flex:1;min-width:110px;text-align:center;padding:.45rem 1.2rem;border-right:1px solid rgba(255,255,255,.06)}
+/* ═══ SECTIONS ═══ */
+.sec{padding:7rem 0}
+.sec-alt{background:var(--off)}
+.sec-hd{margin-bottom:3.5rem}
+.sec-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+
+/* ═══ SOCIAL STRIP ═══ */
+.sstrip{padding:1.5rem 0;border-bottom:1px solid var(--rule)}
+.sstrip-inner{display:flex;align-items:center;gap:0;max-width:1160px;margin:0 auto;padding:0 2.5rem}
+.ss{flex:1;text-align:center;padding:0 1rem;border-right:1px solid var(--rule)}
 .ss:last-child{border-right:none}
-.ssn{font-family:'Bebas Neue',Impact,sans-serif;font-size:1.65rem;background:linear-gradient(135deg,var(--g),#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;display:block;margin-bottom:.15rem}
-.ssl{font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2)}
+.ssn{font-family:'Instrument Serif',Georgia,serif;font-size:2rem;color:var(--ink);line-height:1;display:block;margin-bottom:.2rem}
+.ssl{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dim2)}
 
-/* ═══════════ HOW IT WORKS ═══════════ */
-#como{padding:7rem 0;background:linear-gradient(180deg,var(--ink) 0%,var(--ink2) 100%)}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;margin-top:3.5rem;position:relative}
-.step{background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:18px;padding:2rem 1.5rem;text-align:center;transition:all .3s ease;position:relative;overflow:hidden}
-.step:hover{transform:translateY(-5px);border-color:rgba(29,185,84,.3);background:rgba(29,185,84,.04)}
-.step::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--g),transparent);opacity:0;transition:.3s}
-.step:hover::after{opacity:1}
-.sn{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--g),var(--g2));color:#000;font-family:'Bebas Neue',Impact,sans-serif;font-size:1.4rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;box-shadow:0 0 22px rgba(29,185,84,.45);position:relative}
-.sn::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1px solid rgba(29,185,84,.25);animation:rp 2.8s ease-in-out infinite}
-@keyframes rp{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.2;transform:scale(1.18)}}
-.step h3{font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.5rem}
-.step p{font-size:.82rem;color:var(--dim);line-height:1.65}
+/* ═══ STEPS ═══ */
+.steps-list{display:flex;flex-direction:column;gap:0}
+.step-item{display:flex;gap:2rem;align-items:flex-start;padding:2rem 0;border-bottom:1px solid var(--rule2)}
+.step-item:last-child{border-bottom:none}
+.step-n{font-family:'Instrument Serif',Georgia,serif;font-size:1rem;color:var(--dim2);flex-shrink:0;width:2rem;padding-top:.1rem;font-style:italic}
+.step-body h3{font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:.4rem}
+.step-body p{font-size:.87rem;color:var(--dim);line-height:1.7}
 
-/* ═══════════ PLANES ═══════════ */
-#planes{padding:7rem 0;background:var(--ink2);position:relative}
-#planes::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(29,185,84,.28),rgba(61,127,255,.2),transparent)}
-.plans-note{display:inline-flex;align-items:center;gap:.5rem;margin-top:1rem;background:rgba(29,185,84,.08);border:1px solid rgba(29,185,84,.2);border-radius:100px;padding:.48rem 1.25rem;font-size:.85rem;font-weight:600;color:rgba(255,255,255,.75)}
-.plans-note span{color:var(--g)}
+/* ═══ PACKS ═══ */
+.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:3rem}
+.pack{background:var(--white);padding:2.5rem 2rem;display:flex;flex-direction:column;gap:.6rem;position:relative;transition:.2s}
+.pack:hover{background:var(--off)}
+.pack.featured{background:var(--ink);color:var(--white)}
+.pack.featured:hover{background:#1a1a1a}
+.pack-tier{font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--dim2);margin-bottom:.2rem}
+.pack.featured .pack-tier{color:rgba(255,255,255,.45)}
+.pack-name{font-family:'Instrument Serif',Georgia,serif;font-size:1.7rem;letter-spacing:-.02em;line-height:1.1;font-weight:400}
+.pack.featured .pack-name{color:var(--white)}
+.pack-sub{font-size:.78rem;color:var(--dim);font-style:italic}
+.pack.featured .pack-sub{color:rgba(255,255,255,.5)}
+.pack-ideal{font-size:.8rem;color:var(--dim);line-height:1.6;padding:.75rem 0;border-top:1px solid var(--rule2);border-bottom:1px solid var(--rule2);margin:.3rem 0}
+.pack.featured .pack-ideal{color:rgba(255,255,255,.55);border-color:rgba(255,255,255,.1)}
+.pack-feats{list-style:none;display:flex;flex-direction:column;gap:.45rem;flex:1;padding:.5rem 0}
+.pack-feats li{font-size:.83rem;color:var(--dim);display:flex;align-items:flex-start;gap:.6rem;line-height:1.45}
+.pack.featured .pack-feats li{color:rgba(255,255,255,.65)}
+.pack-feats li::before{content:'—';color:var(--dim2);flex-shrink:0;font-size:.7rem;margin-top:.15rem}
+.pack.featured .pack-feats li::before{color:rgba(255,255,255,.3)}
+.pack-btn{margin-top:.8rem;display:block;text-align:center;padding:.85rem;font-size:.82rem;font-weight:600;letter-spacing:.02em;transition:.18s;cursor:pointer;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink);background:transparent;border-radius:2px}
+.pack-btn:hover{background:var(--ink);color:var(--white)}
+.pack.featured .pack-btn{border-color:var(--white);color:var(--white)}
+.pack.featured .pack-btn:hover{background:var(--white);color:var(--ink)}
+.pack-badge{position:absolute;top:0;right:0;background:var(--ink);color:var(--white);font-size:.58rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:.3rem .85rem}
+.pack.featured .pack-badge{background:var(--white);color:var(--ink)}
+.packs-note{display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--dim);margin-top:1.5rem}
 
-/* 3-column grid */
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+/* ═══ PROMOS EXTRAS ═══ */
+.extras-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:3rem}
+.extra-card{background:var(--white);padding:2rem;cursor:pointer;transition:.2s;position:relative;overflow:hidden}
+.extra-card:hover{background:var(--off)}
+.extra-icon{font-size:1.3rem;margin-bottom:1rem;display:block}
+.extra-price{font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dim2);margin-bottom:.3rem}
+.extra-name{font-family:'Instrument Serif',Georgia,serif;font-size:1.25rem;color:var(--ink);margin-bottom:.5rem;font-weight:400}
+.extra-desc{font-size:.82rem;color:var(--dim);line-height:1.65;margin-bottom:1rem}
+.extra-cta{font-size:.75rem;font-weight:600;color:var(--ink);letter-spacing:.06em;display:flex;align-items:center;gap:.4rem}
+.extra-cta::after{content:'→';transition:.2s}
+.extra-card:hover .extra-cta::after{transform:translateX(4px)}
 
-/* ── base card ── */
-.pc{background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:22px;padding:2.2rem;display:flex;flex-direction:column;gap:.7rem;position:relative;overflow:hidden;transition:all .3s ease}
-.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:0;transition:.3s;border-radius:22px 22px 0 0}
-.pc:hover{transform:translateY(-8px)}
-.pc:hover::before{opacity:1}
+/* ═══ PROMOS EXPRESS ═══ */
+#promos-express{padding:6rem 0;background:var(--ink);color:var(--white)}
+.express-pill{display:inline-flex;align-items:center;gap:.5rem;border:1px solid rgba(255,255,255,.2);border-radius:2px;padding:.3rem 1rem;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:1.5rem}
+.express-standby-box{max-width:660px;margin:3rem auto 0;border:1px solid rgba(255,255,255,.12);padding:3.5rem}
+.express-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,.1);padding-top:2.5rem;margin-top:2.5rem}
+.estat{text-align:center;border-right:1px solid rgba(255,255,255,.08);padding:0 1.5rem}
+.estat:last-child{border-right:none}
+.estatn{font-family:'Instrument Serif',Georgia,serif;font-size:2rem;color:var(--white);display:block;margin-bottom:.2rem}
+.estatl{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.express-social{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:2rem}
+.express-social a{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.2);padding:.5rem 1.2rem;border-radius:2px;transition:.18s}
+.express-social a:hover{color:var(--white);border-color:rgba(255,255,255,.5)}
 
-/* ── BRONCE ── */
-.pc.bronze{border-color:rgba(184,115,51,.3)}
-.pc.bronze::before{background:linear-gradient(90deg,transparent,var(--bronze2),transparent)}
-.pc.bronze:hover{box-shadow:0 28px 70px rgba(184,115,51,.15);border-color:rgba(212,149,106,.45)}
+/* ═══ WHY US ═══ */
+.vs-wrap{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--rule)}
+.vs-col{padding:0}
+.vs-head{padding:1.2rem 1.8rem;font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid var(--rule)}
+.vs-col.bad .vs-head{color:var(--dim2)}
+.vs-col.good .vs-head{color:var(--ink);background:var(--off)}
+.vs-row-item{padding:1rem 1.8rem;border-bottom:1px solid var(--rule2);font-size:.84rem;display:flex;align-items:flex-start;gap:.6rem;line-height:1.45}
+.vs-row-item:last-child{border-bottom:none}
+.vs-col.bad .vs-row-item{color:var(--dim2)}
+.vs-col.bad .vs-row-item .x{color:#cc4444;font-weight:700;flex-shrink:0}
+.vs-col.good .vs-row-item{color:var(--ink2);background:var(--white)}
+.vs-col.good .vs-row-item .ok{color:var(--g);font-weight:700;flex-shrink:0}
 
-/* ── PLATA — most popular ── */
-.pc.silver{border-color:rgba(61,127,255,.45);background:linear-gradient(160deg,rgba(61,127,255,.1),rgba(124,58,237,.07),rgba(255,255,255,.02));box-shadow:0 0 0 1px rgba(61,127,255,.15),0 8px 30px rgba(61,127,255,.1)}
-.pc.silver::before{background:linear-gradient(90deg,transparent,var(--b) 30%,var(--p) 70%,transparent);opacity:.9}
-.pc.silver:hover{box-shadow:0 0 0 1px rgba(61,127,255,.3),0 30px 70px rgba(61,127,255,.15)}
+/* ═══ TESTIMONIALS ═══ */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:3rem}
+.tc{background:var(--white);padding:2.2rem;transition:.15s}
+.tc:hover{background:var(--off)}
+.tc .stars{font-size:.8rem;color:var(--ink);letter-spacing:.1em;margin-bottom:1rem}
+.tc p{font-size:.88rem;color:var(--dim);line-height:1.82;font-style:italic;margin-bottom:1.2rem}
+.tc .aut{font-size:.7rem;font-weight:700;color:var(--dim2);letter-spacing:.08em;text-transform:uppercase}
+.tc .plat{font-size:.7rem;color:var(--g);margin-top:.2rem;font-weight:600}
 
-/* ── ORO ── */
-.pc.gold{border-color:rgba(232,160,32,.38)}
-.pc.gold::before{background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),transparent)}
-.pc.gold:hover{box-shadow:0 28px 70px rgba(232,160,32,.15);border-color:rgba(245,200,66,.5)}
+/* ═══ ARTISTS ═══ */
+#artistas{padding:7rem 0;background:var(--white)}
+.artists-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:3rem}
+.artist-card{background:var(--white);overflow:hidden;position:relative;transition:.2s}
+.artist-card:hover{background:var(--off)}
+.artist-img{height:220px;overflow:hidden;position:relative;background:var(--soft)}
+.artist-img img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s ease}
+.artist-card:hover .artist-img img{transform:scale(1.04)}
+.artist-genre{position:absolute;top:.75rem;left:.75rem;background:var(--white);color:var(--ink);font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .7rem}
+.artist-body{padding:1.3rem}
+.artist-origin{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dim2);margin-bottom:.25rem}
+.artist-name{font-family:'Instrument Serif',Georgia,serif;font-size:1.4rem;color:var(--ink);line-height:1;margin-bottom:.45rem;font-weight:400}
+.artist-bio{font-size:.8rem;color:var(--dim);line-height:1.6;margin-bottom:1rem}
+.artist-btns{display:flex;gap:.5rem}
+.artist-btn{flex:1;display:block;text-align:center;border:1px solid var(--rule);color:var(--dim);padding:.55rem .4rem;font-size:.73rem;font-weight:600;text-decoration:none;transition:.15s;letter-spacing:.02em}
+.artist-btn:hover{border-color:var(--ink);color:var(--ink)}
+.artist-btn.spotify{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.artist-btn.spotify:hover{background:#2a2a2a}
+/* Radar gate */
+#radar-gate{position:relative}
+#radar-gate .gate-blur{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);filter:blur(5px);pointer-events:none;user-select:none;opacity:.35;height:280px;overflow:hidden}
+#radar-gate .gate-blur div{background:var(--soft)}
+#radar-gate .gate-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;background:linear-gradient(180deg,transparent 0%,rgba(255,255,255,.8) 40%,var(--white) 65%)}
+.gate-lock{font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dim2);margin-bottom:.7rem}
+.gate-title{font-family:'Instrument Serif',Georgia,serif;font-size:2rem;color:var(--ink);margin-bottom:.6rem;font-weight:400}
+.gate-sub{font-size:.87rem;color:var(--dim);line-height:1.7;max-width:380px;margin:0 auto 1.8rem}
 
-/* popular badge */
-.popular-wrap{position:absolute;top:0;right:0;left:0;display:flex;justify-content:center}
-.popular-badge{background:linear-gradient(135deg,var(--b),var(--p));color:#fff;font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.38rem 1.4rem;border-radius:0 0 12px 12px;box-shadow:0 4px 16px rgba(61,127,255,.4)}
+/* ═══ FAQ ═══ */
+#faq{padding:7rem 0;background:var(--off)}
+.fl{max-width:760px;margin:3rem auto 0;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--rule)}
+.fi{border-bottom:1px solid var(--rule)}
+.fq{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.4rem 0;background:none;border:none;color:var(--ink);cursor:pointer;text-align:left;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:600;transition:.15s}
+.fq:hover{color:var(--dim)}
+.ficon{font-size:1.1rem;color:var(--dim2);transition:.3s;flex-shrink:0;font-weight:300}
+.fi.open .ficon{transform:rotate(45deg)}
+.fa{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.fi.open .fa{max-height:300px}
+.fai{padding:0 0 1.5rem;font-size:.88rem;color:var(--dim);line-height:1.82}
 
-.ptier{font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.2rem}
-.ptier.t-bronze{color:var(--bronze2)}
-.ptier.t-silver{color:var(--silver2)}
-.ptier.t-gold{color:var(--gold2)}
+/* ═══ CTA ═══ */
+#cta-bottom{padding:7rem 0;background:var(--ink);color:var(--white);text-align:center}
+.cta-h{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(2.5rem,5vw,4.5rem);color:var(--white);line-height:1;font-weight:400;letter-spacing:-.02em;margin-bottom:1rem}
+.cta-h em{font-style:italic;color:rgba(255,255,255,.55)}
+.cta-sub{font-size:.95rem;color:rgba(255,255,255,.5);max-width:440px;margin:0 auto 2.5rem;line-height:1.72}
 
-.pname{font-family:'Bebas Neue',Impact,sans-serif;font-size:2rem;letter-spacing:.06em;color:#fff;line-height:1}
-.pprice-wrap{display:flex;align-items:baseline;gap:.35rem;margin:.3rem 0 .1rem}
-.pprice{font-family:'Bebas Neue',Impact,sans-serif;font-size:3.8rem;line-height:1;letter-spacing:-.02em}
-.pprice sup{font-size:1.5rem;vertical-align:top;margin-top:.6rem;display:inline-block;font-family:'Space Grotesk',sans-serif;font-weight:700}
-.pprice sub{font-size:1rem;font-family:'Space Grotesk',sans-serif;font-weight:500;color:var(--dim)}
-.pprice.bronze-p{background:linear-gradient(135deg,var(--bronze2),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.pprice.silver-p{background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.pprice.gold-p{background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.pideal{font-size:.8rem;color:var(--dim);font-style:italic;padding:.5rem .8rem;background:rgba(255,255,255,.03);border-radius:8px;border-left:2px solid;margin:.3rem 0}
-.pideal.bi{border-color:var(--bronze2)}
-.pideal.si{border-color:var(--b)}
-.pideal.gi{border-color:var(--gold)}
-.pdiv{height:1px;background:var(--bdr);margin:.3rem 0}
-.pf{list-style:none;display:flex;flex-direction:column;gap:.5rem;flex:1}
-.pf li{font-size:.84rem;color:var(--dim);display:flex;align-items:flex-start;gap:.6rem;line-height:1.5}
-.pf li::before{content:'';width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:.12rem;background-repeat:no-repeat;background-position:center}
-.pf li.green::before{background-color:rgba(29,185,84,.1);border:1px solid rgba(29,185,84,.25);background-image:url("data:image/svg+xml,%3Csvg width='9' height='7' viewBox='0 0 9 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.5L3.2 5.8L8 1' stroke='%231DB954' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E")}
-.pf li.blue::before{background-color:rgba(61,127,255,.1);border:1px solid rgba(61,127,255,.25);background-image:url("data:image/svg+xml,%3Csvg width='9' height='7' viewBox='0 0 9 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.5L3.2 5.8L8 1' stroke='%233d7fff' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E")}
-.pf li.gold::before{background-color:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.25);background-image:url("data:image/svg+xml,%3Csvg width='9' height='7' viewBox='0 0 9 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.5L3.2 5.8L8 1' stroke='%23e8a020' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E")}
-.pbtn{margin-top:.5rem;display:block;text-align:center;padding:.92rem;border-radius:var(--r);font-size:.9rem;font-weight:700;letter-spacing:.02em;transition:all .22s ease;cursor:pointer;text-decoration:none;border:none;position:relative;overflow:hidden}
-.pbtn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.12);opacity:0;transition:.18s}
-.pbtn:hover::after{opacity:1}
-.pbtn:hover{transform:translateY(-2px)}
-.pb-bronze{background:linear-gradient(135deg,var(--bronze),var(--bronze2));color:#fff;box-shadow:0 0 20px rgba(184,115,51,.3)}
-.pb-silver{background:linear-gradient(135deg,var(--b),var(--p));color:#fff;box-shadow:0 0 24px rgba(61,127,255,.4)}
-.pb-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;font-weight:800;box-shadow:0 0 24px rgba(232,160,32,.38)}
+/* ═══ MODALS ═══ */
+.modal-wrap{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);z-index:9000;align-items:center;justify-content:center;padding:1.5rem;overflow-y:auto}
+.modal-box{background:var(--white);max-width:660px;width:100%;margin:auto;position:relative;border:1px solid var(--rule)}
+.modal-top{position:absolute;top:0;left:0;right:0;height:2px;background:var(--ink)}
+.modal-close{position:absolute;top:.9rem;right:.9rem;background:none;border:1px solid var(--rule);color:var(--dim);width:30px;height:30px;cursor:pointer;font-size:.8rem;display:flex;align-items:center;justify-content:center;transition:.15s}
+.modal-close:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.modal-inner{padding:2.5rem}
+.modal-ey{font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--dim2);margin-bottom:.5rem}
+.modal-title{font-family:'Instrument Serif',Georgia,serif;font-size:1.9rem;color:var(--ink);margin-bottom:1.1rem;font-weight:400}
+.modal-desc{font-size:.88rem;color:var(--dim);line-height:1.75;margin-bottom:1.4rem}
+.budget-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:1.2rem}
+.budget-cell{background:var(--white);padding:1rem .5rem;text-align:center;transition:.15s}
+.budget-cell:hover{background:var(--off)}
+.budget-cell.pop{background:var(--ink)}
+.budget-price{font-family:'Instrument Serif',Georgia,serif;font-size:1.5rem;color:var(--ink);line-height:1;display:block;margin-bottom:.2rem}
+.budget-cell.pop .budget-price{color:var(--white)}
+.budget-dur{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2);margin-bottom:.65rem;display:block}
+.budget-cell.pop .budget-dur{color:rgba(255,255,255,.45)}
+.budget-cell.pop .budget-btn{border-color:var(--white);color:var(--white)}
+.budget-cell.pop .budget-btn:hover{background:var(--white);color:var(--ink)}
+.budget-btn{display:block;border:1px solid var(--rule);color:var(--dim);padding:.4rem .3rem;font-size:.68rem;font-weight:600;text-decoration:none;text-align:center;transition:.15s}
+.budget-btn:hover{border-color:var(--ink);color:var(--ink)}
+.modal-note{font-size:.73rem;color:var(--dim2);text-align:center;padding:.75rem;border:1px solid var(--rule2)}
+.modal-feats{display:grid;grid-template-columns:1fr 1fr;gap:.5rem .75rem;margin-bottom:1.2rem}
+.mf{font-size:.82rem;color:var(--dim2);display:flex;align-items:flex-start;gap:.4rem}
+.mf::before{content:'—';color:var(--dim2);flex-shrink:0;font-size:.7rem;margin-top:.1rem}
+.modal-cta{display:block;background:var(--ink);color:var(--white);text-align:center;padding:.95rem;font-size:.88rem;font-weight:600;text-decoration:none;transition:.18s}
+.modal-cta:hover{background:#2a2a2a}
+.badge-pop{display:inline-block;background:var(--white);color:var(--ink);font-size:.58rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .7rem;margin-bottom:.6rem}
 
-.pcta{text-align:center;margin-top:3rem}
-.pnote{font-size:.78rem;color:var(--dim2);margin-top:.9rem;display:flex;align-items:center;justify-content:center;gap:.4rem}
-.pnote::before{content:'🔒';font-size:.8rem}
-
-/* ═══════════ ANTI-BOT ═══════════ */
-#antibots{padding:6rem 0;background:var(--ink3);position:relative;overflow:hidden}
-#antibots::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(124,58,237,.08) 0%,transparent 65%);pointer-events:none}
-.ab-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-top:3rem}
-.ab-left h3{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(2rem,4vw,3.2rem);line-height:.95;color:#fff;margin-bottom:1.2rem;letter-spacing:.04em}
-.ab-left h3 em{font-style:normal;background:linear-gradient(135deg,#ef4444,#dc2626);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.ab-left p{font-size:.9rem;color:var(--dim);line-height:1.78;margin-bottom:.9rem}
-.vs-table{border:1px solid var(--bdr);border-radius:16px;overflow:hidden}
-.vs-row{display:grid;grid-template-columns:1fr 1fr;gap:0}
-.vs-head{display:grid;grid-template-columns:1fr 1fr;background:rgba(255,255,255,.04)}
-.vs-h{padding:.75rem 1.2rem;font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;text-align:center}
-.vs-h.bad{color:#ef4444;border-right:1px solid var(--bdr)}
-.vs-h.good{color:var(--g)}
-.vs-row{border-top:1px solid var(--bdr)}
-.vs-cell{padding:.8rem 1.2rem;font-size:.83rem;line-height:1.5;text-align:center}
-.vs-cell.bad{color:rgba(255,255,255,.45);border-right:1px solid var(--bdr)}
-.vs-cell.bad .x{color:#ef4444;font-weight:800;margin-right:.3rem}
-.vs-cell.good{color:rgba(255,255,255,.75)}
-.vs-cell.good .ok{color:var(--g);font-weight:800;margin-right:.3rem}
-
-/* ═══════════ TESTIMONIALS ═══════════ */
-#testimonios{padding:6rem 0;background:var(--ink)}
-.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem;margin-top:3rem}
-.tc{background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:18px;padding:2rem;position:relative;overflow:hidden;transition:all .3s ease}
-.tc::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--g),var(--b))}
-.tc:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(29,185,84,.07)}
-.tc::after{content:'"';position:absolute;top:-.5rem;right:1.2rem;font-size:6.5rem;color:rgba(255,255,255,.025);font-family:Georgia,serif;line-height:1.1;pointer-events:none}
-.tc .stars{color:var(--g);font-size:.9rem;margin-bottom:.9rem;letter-spacing:.1em}
-.tc p{font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.8;font-style:italic;margin-bottom:1.1rem}
-.tc .aut{font-size:.74rem;font-weight:700;color:var(--dim2);letter-spacing:.07em;text-transform:uppercase}
-.tc .plat{font-size:.7rem;color:var(--g);margin-top:.2rem;font-weight:500}
-
-/* ═══════════ FAQ ═══════════ */
-#faq{padding:7rem 0;background:var(--ink3);position:relative}
-#faq::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(124,58,237,.28),transparent)}
-.fl{max-width:760px;margin:3.5rem auto 0;display:flex;flex-direction:column;gap:.6rem}
-.fi{background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:12px;overflow:hidden;transition:.25s}
-.fi:hover,.fi.open{border-color:rgba(124,58,237,.25)}
-.fi.open{background:rgba(124,58,237,.04)}
-.fq{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 1.5rem;background:none;border:none;color:#fff;cursor:pointer;text-align:left;font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:600;transition:.2s}
-.fq:hover{background:rgba(124,58,237,.04)}
-.ficon{width:28px;height:28px;border-radius:50%;background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.25);color:var(--p);display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;transition:.35s}
-.fi.open .ficon{transform:rotate(45deg);background:rgba(124,58,237,.25);color:#fff}
-.fa{max-height:0;overflow:hidden;transition:max-height .38s ease}
-.fi.open .fa{max-height:400px}
-.fai{padding:0 1.5rem 1.5rem;font-size:.88rem;color:var(--dim);line-height:1.82;border-top:1px solid var(--bdr);padding-top:1rem}
-
-/* ═══════════ CTA BOTTOM ═══════════ */
-#cta-bottom{padding:6rem 0;background:var(--ink);position:relative}
-.cta-box{background:linear-gradient(135deg,rgba(29,185,84,.1),rgba(61,127,255,.07),rgba(124,58,237,.05));border:1px solid rgba(29,185,84,.22);border-radius:24px;padding:4rem;text-align:center;position:relative;overflow:hidden}
-.cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--g) 20%,var(--b) 50%,var(--p) 80%,transparent)}
-.cta-box h2{font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(2.5rem,5.5vw,4rem);color:#fff;margin-bottom:.9rem}
-.cta-box h2 em{font-style:normal;background:linear-gradient(135deg,var(--g),#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.cta-box p{color:var(--dim);max-width:480px;margin:0 auto 2.2rem;line-height:1.75}
-
-/* ═══════════ FOOTER ═══════════ */
-footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem}
-.fo{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
-.flogo{font-family:'Bebas Neue',Impact,sans-serif;font-size:1.25rem;letter-spacing:.07em;color:rgba(255,255,255,.35)}
-.flogo em{font-style:normal;background:linear-gradient(135deg,var(--g),#4ade80);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+/* ═══ FOOTER ═══ */
+footer{background:var(--off);border-top:1px solid var(--rule);padding:2.5rem 2.5rem}
+.fo{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.flogo{font-family:'Instrument Serif',Georgia,serif;font-size:1.15rem;color:var(--dim2);font-style:italic}
 .flinks{display:flex;flex-wrap:wrap;gap:1.5rem}
-.flinks a{font-size:.77rem;color:var(--dim2);transition:.2s;font-weight:500}
-.flinks a:hover{color:var(--g)}
-.fcopy{font-size:.7rem;color:rgba(255,255,255,.18);text-align:center;margin-top:.7rem}
+.flinks a{font-size:.75rem;color:var(--dim2);transition:.15s;font-weight:500}
+.flinks a:hover{color:var(--ink)}
+.fcopy{font-size:.68rem;color:var(--dim2);text-align:center;margin-top:.6rem}
 
-/* ── BACK TOP ── */
-.bktop{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--g),var(--g2));color:#000;border:none;cursor:pointer;display:none;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 0 20px rgba(29,185,84,.4);z-index:900;transition:.3s}
+/* ═══ COOKIE BANNER ═══ */
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--ink);padding:1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;transition:transform .4s ease}
+#cookie-banner p{font-size:.78rem;color:rgba(255,255,255,.6);flex:1;min-width:220px;line-height:1.5;font-family:'DM Sans',sans-serif}
+#cookie-banner a{color:rgba(255,255,255,.8);text-decoration:underline}
+.cb-btns{display:flex;gap:.5rem}
+.cb-btn{padding:.45rem 1rem;font-size:.74rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;border-radius:2px;border:none;transition:.18s}
+.cb-reject{background:transparent;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.2)!important}
+.cb-reject:hover{color:rgba(255,255,255,.8)}
+.cb-accept{background:var(--white);color:var(--ink)}
+.cb-accept:hover{background:var(--off)}
+
+/* ═══ BACK TOP ═══ */
+.bktop{position:fixed;bottom:2rem;right:2rem;width:40px;height:40px;background:var(--ink);color:var(--white);border:none;cursor:pointer;display:none;align-items:center;justify-content:center;font-size:.85rem;z-index:900;transition:.2s}
 .bktop.on{display:flex}
-.bktop:hover{transform:translateY(-3px) scale(1.08)}
+.bktop:hover{background:#2a2a2a}
 
-/* ── REVEAL ── */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+/* ═══ REVEAL ═══ */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
 .rv.v{opacity:1;transform:none}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
 
-/* ═══════════ RESPONSIVE ═══════════ */
-@media(max-width:900px){.pgrid{grid-template-columns:1fr 1fr}}
-@media(max-width:900px){.ab-grid{grid-template-columns:1fr;gap:2rem}}
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:900px){
+  .packs{grid-template-columns:1fr}
+  .sec-grid-2{grid-template-columns:1fr;gap:2.5rem}
+  .tgrid{grid-template-columns:1fr}
+  .vs-wrap{grid-template-columns:1fr}
+  .extras-grid{grid-template-columns:1fr 1fr}
+}
 @media(max-width:700px){
-  .hstats{padding:1.2rem 1.5rem}.hs{border-right:none;border-bottom:1px solid rgba(255,255,255,.06);padding:.8rem 0}.hs:last-child{border-bottom:none}
-  .pgrid{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr 1fr}
-  .cta-box{padding:2.5rem 1.5rem}
-  .hbtns{flex-direction:column;align-items:stretch}.hbtns .btn{width:100%}
+  .nl{display:none}.ham{display:flex}
+  .w,.hero-c,.sstrip-inner,.ni{padding-left:1.5rem;padding-right:1.5rem}
+  h1.ht{font-size:clamp(2.8rem,12vw,4.5rem)}
+  .hstat{padding-right:1rem}.hstat:last-child{padding-left:1rem}
+  .hero-btns{flex-direction:column}
+  .hero-btns .btn{width:100%}
+  .hero-stat-row{flex-direction:column;gap:1.2rem}
+  .hstat{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:1rem}
+  .hstat:last-child{border-bottom:none;padding:0}
+  .extras-grid{grid-template-columns:1fr}
+  .budget-grid{grid-template-columns:1fr 1fr}
+  .modal-feats{grid-template-columns:1fr}
+  .express-stats{grid-template-columns:1fr}
+  .estat{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding:1rem 0}
+  .sstrip-inner{flex-wrap:wrap}
+  .ss{min-width:calc(50% - 1rem);border-right:none;padding:.5rem 0;text-align:left}
 }
-@media(max-width:480px){.steps{grid-template-columns:1fr}}
-
-/* ── CAMPAÑAS RESPONSIVE ── */
-@media(max-width:1100px){
-  .camp-grid{grid-template-columns:repeat(3,1fr)!important}
-}
-@media(max-width:660px){
-  .camp-grid{grid-template-columns:1fr 1fr!important}
-  .camp-how{grid-template-columns:1fr!important}
-  #campanas .rv > div > div[style*="gap:.7rem"]{flex-direction:column;align-items:flex-start}
-}
-@media(max-width:420px){
-  .camp-grid{grid-template-columns:1fr!important}
-}
-
+@media(max-width:480px){.packs{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -306,883 +324,378 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
 <!-- NAV -->
 <nav id="nav">
   <div class="ni">
-    <a href="#home" class="logo">🎧 LigaMusic<em>España</em></a>
+    <a href="#home" class="logo">LigaMusic <span>España</span></a>
     <div class="nl">
-      <a href="#como">Cómo funciona</a>
-      <a href="#planes">Servicios</a><a href="#promos-extras" style="color:var(--gold2);font-weight:700">Promos Extras</a><a href="#promos-express" style="color:#ef4444;font-weight:700;animation:flashPill 2s ease-in-out infinite">⚡ Express</a>
+      <a href="#como">Metodología</a>
+      <a href="#planes">Servicios</a>
+      <a href="#promos-extras">Extras</a>
+      <a href="#promos-express">Express</a>
       <a href="#antibots">¿Por qué nosotros?</a>
-      
-      <a href="#artistas">Radar de Novedades</a>
+      <a href="#artistas">Radar</a>
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-r">
-      
       <a href="https://tally.so/r/aQJBr2" target="_blank" class="nc">Solicitar Estrategia</a>
     </div>
     <button class="ham" onclick="document.getElementById('mob').classList.toggle('open')" aria-label="Menú"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div id="mob">
-  <a href="#como" onclick="this.closest('#mob').classList.remove('open')">Cómo funciona</a>
+  <a href="#como" onclick="this.closest('#mob').classList.remove('open')">Metodología</a>
   <a href="#planes" onclick="this.closest('#mob').classList.remove('open')">Servicios</a>
+  <a href="#promos-extras" onclick="this.closest('#mob').classList.remove('open')">Extras</a>
+  <a href="#promos-express" onclick="this.closest('#mob').classList.remove('open')">Express</a>
   <a href="#antibots" onclick="this.closest('#mob').classList.remove('open')">¿Por qué nosotros?</a>
-  <a href="#promos-extras" onclick="this.closest('#mob').classList.remove('open')" style="color:var(--gold2);font-weight:700">Promos Extras</a>
-  <a href="#promos-express" onclick="this.closest('#mob').classList.remove('open')" style="color:#ef4444;font-weight:700">⚡ Promos Express</a>
-  <a href="#artistas" onclick="this.closest('#mob').classList.remove('open')">Radar de Novedades</a>
+  <a href="#artistas" onclick="this.closest('#mob').classList.remove('open')">Radar</a>
   <a href="#faq" onclick="this.closest('#mob').classList.remove('open')">FAQ</a>
-  <a href="#planes" onclick="this.closest('#mob').classList.remove('open')">→ Ver planes</a>
+  <a href="https://tally.so/r/aQJBr2" target="_blank">→ Solicitar Estrategia</a>
 </div>
 
 <!-- HERO -->
 <section id="home">
-  <div class="slides">
-    <div class="sl sl1 on"></div>
-    <div class="sl sl2"></div>
-    <div class="sl sl3"></div>
-    <div class="sl sl4"></div>
+  <div class="hero-video">
+    <!-- Reemplaza 'TU_VIDEO.mp4' con la URL de tu vídeo -->
+    <video autoplay muted loop playsinline poster="">
+      <source src="TU_VIDEO.mp4" type="video/mp4">
+    </video>
   </div>
-  <div class="sl-ov"></div>
-  <div class="hero-mesh"></div>
-  <div class="hc">
-    <div class="hbadge"><span class="hdot"></span><span>Agencia de Crecimiento Musical · Estrategia · Meta Ads · Playlists</span></div>
-    <h1 class="ht">
-      Aceleramos tu<br>carrera independiente.<br>
-      <span class="line-g">Estrategia real. Resultados reales.</span>
-    </h1>
-    <p class="hsub">No vendemos reproducciones. Diseñamos la estrategia completa para tu lanzamiento: optimización de perfil, campañas de Meta Ads de alta conversión y el impulso de nuestra red de playlists reales. Asesoramiento 24/7 con un estratega musical real.</p>
-    <div style="display:inline-flex;align-items:center;gap:.6rem;background:rgba(29,185,84,.08);border:1px solid rgba(29,185,84,.2);border-radius:100px;padding:.5rem 1.3rem;margin-bottom:2rem;animation:fadeUp .9s .4s ease both">
-      <span style="font-size:1rem">🏆</span>
-      <span style="font-size:.8rem;font-weight:700;color:rgba(255,255,255,.8)">Más de <strong style="color:var(--g)">6 años de experiencia</strong> · Clientes desde el inicio que renuevan cada mes con nosotros</span>
+  <div class="hero-ov"></div>
+  <div class="hero-c w">
+    <span class="hero-eyebrow">Agencia de Crecimiento Musical · Más de 6 años</span>
+    <h1 class="ht">Aceleramos<br>tu carrera<br><em>independiente.</em></h1>
+    <p class="hero-sub">No vendemos reproducciones. Diseñamos la estrategia completa para tu lanzamiento: optimización de perfil, campañas de Meta Ads de alta conversión y el impulso de nuestra red de playlists reales.</p>
+    <div class="hero-btns">
+      <a href="https://tally.so/r/aQJBr2" target="_blank" class="btn btn-blk btn-lg" style="background:#fff;color:#111">Solicitar Estrategia Personalizada</a>
+      <a href="#como" class="btn btn-lg" style="background:transparent;border:1.5px solid rgba(255,255,255,.4);color:#fff">Ver cómo trabajamos</a>
     </div>
-    <div class="hbtns">
-      <a href="#planes" class="btn btn-g btn-lg">🎵 Ver planes desde 25€/mes</a>
-    </div>
-    <div class="hstats">
-      <div class="hs"><span class="hsn">+101K</span><span class="hsl">Streams generados</span></div>
-      <div class="hs"><span class="hsn">20+</span><span class="hsl">Playlists activas</span></div>
-      <div class="hs"><span class="hsn">1.401</span><span class="hsl">Oyentes activos</span></div>
-      <div class="hs"><span class="hsn">5</span><span class="hsl">Países alcanzados</span></div>
+    <div class="hero-stat-row">
+      <div class="hstat"><span class="hstat-n">+101K</span><span class="hstat-l">Streams generados</span></div>
+      <div class="hstat"><span class="hstat-n">20+</span><span class="hstat-l">Playlists activas</span></div>
+      <div class="hstat"><span class="hstat-n">1.401</span><span class="hstat-l">Oyentes activos</span></div>
+      <div class="hstat"><span class="hstat-n">5</span><span class="hstat-l">Países alcanzados</span></div>
     </div>
   </div>
 </section>
 
-<!-- SOCIAL STRIP -->
-<section class="sstrip">
+<!-- STRIP -->
+<div class="sstrip">
   <div class="sstrip-inner">
     <div class="ss"><span class="ssn">+101K</span><span class="ssl">Reproducciones</span></div>
     <div class="ss"><span class="ssn">20+</span><span class="ssl">Playlists activas</span></div>
     <div class="ss"><span class="ssn">1.401</span><span class="ssl">Oyentes activos</span></div>
     <div class="ss"><span class="ssn">5</span><span class="ssl">Países alcanzados</span></div>
   </div>
-</section>
-
-<div class="sdiv"></div>
+</div>
 
 <!-- CÓMO FUNCIONA -->
-<section id="como">
+<section id="como" class="sec">
   <div class="w">
-    <div class="sec rv">
-      <div class="pill pill-g" style="margin-bottom:.9rem">⚡ Nuestra metodología</div>
-      <h2 class="h2">Cómo trabajamos<br><em class="grad-g">contigo</em></h2>
-      <p class="sub" style="margin-top:.7rem">No eres un pedido más. Eres un proyecto. Cada artista recibe una estrategia diseñada desde cero para su sonido, su momento y su presupuesto.</p>
-    </div>
-    <div class="steps">
-      <div class="step rv d1"><div class="sn">1</div><h3>Diagnóstico inicial</h3><p>Analizamos tu perfil de Spotify, tus métricas y tu historial de lanzamientos para identificar exactamente dónde está el cuello de botella.</p></div>
-      <div class="step rv d2"><div class="sn">2</div><h3>Diseño de estrategia</h3><p>Creamos un plan personalizado: qué publicar, cuándo lanzarlo, cómo configurar los Ads y en qué playlists tiene más impacto tu sonido.</p></div>
-      <div class="step rv d3"><div class="sn">3</div><h3>Activación y lanzamiento</h3><p>Ejecutamos la estrategia: campañas de Meta Ads segmentadas, entrada en nuestra red de playlists y optimización del perfil para el algoritmo.</p></div>
-      <div class="step rv d4"><div class="sn">4</div><h3>Seguimiento activo</h3><p>Revisamos los datos semanalmente contigo. Ajustamos las campañas en tiempo real para no malgastar ni un euro de presupuesto publicitario.</p></div>
-      <div class="step rv d5"><div class="sn">5</div><h3>Crecimiento sostenido</h3><p>El algoritmo de Spotify empieza a recomendarte de forma orgánica. Más oyentes, más regalías, más presencia. Sin bots, sin atajos.</p></div>
+    <div class="sec-grid-2">
+      <div class="sec-hd rv">
+        <span class="eyebrow">Nuestra metodología</span>
+        <h2 class="h2">Cómo trabajamos<br><em>contigo</em></h2>
+        <p class="sub" style="margin-top:1rem">No eres un pedido más. Eres un proyecto. Cada artista recibe una estrategia diseñada desde cero para su sonido, su momento y su presupuesto.</p>
+      </div>
+      <div class="steps-list rv d1">
+        <div class="step-item"><div class="step-n">01</div><div class="step-body"><h3>Diagnóstico inicial</h3><p>Analizamos tu perfil de Spotify, tus métricas y tu historial de lanzamientos para identificar exactamente dónde está el cuello de botella.</p></div></div>
+        <div class="step-item"><div class="step-n">02</div><div class="step-body"><h3>Diseño de estrategia</h3><p>Creamos un plan personalizado: qué publicar, cuándo lanzarlo, cómo configurar los Ads y en qué playlists tiene más impacto tu sonido.</p></div></div>
+        <div class="step-item"><div class="step-n">03</div><div class="step-body"><h3>Activación y lanzamiento</h3><p>Ejecutamos la estrategia: campañas de Meta Ads segmentadas, entrada en nuestra red de playlists y optimización del perfil para el algoritmo.</p></div></div>
+        <div class="step-item"><div class="step-n">04</div><div class="step-body"><h3>Seguimiento activo</h3><p>Revisamos los datos semanalmente contigo. Ajustamos las campañas en tiempo real para no malgastar ni un euro de presupuesto publicitario.</p></div></div>
+        <div class="step-item"><div class="step-n">05</div><div class="step-body"><h3>Crecimiento sostenido</h3><p>El algoritmo de Spotify empieza a recomendarte de forma orgánica. Más oyentes, más regalías, más presencia. Sin bots, sin atajos.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="sdiv"></div>
+<div class="rule"></div>
 
-<!-- PLANES -->
-<section id="planes">
-  <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(29,185,84,.28),rgba(61,127,255,.22),transparent)"></div>
+<!-- SERVICIOS -->
+<section id="planes" class="sec sec-alt">
   <div class="w">
-    <div class="sec rv">
-      <div class="pill pill-g" style="margin-bottom:.9rem">🎯 Servicios de acompañamiento</div>
-      <h2 class="h2">No vendemos playlists.<br><em class="grad-g">Construimos carreras.</em></h2>
-      <p class="sub" style="margin-top:.7rem">Cada artista es diferente. Por eso no tenemos tarifas fijas: trabajamos con presupuesto personalizado según tus objetivos, tu momento y tu catálogo.</p>
-      <div class="plans-note" style="margin-top:1rem"><span>✓</span> Presupuesto a medida · Sin permanencia · Estratega dedicado</div>
+    <div class="sec-hd rv">
+      <span class="eyebrow">Servicios de acompañamiento</span>
+      <h2 class="h2">No vendemos playlists.<br><em>Construimos carreras.</em></h2>
+      <p class="sub" style="margin-top:1rem">Presupuesto personalizado según tus objetivos, tu momento y tu catálogo. Sin permanencia, con estratega dedicado.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem" class="rv">
-
-      <!-- PACK 1 -->
-      <div class="pc bronze">
-        <div class="ptier t-bronze">🚀 Pack 1</div>
-        <div class="pname">Lanzamiento y Diagnóstico</div>
-        <div style="font-size:.82rem;font-weight:700;color:var(--bronze2);margin:.35rem 0 .15rem">Presupuesto personalizado</div>
-        <div class="pideal bi">Ideal para artistas que comienzan o quieren lanzar su primer single de forma profesional.</div>
-        <div class="pdiv"></div>
-        <ul class="pf">
-          <li class="green">Diagnóstico completo de tu perfil Spotify</li>
-          <li class="green">Estrategia de lanzamiento del single</li>
-          <li class="green">Configuración de campañas Ads</li>
-          <li class="green">Entrada en playlists de nicho seleccionadas</li>
-          <li class="green">Segmentación por ciudad, edad e intereses</li>
-          <li class="green">Informe de resultados al finalizar</li>
-          <li class="green">Smartlink de por vida incluido</li>
+    <div class="packs rv">
+      <!-- Pack 1 -->
+      <div class="pack">
+        <div class="pack-tier">Pack 1</div>
+        <div class="pack-name">Lanzamiento<br>y Diagnóstico</div>
+        <div class="pack-sub">Presupuesto personalizado</div>
+        <div class="pack-ideal">Ideal para artistas que comienzan o quieren lanzar su primer single de forma profesional.</div>
+        <ul class="pack-feats">
+          <li>Diagnóstico completo de tu perfil Spotify</li>
+          <li>Estrategia de lanzamiento del single</li>
+          <li>Configuración de campañas Ads</li>
+          <li>Entrada en playlists de nicho seleccionadas</li>
+          <li>Segmentación por ciudad, edad e intereses</li>
+          <li>Informe de resultados al finalizar</li>
+          <li>Smartlink de por vida incluido</li>
         </ul>
-        <a href="https://tally.so/r/aQJBr2" target="_blank" class="pbtn pb-bronze">🎯 Analizar mi Caso</a>
-        
+        <a href="https://tally.so/r/aQJBr2" target="_blank" class="pack-btn">Analizar mi Caso</a>
       </div>
-
-      <!-- PACK 2 -->
-      <div class="pc silver">
-        <div class="popular-wrap"><div class="popular-badge">⭐ Recomendado</div></div>
-        <div class="ptier t-silver" style="margin-top:1.2rem">📈 Pack 2</div>
-        <div class="pname">Crecimiento Pro</div>
-        <div style="font-size:.8rem;font-weight:700;color:#60a5fa;margin:.2rem 0 .05rem">Acompañamiento 360°</div>
-        <div style="font-size:.82rem;color:var(--dim);font-style:italic;margin-bottom:.2rem">Presupuesto personalizado</div>
-        <div class="pideal si">Para artistas que quieren crecer mes a mes con gestión activa, soporte continuo y estrategia real.</div>
-        <div class="pdiv"></div>
-        <ul class="pf">
-          <li class="blue">Asesoría directa 24/7 con tu estratega personal</li>
-          <li class="blue">Gestión activa de campañas Meta Ads semanal</li>
-          <li class="blue">Optimización del algoritmo de Spotify continua</li>
-          <li class="blue">Rotación en toda la red de playlists LigaMusic</li>
-          <li class="blue">Hasta 2 canciones en rotación simultánea</li>
-          <li class="blue">Smartlink de por vida incluido</li>
-          <li class="blue">Reporting semanal con métricas reales</li>
+      <!-- Pack 2 — Featured -->
+      <div class="pack featured">
+        <div class="pack-badge">Recomendado</div>
+        <div class="pack-tier">Pack 2</div>
+        <div class="pack-name">Crecimiento<br>Pro</div>
+        <div class="pack-sub">Acompañamiento 360° · Presupuesto personalizado</div>
+        <div class="pack-ideal">Para artistas que quieren crecer mes a mes con gestión activa, soporte continuo y estrategia real.</div>
+        <ul class="pack-feats">
+          <li>Asesoría directa 24/7 con tu estratega personal</li>
+          <li>Gestión activa de campañas Meta Ads semanal</li>
+          <li>Optimización del algoritmo de Spotify continua</li>
+          <li>Rotación en toda la red de playlists LigaMusic</li>
+          <li>Hasta 2 canciones en rotación simultánea</li>
+          <li>Smartlink de por vida incluido</li>
+          <li>Reporting semanal con métricas reales</li>
         </ul>
-        <a href="https://tally.so/r/aQJBr2" target="_blank" class="pbtn pb-silver">🚀 Solicitar Presupuesto</a>
-        
+        <a href="https://tally.so/r/aQJBr2" target="_blank" class="pack-btn">Solicitar Presupuesto</a>
       </div>
-
-      <!-- PACK 3 -->
-      <div class="pc gold">
-        <div class="ptier t-gold">🏆 Pack 3</div>
-        <div class="pname">Aceleración de Catálogo</div>
-        <div style="font-size:.82rem;font-weight:700;color:var(--gold2);margin:.35rem 0 .15rem">Presupuesto personalizado</div>
-        <div class="pideal gi">Para artistas con catálogo que quieren escalar múltiples lanzamientos simultáneamente.</div>
-        <div class="pdiv"></div>
-        <ul class="pf">
-          <li class="gold">Estrategia multi-lanzamiento (EP o Álbum)</li>
-          <li class="gold">Campañas Meta Ads avanzadas y optimizadas</li>
-          <li class="gold">Rotación masiva en las 20+ playlists activas</li>
-          <li class="gold">Top 10 garantizado en listas principales</li>
-          <li class="gold">Apple Music + Tidal incluidos</li>
-          <li class="gold">Inclusión en Radar de Novedades de la web</li>
-          <li class="gold">Campaña de email masivo con cada lanzamiento</li>
-          <li class="gold">Smartlink de por vida incluido</li>
-          <li class="gold">Reporte mensual detallado</li>
+      <!-- Pack 3 -->
+      <div class="pack">
+        <div class="pack-tier">Pack 3</div>
+        <div class="pack-name">Aceleración<br>de Catálogo</div>
+        <div class="pack-sub">Presupuesto personalizado</div>
+        <div class="pack-ideal">Para artistas con catálogo que quieren escalar múltiples lanzamientos simultáneamente.</div>
+        <ul class="pack-feats">
+          <li>Estrategia multi-lanzamiento (EP o Álbum)</li>
+          <li>Campañas Meta Ads avanzadas y optimizadas</li>
+          <li>Rotación masiva en las 20+ playlists activas</li>
+          <li>Top 10 garantizado en listas principales</li>
+          <li>Apple Music + Tidal incluidos</li>
+          <li>Inclusión en Radar de Novedades de la web</li>
+          <li>Campaña de email masivo con cada lanzamiento</li>
+          <li>Smartlink de por vida incluido</li>
+          <li>Reporte mensual detallado</li>
         </ul>
-        <a href="https://tally.so/r/aQJBr2" target="_blank" class="pbtn pb-gold">🎯 Solicitar Presupuesto</a>
-        
+        <a href="https://tally.so/r/aQJBr2" target="_blank" class="pack-btn">Solicitar Presupuesto</a>
       </div>
-
     </div>
-    <div class="pcta rv" style="margin-top:3rem">
-      <p style="font-size:.95rem;color:var(--dim);margin-bottom:1.5rem;max-width:560px;margin-left:auto;margin-right:auto;text-align:center;line-height:1.75">¿No sabes cuál encaja con tu situación? Cuéntanos tu proyecto y te decimos exactamente qué necesitas.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center">
-        <a href="https://tally.so/r/aQJBr2" target="_blank" class="btn btn-g btn-lg">🚀 Solicitar Estudio de Mi Proyecto</a>
-        
+    <div class="packs-note rv"><span>—</span> Sin compromisos · Presupuesto a medida · Estratega real, no un bot</div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- PROMOS EXTRAS -->
+<section id="promos-extras" class="sec">
+  <div class="w">
+    <div class="sec-hd rv">
+      <span class="eyebrow">Servicios adicionales</span>
+      <h2 class="h2">Promos<br><em>Extras</em></h2>
+      <p class="sub" style="margin-top:1rem">Servicios de apoyo a tu lanzamiento. Combínalos con tu pack para maximizar el impacto.</p>
+    </div>
+    <div class="extras-grid rv">
+      <div class="extra-card" onclick="openExtra('ads')">
+        <span class="extra-icon">📣</span>
+        <div class="extra-price">Desde 10€</div>
+        <div class="extra-name">Campañas Publicitarias</div>
+        <p class="extra-desc">Anuncios segmentados por ciudad y edad que llevan oyentes reales directamente a tu Spotify.</p>
+        <div class="extra-cta">Ver presupuestos</div>
       </div>
-      <div class="pnote">Sin compromisos · Presupuesto a medida · Estratega real, no un bot</div>
+      <div class="extra-card" onclick="openExtra('youtube')">
+        <span class="extra-icon">▶</span>
+        <div class="extra-price">6,99€ / mes</div>
+        <div class="extra-name">YouTube</div>
+        <p class="extra-desc">Tus 3 mejores canciones en nuestras 3 listas de YouTube. Más visibilidad, más regalías.</p>
+        <div class="extra-cta">Ver servicio</div>
+      </div>
+      <div class="extra-card" onclick="openExtra('apple')">
+        <span class="extra-icon">🍎</span>
+        <div class="extra-price">22€ / mes</div>
+        <div class="extra-name">Apple Music</div>
+        <p class="extra-desc">5 canciones en 5 listas activas de Apple Music. España, EEUU, UK, Argentina, Chile y Colombia.</p>
+        <div class="extra-cta">Ver servicio</div>
+      </div>
+      <div class="extra-card" onclick="openExtra('smart')">
+        <span class="extra-icon">🔗</span>
+        <div class="extra-price">2,50€ · Pago único</div>
+        <div class="extra-name">Smartlink</div>
+        <p class="extra-desc">Un enlace que redirige a todas tus plataformas y redes. Válido de por vida, sin suscripciones.</p>
+        <div class="extra-cta">Ver servicio</div>
+      </div>
+      <div class="extra-card" onclick="openExtra('djs')">
+        <span class="extra-icon">🎛️</span>
+        <div class="extra-price">Próximamente</div>
+        <div class="extra-name">DJs &amp; Productores</div>
+        <p class="extra-desc">Beats, mezclas, masterización y producción a medida. Profesionales de la escena urbana.</p>
+        <div class="extra-cta">Más info</div>
+      </div>
+      <div class="extra-card" onclick="openExtra('cd')">
+        <span class="extra-icon">💿</span>
+        <div class="extra-price">Próximamente · Desde 25 copias</div>
+        <div class="extra-name">CD Físico</div>
+        <p class="extra-desc">Tu música en CD profesional con caja jewel impresa. Desde 25 copias. Perfecto para conciertos.</p>
+        <div class="extra-cta">Más info</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="promos-extras" style="padding:6rem 0;background:var(--ink3);position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(61,127,255,.06) 0%,transparent 65%)"></div>
-  <div class="w" style="position:relative;z-index:1;">
-
-    <!-- Header -->
-    <div class="sec rv" style="margin-bottom:3.5rem">
-      <div class="pill pill-gold" style="margin-bottom:.9rem">⚡ Servicios adicionales</div>
-      <h2 class="h2">Promos <em class="grad-gold">Extras</em></h2>
-      <p class="sub" style="margin-top:.8rem">Aquí puedes encontrar servicios extra profesionales de apoyo a tu lanzamiento. Combínalos con tu plan mensual para maximizar el impacto.</p>
-    </div>
-
-    <!-- ── SERVICIO 1: ADS ── -->
-    <div class="rv" style="background:rgba(61,127,255,.06);border:1px solid rgba(61,127,255,.18);border-radius:20px;padding:2rem 2.2rem;margin-bottom:1.5rem;">
-      <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.6rem">
-        <span style="font-size:1.6rem">📣</span>
-        <div>
-          <div style="font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--b);margin-bottom:.15rem">Servicio extra</div>
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.6rem;letter-spacing:.05em;color:#fff;line-height:1">Campañas Publicitarias</div>
-        </div>
-      </div>
-      <p style="font-size:.86rem;color:var(--dim);line-height:1.7;margin-bottom:1.5rem">Dirigimos anuncios reales al público exacto que quieres alcanzar, redirigiendo directamente a tu canción en Spotify. Envía un vídeo de máximo 20 segundos (formato 9:16) e indícanos ciudades y edades objetivo.</p>
-
-      <!-- How it works row -->
-      <div class="camp-how" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1.5rem;background:rgba(255,255,255,.03);border-radius:12px;padding:1.2rem">
-        <div style="display:flex;align-items:flex-start;gap:.65rem"><span style="font-size:1.2rem;flex-shrink:0">📱</span><div><div style="font-size:.83rem;font-weight:700;color:#fff;margin-bottom:.2rem">Envía tu vídeo</div><div style="font-size:.77rem;color:var(--dim);line-height:1.55">Máximo 20 segundos, preferiblemente formato vertical 9:16.</div></div></div>
-        <div style="display:flex;align-items:flex-start;gap:.65rem"><span style="font-size:1.2rem;flex-shrink:0">📍</span><div><div style="font-size:.83rem;font-weight:700;color:#fff;margin-bottom:.2rem">Elige tu segmentación</div><div style="font-size:.77rem;color:var(--dim);line-height:1.55">Ciudades y rango de edad de tu público objetivo.</div></div></div>
-        <div style="display:flex;align-items:flex-start;gap:.65rem"><span style="font-size:1.2rem;flex-shrink:0">🎯</span><div><div style="font-size:.83rem;font-weight:700;color:#fff;margin-bottom:.2rem">Tráfico a Spotify</div><div style="font-size:.77rem;color:var(--dim);line-height:1.55">Cada clic lleva al oyente directo a tu canción.</div></div></div>
-      </div>
-
-      <!-- Budget grid -->
-      <div class="camp-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:.9rem;">
-        <div style="background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:14px;padding:1.3rem 1rem;text-align:center;transition:all .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(61,127,255,.4)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)'">
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:2.2rem;background:linear-gradient(135deg,var(--b),var(--p));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.25rem">10€</div>
-          <div style="font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2);margin-bottom:.7rem">5 días</div>
-          <div style="font-size:.76rem;color:var(--dim);line-height:1.5;margin-bottom:.9rem">Prueba de impacto inicial.</div>
-          <a href="https://tally.so/r/KYNJEV" target="_blank" style="display:block;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.28);color:#25D366;border-radius:8px;padding:.55rem .4rem;font-size:.76rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(37,211,102,.18)'" onmouseout="this.style.background='rgba(37,211,102,.08)'">🎵 Contratar</a>
-        </div>
-        <div style="background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:14px;padding:1.3rem 1rem;text-align:center;transition:all .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(61,127,255,.4)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)'">
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:2.2rem;background:linear-gradient(135deg,var(--b),var(--p));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.25rem">19,90€</div>
-          <div style="font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2);margin-bottom:.7rem">10 días</div>
-          <div style="font-size:.76rem;color:var(--dim);line-height:1.5;margin-bottom:.9rem">Primera semana y media de tracción.</div>
-          <a href="https://tally.so/r/dW4DOK" target="_blank" style="display:block;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.28);color:#25D366;border-radius:8px;padding:.55rem .4rem;font-size:.76rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(37,211,102,.18)'" onmouseout="this.style.background='rgba(37,211,102,.08)'">🎵 Contratar</a>
-        </div>
-        <div style="background:linear-gradient(160deg,rgba(61,127,255,.1),rgba(124,58,237,.07));border:1px solid rgba(61,127,255,.4);border-radius:14px;padding:1.3rem 1rem;text-align:center;transition:all .3s ease;position:relative" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
-          <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--b),var(--p));color:#fff;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .85rem;border-radius:0 0 8px 8px">Más elegido</div>
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:2.2rem;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.25rem;margin-top:.7rem">29,90€</div>
-          <div style="font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--silver2);margin-bottom:.7rem">15 días</div>
-          <div style="font-size:.76rem;color:var(--dim);line-height:1.5;margin-bottom:.9rem">Dos semanas. El algoritmo reacciona.</div>
-          <a href="https://tally.so/r/44DoZX" target="_blank" style="display:block;background:linear-gradient(135deg,var(--b),var(--p));color:#fff;border-radius:8px;padding:.55rem .4rem;font-size:.76rem;font-weight:800;text-decoration:none;box-shadow:0 0 16px rgba(61,127,255,.35)" onmouseover="this.style.filter='brightness(1.1)'" onmouseout="this.style.filter='none'">🎵 Contratar</a>
-        </div>
-        <div style="background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:14px;padding:1.3rem 1rem;text-align:center;transition:all .3s ease" onmouseover="this.style.transform='translateY(-4px)';this.style.borderColor='rgba(61,127,255,.4)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)'">
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:2.2rem;background:linear-gradient(135deg,var(--b),var(--p));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.25rem">50€</div>
-          <div style="font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2);margin-bottom:.7rem">27 días</div>
-          <div style="font-size:.76rem;color:var(--dim);line-height:1.5;margin-bottom:.9rem">Un mes completo de presión constante.</div>
-          <a href="https://tally.so/r/zxRrVR" target="_blank" style="display:block;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.28);color:#25D366;border-radius:8px;padding:.55rem .4rem;font-size:.76rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(37,211,102,.18)'" onmouseout="this.style.background='rgba(37,211,102,.08)'">🎵 Contratar</a>
-        </div>
-        <div style="background:rgba(232,160,32,.06);border:1px solid rgba(232,160,32,.3);border-radius:14px;padding:1.3rem 1rem;text-align:center;transition:all .3s ease;position:relative" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='none'">
-          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),transparent)"></div>
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:2.2rem;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.25rem">99€</div>
-          <div style="font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin-bottom:.7rem">50 días</div>
-          <div style="font-size:.76rem;color:var(--dim);line-height:1.5;margin-bottom:.9rem">Máximo impacto. El setup más potente.</div>
-          <a href="https://tally.so/r/WOkMyN" target="_blank" style="display:block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;border-radius:8px;padding:.55rem .4rem;font-size:.76rem;font-weight:800;text-decoration:none;box-shadow:0 0 16px rgba(232,160,32,.3)" onmouseover="this.style.filter='brightness(1.1)'" onmouseout="this.style.filter='none'">🎵 Contratar</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Services grid: YouTube, Apple Music, Smartlink, DJs, Próximamente -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;" class="rv">
-
-      <!-- YouTube -->
-      <div style="background:rgba(255,0,0,.05);border:1px solid rgba(255,60,60,.2);border-radius:18px;padding:1.8rem;position:relative;overflow:hidden;transition:all .3s ease" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='rgba(255,60,60,.4)';this.style.boxShadow='0 20px 50px rgba(255,0,0,.08)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(255,60,60,.2)';this.style.boxShadow='none'">
-        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#ff4444,transparent)"></div>
-        <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.9rem">
-          <span style="font-size:1.8rem">▶️</span>
-          <div>
-            <div style="font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#ff4444;margin-bottom:.1rem">Servicio extra</div>
-            <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.4rem;letter-spacing:.05em;color:#fff;line-height:1">YouTube</div>
-          </div>
-          <div style="margin-left:auto;font-family:'Bebas Neue',Impact,sans-serif;font-size:1.6rem;color:#ff6666">6,99€</div>
-        </div>
-        <div style="font-size:.65rem;color:#ff4444;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.7rem">1 mes</div>
-        <p style="font-size:.84rem;color:var(--dim);line-height:1.7;margin-bottom:1.2rem">Incorporamos tus 3 mejores canciones en nuestras 3 listas de YouTube. Aumenta tu visibilidad en la plataforma de vídeo más grande del mundo.</p>
-        <a href="https://tally.so/r/Np9Jvp" target="_blank" target="_blank" style="display:block;background:rgba(255,60,60,.1);border:1.5px solid rgba(255,60,60,.3);color:#ff6666;border-radius:10px;padding:.75rem;font-size:.84rem;font-weight:700;text-align:center;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(255,60,60,.22)'" onmouseout="this.style.background='rgba(255,60,60,.1)'">🎵 Contratar ahora</a>
-      </div>
-
-      <!-- Apple Music -->
-      <div style="background:rgba(252,100,120,.05);border:1px solid rgba(252,100,120,.2);border-radius:18px;padding:1.8rem;position:relative;overflow:hidden;transition:all .3s ease" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='rgba(252,100,120,.4)';this.style.boxShadow='0 20px 50px rgba(252,100,120,.08)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(252,100,120,.2)';this.style.boxShadow='none'">
-        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#fc6478,transparent)"></div>
-        <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.9rem">
-          <span style="font-size:1.8rem">🍎</span>
-          <div>
-            <div style="font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fc6478;margin-bottom:.1rem">Servicio extra</div>
-            <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.4rem;letter-spacing:.05em;color:#fff;line-height:1">Apple Music</div>
-          </div>
-          <div style="margin-left:auto;font-family:'Bebas Neue',Impact,sans-serif;font-size:1.6rem;color:#fc6478">22€</div>
-        </div>
-        <div style="font-size:.65rem;color:#fc6478;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.7rem">1 mes</div>
-        <p style="font-size:.84rem;color:var(--dim);line-height:1.7;margin-bottom:.7rem">Añadimos 5 canciones en 5 de nuestras listas de Apple Music.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem">
-          <span style="background:rgba(252,100,120,.1);border:1px solid rgba(252,100,120,.2);border-radius:6px;padding:.2rem .65rem;font-size:.72rem;font-weight:700;color:#fc6478">🇺🇸 EEUU</span>
-          <span style="background:rgba(252,100,120,.1);border:1px solid rgba(252,100,120,.2);border-radius:6px;padding:.2rem .65rem;font-size:.72rem;font-weight:700;color:#fc6478">🇪🇸 España</span>
-          <span style="background:rgba(252,100,120,.1);border:1px solid rgba(252,100,120,.2);border-radius:6px;padding:.2rem .65rem;font-size:.72rem;font-weight:700;color:#fc6478">🇬🇧 UK</span>
-          <span style="background:rgba(252,100,120,.1);border:1px solid rgba(252,100,120,.2);border-radius:6px;padding:.2rem .65rem;font-size:.72rem;font-weight:700;color:#fc6478">🇨🇴 Colombia</span>
-          <span style="background:rgba(252,100,120,.1);border:1px solid rgba(252,100,120,.2);border-radius:6px;padding:.2rem .65rem;font-size:.72rem;font-weight:700;color:#fc6478">🇦🇷 Argentina</span>
-          <span style="background:rgba(252,100,120,.1);border:1px solid rgba(252,100,120,.2);border-radius:6px;padding:.2rem .65rem;font-size:.72rem;font-weight:700;color:#fc6478">🇨🇱 Chile</span>
-        </div>
-        <div style="font-size:.78rem;color:var(--g);font-weight:700;margin-bottom:1rem">✓ Regalías 100% garantizadas</div>
-        <a href="https://tally.so/r/Np9JN0" target="_blank" target="_blank" style="display:block;background:rgba(252,100,120,.1);border:1.5px solid rgba(252,100,120,.3);color:#fc6478;border-radius:10px;padding:.75rem;font-size:.84rem;font-weight:700;text-align:center;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(252,100,120,.22)'" onmouseout="this.style.background='rgba(252,100,120,.1)'">🎵 Contratar ahora</a>
-      </div>
-
-      <!-- Smartlink -->
-      <div style="background:rgba(6,214,200,.05);border:1px solid rgba(6,214,200,.2);border-radius:18px;padding:1.8rem;position:relative;overflow:hidden;transition:all .3s ease" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='rgba(6,214,200,.4)';this.style.boxShadow='0 20px 50px rgba(6,214,200,.07)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(6,214,200,.2)';this.style.boxShadow='none'">
-        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#06d6c8,transparent)"></div>
-        <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.9rem">
-          <span style="font-size:1.8rem">🔗</span>
-          <div>
-            <div style="font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#06d6c8;margin-bottom:.1rem">Servicio extra</div>
-            <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.4rem;letter-spacing:.05em;color:#fff;line-height:1">Smartlink</div>
-          </div>
-          <div style="margin-left:auto;font-family:'Bebas Neue',Impact,sans-serif;font-size:1.6rem;color:#06d6c8">2,50€</div>
-        </div>
-        <div style="display:flex;gap:.5rem;margin-bottom:.8rem">
-          <span style="background:rgba(29,185,84,.1);border:1px solid rgba(29,185,84,.25);border-radius:6px;padding:.2rem .7rem;font-size:.72rem;font-weight:700;color:var(--g)">De por vida</span>
-          <span style="background:rgba(6,214,200,.1);border:1px solid rgba(6,214,200,.25);border-radius:6px;padding:.2rem .7rem;font-size:.72rem;font-weight:700;color:#06d6c8">Único pago</span>
-        </div>
-        <p style="font-size:.84rem;color:var(--dim);line-height:1.7;margin-bottom:1.2rem">Un solo enlace que redirige a todas tus plataformas de streaming y redes sociales. Compártelo en bio, stories y posts. Válido de por vida con un único pago.</p>
-        <a href="https://tally.so/r/oba78O" target="_blank" target="_blank" style="display:block;background:rgba(6,214,200,.1);border:1.5px solid rgba(6,214,200,.3);color:#06d6c8;border-radius:10px;padding:.75rem;font-size:.84rem;font-weight:700;text-align:center;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(6,214,200,.2)'" onmouseout="this.style.background='rgba(6,214,200,.1)'">🔗 Crear mi Smartlink</a>
-      </div>
-
-      <!-- DJs & Productores -->
-      <div style="background:rgba(139,92,246,.05);border:1px solid rgba(139,92,246,.2);border-radius:18px;padding:1.8rem;position:relative;overflow:hidden;transition:all .3s ease" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='rgba(139,92,246,.4)';this.style.boxShadow='0 20px 50px rgba(139,92,246,.08)'" onmouseout="this.style.transform='none';this.style.borderColor='rgba(139,92,246,.2)';this.style.boxShadow='none'">
-        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#8b5cf6,transparent)"></div>
-        <div style="display:flex;align-items:center;gap:.7rem;margin-bottom:.9rem">
-          <span style="font-size:1.8rem">🎛️</span>
-          <div>
-            <div style="font-size:.65rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#a78bfa;margin-bottom:.1rem">Servicio extra</div>
-            <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.4rem;letter-spacing:.05em;color:#fff;line-height:1">DJs & Productores</div>
-          </div>
-        </div>
-        <p style="font-size:.84rem;color:var(--dim);line-height:1.7;margin-bottom:1.2rem">Contrata a nuestros DJs y productores profesionales para tu proyecto musical. Beats, mezclas, masterización y producción a medida.</p>
-        <div style="background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.2);border-radius:10px;padding:.9rem 1rem;font-size:.8rem;color:rgba(255,255,255,.5);font-style:italic;margin-bottom:1.2rem;text-align:center">✏️ Precios y detalles disponibles próximamente</div>
-      </div>
-
-      <!-- CD Físico — Próximamente -->
-      <div style="background:linear-gradient(160deg,rgba(232,160,32,.08),rgba(255,200,80,.04),rgba(255,255,255,.02));border:1px solid rgba(232,160,32,.28);border-radius:18px;overflow:hidden;position:relative;transition:all .3s ease" onmouseover="this.style.borderColor='rgba(232,160,32,.5)';this.style.boxShadow='0 20px 50px rgba(232,160,32,.1)'" onmouseout="this.style.borderColor='rgba(232,160,32,.28)';this.style.boxShadow='none'">
-        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),transparent)"></div>
-
-        <!-- Image banner -->
-        <div style="position:relative;height:180px;overflow:hidden;background:linear-gradient(135deg,#1a1200,#2a1e00,#0d0800)">
-          <!-- SVG CD Jewel Case illustration -->
-          <svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block">
-            <!-- Background glow -->
-            <defs>
-              <radialGradient id="cdGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#f0b429" stop-opacity="0.15"/>
-                <stop offset="100%" stop-color="#f0b429" stop-opacity="0"/>
-              </radialGradient>
-              <linearGradient id="caseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#2a2200"/>
-                <stop offset="50%" stop-color="#3d3000"/>
-                <stop offset="100%" stop-color="#1a1500"/>
-              </linearGradient>
-              <linearGradient id="cdGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#c0c0c0"/>
-                <stop offset="25%" stop-color="#e8d070"/>
-                <stop offset="50%" stop-color="#f0b429"/>
-                <stop offset="75%" stop-color="#c8a020"/>
-                <stop offset="100%" stop-color="#a08010"/>
-              </linearGradient>
-              <linearGradient id="shineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18"/>
-                <stop offset="100%" stop-color="#ffffff" stop-opacity="0.03"/>
-              </linearGradient>
-              <linearGradient id="diskRainbow" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#ff6b9d"/>
-                <stop offset="20%" stop-color="#ffd93d"/>
-                <stop offset="40%" stop-color="#6bcb77"/>
-                <stop offset="60%" stop-color="#4d96ff"/>
-                <stop offset="80%" stop-color="#c77dff"/>
-                <stop offset="100%" stop-color="#ff6b9d"/>
-              </linearGradient>
-            </defs>
-            <!-- Background glow -->
-            <rect width="600" height="180" fill="url(#cdGlow)"/>
-            <!-- Jewel Case body LEFT -->
-            <rect x="60" y="20" width="190" height="140" rx="6" fill="url(#caseGrad)" stroke="#f0b429" stroke-width="1.5" stroke-opacity="0.6"/>
-            <!-- Case shine -->
-            <rect x="60" y="20" width="190" height="140" rx="6" fill="url(#shineGrad)"/>
-            <!-- Spine -->
-            <rect x="60" y="20" width="12" height="140" rx="3" fill="#f0b429" fill-opacity="0.3"/>
-            <!-- Cover art area -->
-            <rect x="78" y="28" width="164" height="124" rx="3" fill="#1a1000" fill-opacity="0.8"/>
-            <!-- Cover art design -->
-            <circle cx="160" cy="90" r="45" fill="none" stroke="#f0b429" stroke-width="1" stroke-opacity="0.3"/>
-            <circle cx="160" cy="90" r="30" fill="none" stroke="#f0b429" stroke-width="1" stroke-opacity="0.2"/>
-            <text x="160" y="86" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="13" font-weight="900" fill="#f0b429" fill-opacity="0.9">LigaMusic</text>
-            <text x="160" y="102" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#f5c842" fill-opacity="0.7" letter-spacing="3">ESPAÑA</text>
-            <!-- CD disc -->
-            <circle cx="380" cy="90" r="70" fill="url(#diskRainbow)" fill-opacity="0.5"/>
-            <circle cx="380" cy="90" r="70" fill="url(#cdGrad)" fill-opacity="0.6"/>
-            <!-- CD rings -->
-            <circle cx="380" cy="90" r="68" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.3"/>
-            <circle cx="380" cy="90" r="55" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.2"/>
-            <circle cx="380" cy="90" r="40" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.2"/>
-            <circle cx="380" cy="90" r="20" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.3"/>
-            <!-- CD center label -->
-            <circle cx="380" cy="90" r="18" fill="#1a1200"/>
-            <circle cx="380" cy="90" r="6" fill="#2a2200" stroke="#f0b429" stroke-width="1" stroke-opacity="0.6"/>
-            <!-- CD shine highlight -->
-            <ellipse cx="360" cy="70" rx="18" ry="10" fill="white" fill-opacity="0.12" transform="rotate(-30 360 70)"/>
-            <!-- Second case outline (stack effect) -->
-            <rect x="72" y="26" width="190" height="140" rx="6" fill="none" stroke="#f0b429" stroke-width="0.8" stroke-opacity="0.2"/>
-            <!-- Dots decoration -->
-            <circle cx="520" cy="40" r="3" fill="#f0b429" fill-opacity="0.3"/>
-            <circle cx="535" cy="55" r="2" fill="#f5c842" fill-opacity="0.2"/>
-            <circle cx="508" cy="60" r="2" fill="#f0b429" fill-opacity="0.25"/>
-            <circle cx="545" cy="35" r="1.5" fill="#f0b429" fill-opacity="0.2"/>
-          </svg>
-          <!-- Overlay gradient -->
-          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,18,0,.1) 0%,rgba(26,18,0,.65) 100%)"></div>
-          <!-- Badge -->
-          <div style="position:absolute;top:.8rem;right:.8rem;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;font-size:.62rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .9rem;border-radius:6px;box-shadow:0 4px 14px rgba(232,160,32,.4)">🕐 Próximamente</div>
-          <!-- Title overlay -->
-          <div style="position:absolute;bottom:.9rem;left:1.2rem">
-            <div style="font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,200,80,.7);margin-bottom:.2rem">Próximamente</div>
-            <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:2rem;letter-spacing:.06em;color:#fff;line-height:1;text-shadow:0 2px 16px rgba(0,0,0,.6)">CD Físico 💿</div>
-          </div>
-        </div>
-
-        <!-- Content -->
-        <div style="padding:1.4rem 1.6rem 1.6rem">
-          <p style="font-size:.85rem;color:var(--dim);line-height:1.72;margin-bottom:.8rem">Tu música en formato físico profesional. <strong style="color:rgba(255,255,255,.7)">CD con caja jewel impresa a todo color</strong>, listo para vender en conciertos, tiendas o regalar a tu comunidad.</p>
-          <div style="display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.2rem">
-            <div style="display:flex;align-items:center;gap:.55rem;font-size:.81rem;color:var(--dim)"><span style="color:var(--gold2)">✓</span> A partir de 25 copias</div>
-            <div style="display:flex;align-items:center;gap:.55rem;font-size:.81rem;color:var(--dim)"><span style="color:var(--gold2)">✓</span> Impresión de caja jewel incluida</div>
-            <div style="display:flex;align-items:center;gap:.55rem;font-size:.81rem;color:var(--dim)"><span style="color:var(--gold2)">✓</span> Gastos de envío por separado (+6€)</div>
-          </div>
-          <div style="background:rgba(232,160,32,.07);border:1px solid rgba(232,160,32,.18);border-radius:10px;padding:.8rem 1rem;font-size:.78rem;color:var(--dim2);text-align:center">¿Te interesa? Escríbenos y te avisamos en cuanto esté disponible.</div>
-          <a href="https://tally.so/r/aQJBr2" target="_blank" style="display:block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;border-radius:12px;padding:1rem;font-size:.9rem;font-weight:800;text-align:center;text-decoration:none">🎯 Solicitar información</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+<div class="rule"></div>
 
 <!-- PROMOS EXPRESS -->
-<section id="promos-express" style="padding:5rem 0;background:var(--ink);position:relative;overflow:hidden;">
-
-  <!-- Animated background -->
-  <div style="position:absolute;inset:0;pointer-events:none;z-index:0;">
-    <div style="position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:800px;height:400px;background:radial-gradient(ellipse,rgba(232,160,32,.12) 0%,transparent 65%);border-radius:50%"></div>
-    <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(232,160,32,.2),transparent)"></div>
-    <!-- Flash lines decoration -->
-    <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:.04" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-      <line x1="0" y1="0" x2="300" y2="400" stroke="#f0b429" stroke-width="1"/>
-      <line x1="200" y1="0" x2="500" y2="400" stroke="#f0b429" stroke-width="1"/>
-      <line x1="700" y1="0" x2="1000" y2="400" stroke="#f0b429" stroke-width="1"/>
-      <line x1="900" y1="0" x2="1200" y2="400" stroke="#f0b429" stroke-width="1"/>
-    </svg>
-  </div>
-
-  <div class="w" style="position:relative;z-index:1;">
-
-    <!-- Header -->
-    <div class="sec rv" style="margin-bottom:3rem">
-      <div style="display:inline-flex;align-items:center;gap:.6rem;background:rgba(232,160,32,.12);border:1px solid rgba(232,160,32,.35);border-radius:100px;padding:.4rem 1.1rem;margin-bottom:1rem;animation:flashPill 2.5s ease-in-out infinite">
-        <span style="font-size:.9rem">⚡</span>
-        <span style="font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2)">Lanzamientos oportunos · Plazas limitadas</span>
-      </div>
-      <h2 class="h2">Promos <em class="grad-gold">Express</em></h2>
-      <p class="sub" style="margin-top:.7rem">Lanzamos packs especiales por menos de 20€ de forma sorpresa, sin fecha previa. Solo 5 plazas por promoción. Síguenos en redes para no perderte ninguna.</p>
+<section id="promos-express">
+  <div class="w">
+    <div class="sec-hd rv" style="padding-top:6rem">
+      <div class="express-pill">⚡ Lanzamientos oportunos · Plazas limitadas</div>
+      <h2 class="h2" style="color:var(--white)">Promos<br><em style="color:rgba(255,255,255,.45)">Express</em></h2>
+      <p class="sub" style="color:rgba(255,255,255,.45);margin-top:1rem">Packs especiales por menos de 20€ de forma sorpresa, sin fecha previa. Solo 5 plazas por promoción.</p>
     </div>
-
-    <!-- ESTADO STANDBY — visible cuando no hay promo activa -->
-    <div id="express-standby" class="rv" style="max-width:700px;margin:0 auto;">
-      <div style="background:linear-gradient(135deg,rgba(232,160,32,.08),rgba(255,200,60,.05),rgba(255,255,255,.02));border:1.5px solid rgba(232,160,32,.3);border-radius:24px;padding:3rem 2.5rem;text-align:center;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold2) 70%,transparent)"></div>
-
-        <!-- Icon -->
-        <div style="width:72px;height:72px;background:rgba(232,160,32,.1);border:1.5px solid rgba(232,160,32,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:2.2rem;animation:rocketBounce 3s ease-in-out infinite">🚀</div>
-
-        <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(1.6rem,4vw,2.4rem);color:#fff;letter-spacing:.05em;margin-bottom:.7rem">Próxima promo: sorpresa</div>
-        <p style="font-size:.9rem;color:var(--dim);line-height:1.75;max-width:480px;margin:0 auto 2rem">Aún no hay ninguna promo activa. Cuando lancemos la próxima, aparecerá aquí y lo anunciaremos en redes. Activa las notificaciones para ser el primero.</p>
-
-        <!-- Social follow CTA -->
-        <div style="display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-bottom:2rem">
-          <a href="https://www.instagram.com/algoritmoenmovimientomusic" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,rgba(193,53,132,.15),rgba(253,29,29,.1));border:1px solid rgba(193,53,132,.35);border-radius:100px;padding:.55rem 1.3rem;font-size:.8rem;font-weight:700;color:#e1306c;text-decoration:none;transition:.2s" onmouseover="this.style.background='linear-gradient(135deg,rgba(193,53,132,.28),rgba(253,29,29,.18))'" onmouseout="this.style.background='linear-gradient(135deg,rgba(193,53,132,.15),rgba(253,29,29,.1))'">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="#e1306c"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            Seguir en Instagram
-          </a>
-        </div>
-
-        <!-- What to expect -->
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;border-top:1px solid rgba(255,255,255,.06);padding-top:1.5rem">
-          <div style="text-align:center">
-            <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.8rem;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.3rem">&lt;20€</div>
-            <div style="font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2)">Precio máximo</div>
-          </div>
-          <div style="text-align:center;border-left:1px solid rgba(255,255,255,.06);border-right:1px solid rgba(255,255,255,.06)">
-            <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.8rem;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.3rem">5</div>
-            <div style="font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2)">Plazas por promo</div>
-          </div>
-          <div style="text-align:center">
-            <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.8rem;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.3rem">⚡</div>
-            <div style="font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2)">Sin fecha previa</div>
-          </div>
-        </div>
+    <div class="express-standby-box rv">
+      <div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1.2rem">Estado actual</div>
+      <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.9rem;color:var(--white);margin-bottom:.7rem;font-weight:400">Próxima promo: <em>sorpresa</em></div>
+      <p style="font-size:.87rem;color:rgba(255,255,255,.45);line-height:1.75;margin-bottom:2rem">Aún no hay ninguna promo activa. Síguenos en redes para ser el primero en enterarte cuando lancemos la próxima.</p>
+      <div class="express-social">
+        <a href="https://www.instagram.com/algoritmoenmovimientomusic" target="_blank">Instagram @ligamusic</a>
+      </div>
+      <div class="express-stats">
+        <div class="estat"><span class="estatn">&lt;20€</span><span class="estatl">Precio máximo</span></div>
+        <div class="estat"><span class="estatn">5</span><span class="estatl">Plazas por promo</span></div>
+        <div class="estat"><span class="estatn">⚡</span><span class="estatl">Sin fecha previa</span></div>
       </div>
     </div>
-
-    <!-- ESTADO ACTIVO — descomentar y rellenar cuando haya promo -->
     <!--
-    <div id="express-active" style="max-width:760px;margin:0 auto;" class="rv">
-      <div style="background:linear-gradient(135deg,rgba(232,160,32,.12),rgba(255,60,60,.06));border:2px solid rgba(232,160,32,.5);border-radius:24px;padding:2.5rem;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#ef4444,var(--gold),var(--gold2),#ef4444);animation:flashBar 1.5s linear infinite"></div>
-
-        <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem;flex-wrap:wrap">
-          <div style="display:inline-flex;align-items:center;gap:.5rem;background:#ef4444;border-radius:100px;padding:.4rem 1rem">
-            <span style="width:8px;height:8px;border-radius:50%;background:#fff;animation:pulse 1s infinite;display:block"></span>
-            <span style="font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff">Promo activa ahora</span>
-          </div>
-          <span style="font-size:.8rem;color:var(--dim)">Solo quedan <strong style="color:#ef4444">X plazas</strong></span>
-        </div>
-
-        <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(2rem,5vw,3.5rem);color:#fff;letter-spacing:.04em;line-height:1;margin-bottom:.5rem">NOMBRE DE LA PROMO</div>
-        <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(3rem,8vw,5.5rem);background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:1rem">XX€</div>
-
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.5rem">
-          <li style="font-size:.88rem;color:var(--dim);display:flex;align-items:center;gap:.6rem"><span style="color:var(--gold2)">✓</span> Incluye...</li>
-          <li style="font-size:.88rem;color:var(--dim);display:flex;align-items:center;gap:.6rem"><span style="color:var(--gold2)">✓</span> Incluye...</li>
-        </ul>
-
-        <a href="LINK_TALLY_PROMO" target="_blank" style="display:block;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;border-radius:14px;padding:1.1rem;font-size:1rem;font-weight:800;text-align:center;text-decoration:none;box-shadow:0 0 30px rgba(232,160,32,.4);animation:ctaPulseGold 2.5s ease-in-out infinite">⚡ Reservar plaza ahora</a>
-
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1rem">
-          <span style="font-size:.75rem;color:var(--dim2)">5 plazas · Sin permanencia</span>
-          <span style="font-size:.75rem;color:#ef4444;font-weight:700">Expira pronto</span>
-        </div>
-      </div>
+    ACTIVAR cuando haya promo: descomentar y rellenar
+    <div style="max-width:660px;margin:3rem auto 0;border:1px solid rgba(255,255,255,.2);padding:3rem;">
+      <div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#ef4444;margin-bottom:1rem">● Promo activa ahora · X plazas restantes</div>
+      <div style="font-family:'Instrument Serif',Georgia,serif;font-size:2.5rem;color:var(--white);margin-bottom:1rem;font-weight:400">NOMBRE DE LA PROMO<br><em>XX€</em></div>
+      <ul style="list-style:none;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:.5rem">
+        <li style="font-size:.87rem;color:rgba(255,255,255,.55)">— Incluye...</li>
+      </ul>
+      <a href="LINK_TALLY_PROMO" target="_blank" style="display:block;background:var(--white);color:var(--ink);text-align:center;padding:1rem;font-size:.9rem;font-weight:700">⚡ Reservar plaza ahora</a>
     </div>
     -->
-
+    <div style="height:6rem"></div>
   </div>
 </section>
 
-<style>
-@keyframes flashPill{0%,100%{box-shadow:0 0 0 rgba(232,160,32,0)}50%{box-shadow:0 0 18px rgba(232,160,32,.3)}}
-@keyframes rocketBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes flashBar{0%{background-position:0% 50%}100%{background-position:200% 50%}}
-@keyframes ctaPulseGold{0%,100%{box-shadow:0 0 24px rgba(232,160,32,.35)}50%{box-shadow:0 0 48px rgba(232,160,32,.65)}}
-</style>
+<div class="rule" style="background:rgba(255,255,255,.08)"></div>
 
-<div class="sdiv"></div>
-
-<!-- ANTI-BOT SECTION -->
-<section id="antibots">
+<!-- WHY US -->
+<section id="antibots" class="sec sec-alt">
   <div class="w">
-    <div class="ab-grid">
-      <div class="ab-left rv">
-        <div class="pill pill-b" style="margin-bottom:1rem">🧠 Por qué LigaMusic es diferente</div>
-        <h3>No eres un ticket.<br>Eres un <em>proyecto.</em></h3>
-        <p>Trabajas directamente con un estratega musical real — no con un chatbot, no con una plataforma automatizada. Cada decisión se toma analizando tus datos reales: tus streams, tu demografía, tus campañas previas y tu sonido.</p>
-        <p>Sabemos que los artistas independientes malgastan cientos de euros en anuncios mal configurados que no convierten. Nuestra metodología existe para evitar eso: primero el diagnóstico, luego la estrategia, luego la inversión. Nunca al revés.</p>
-        <p style="font-size:.85rem;color:rgba(255,255,255,.55);margin-top:.5rem">🔒 Más de 6 años acompañando artistas independientes. Clientes desde el primer día que siguen creciendo con nosotros mes a mes.</p>
+    <div class="sec-grid-2 rv">
+      <div>
+        <span class="eyebrow">Por qué LigaMusic es diferente</span>
+        <h2 class="h2">No eres un ticket.<br>Eres un <em>proyecto.</em></h2>
+        <p style="color:var(--dim);font-size:.9rem;line-height:1.78;margin-top:1rem">Trabajas directamente con un estratega musical real — no con un chatbot, no con una plataforma automatizada. Cada decisión se toma analizando tus datos reales: tus streams, tu demografía, tus campañas previas y tu sonido.</p>
+        <p style="color:var(--dim);font-size:.9rem;line-height:1.78;margin-top:.9rem">Sabemos que los artistas independientes malgastan cientos de euros en anuncios mal configurados que no convierten. Nuestra metodología existe para evitar eso: primero el diagnóstico, luego la estrategia, luego la inversión. Nunca al revés.</p>
+        <p style="color:var(--dim2);font-size:.82rem;line-height:1.7;margin-top:1rem">— Más de 6 años acompañando artistas independientes. Clientes desde el primer día que siguen creciendo con nosotros.</p>
       </div>
-      <div class="rv d2">
-        <div class="vs-table">
-          <div class="vs-head">
-            <div class="vs-h bad">❌ Sin estrategia</div>
-            <div class="vs-h good">✅ Con LigaMusic</div>
+      <div>
+        <div class="vs-wrap">
+          <div class="vs-col bad">
+            <div class="vs-head">Sin estrategia</div>
+            <div class="vs-row-item"><span class="x">✗</span>Ads mal configurados que no convierten</div>
+            <div class="vs-row-item"><span class="x">✗</span>Cero seguimiento de métricas reales</div>
+            <div class="vs-row-item"><span class="x">✗</span>Plataformas automáticas sin criterio</div>
+            <div class="vs-row-item"><span class="x">✗</span>Presupuesto malgastado en bots</div>
+            <div class="vs-row-item"><span class="x">✗</span>Sin activación del algoritmo orgánico</div>
+            <div class="vs-row-item"><span class="x">✗</span>Resultados puntuales que desaparecen</div>
           </div>
-          <div class="vs-row"><div class="vs-cell bad"><span class="x">✗</span>Ads mal configurados que no convierten</div><div class="vs-cell good"><span class="ok">✓</span>Estrategia antes de invertir ni un euro</div></div>
-          <div class="vs-row"><div class="vs-cell bad"><span class="x">✗</span>Cero seguimiento de métricas reales</div><div class="vs-cell good"><span class="ok">✓</span>Reporting semanal con datos reales</div></div>
-          <div class="vs-row"><div class="vs-cell bad"><span class="x">✗</span>Plataformas automáticas sin criterio</div><div class="vs-cell good"><span class="ok">✓</span>Estratega dedicado a tu proyecto</div></div>
-          <div class="vs-row"><div class="vs-cell bad"><span class="x">✗</span>Presupuesto malgastado en bots</div><div class="vs-cell good"><span class="ok">✓</span>Cada euro optimizado para ROI real</div></div>
-          <div class="vs-row"><div class="vs-cell bad"><span class="x">✗</span>Sin activación del algoritmo orgánico</div><div class="vs-cell good"><span class="ok">✓</span>Activa Descubrimiento Semanal y Radios</div></div>
-          <div class="vs-row"><div class="vs-cell bad"><span class="x">✗</span>Resultados puntuales que desaparecen</div><div class="vs-cell good"><span class="ok">✓</span>Crecimiento sostenido mes a mes</div></div>
+          <div class="vs-col good">
+            <div class="vs-head">Con LigaMusic</div>
+            <div class="vs-row-item"><span class="ok">✓</span>Estrategia antes de invertir ni un euro</div>
+            <div class="vs-row-item"><span class="ok">✓</span>Reporting semanal con datos reales</div>
+            <div class="vs-row-item"><span class="ok">✓</span>Estratega dedicado a tu proyecto</div>
+            <div class="vs-row-item"><span class="ok">✓</span>Cada euro optimizado para ROI real</div>
+            <div class="vs-row-item"><span class="ok">✓</span>Activa Descubrimiento Semanal y Radios</div>
+            <div class="vs-row-item"><span class="ok">✓</span>Crecimiento sostenido mes a mes</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="sdiv"></div>
+<div class="rule"></div>
 
 <!-- TESTIMONIALS -->
-<section id="testimonios">
+<section id="testimonios" class="sec">
   <div class="w">
-    <div class="sec rv">
-      <div class="pill pill-g" style="margin-bottom:.9rem">⭐ Artistas reales</div>
-      <h2 class="h2">Lo que dicen<br>quienes <em class="grad-g">ya están en rotación</em></h2>
+    <div class="sec-hd rv">
+      <span class="eyebrow">Artistas reales</span>
+      <h2 class="h2">Lo que dicen quienes<br><em>ya están en rotación</em></h2>
     </div>
-    <div class="tgrid">
-      <div class="tc rv d1">
-        <div class="stars">★★★★★</div>
-        <p>"Pasé de 100 oyentes a más de 1.400 en tres meses. No me lo esperaba tan rápido. Si estás dudando, pruébalo."</p>
-        <div class="aut">Artista urbano · España</div>
-        <div class="plat">Spotify · +1.300 oyentes en 3 meses</div>
-      </div>
-      <div class="tc rv d2">
-        <div class="stars">★★★★★</div>
-        <p>"La atención es increíble. Se nota que les importa tu carrera y te asesoran de verdad. Nada genérico, todo personalizado."</p>
-        <div class="aut">Rapero independiente · México</div>
-        <div class="plat">Spotify · Atención personalizada</div>
-      </div>
-      <div class="tc rv d3">
-        <div class="stars">★★★★★</div>
-        <p>"En 28 días mi canción superó 5.000 reproducciones. Las playlists son activas de verdad, con oyentes reales."</p>
-        <div class="aut">Artista emergente · Colombia</div>
-        <div class="plat">Spotify · +5.336 reproducciones</div>
-      </div>
+    <div class="tgrid rv">
+      <div class="tc"><div class="stars">★★★★★</div><p>"Pasé de 100 oyentes a más de 1.400 en tres meses. No me lo esperaba tan rápido. Si estás dudando, pruébalo."</p><div class="aut">Artista urbano · España</div><div class="plat">Spotify · +1.300 oyentes en 3 meses</div></div>
+      <div class="tc"><div class="stars">★★★★★</div><p>"La atención es increíble. Se nota que les importa tu carrera y te asesoran de verdad. Nada genérico, todo personalizado."</p><div class="aut">Rapero independiente · México</div><div class="plat">Spotify · Atención personalizada</div></div>
+      <div class="tc"><div class="stars">★★★★★</div><p>"En 28 días mi canción superó 5.000 reproducciones. Las playlists son activas de verdad, con oyentes reales."</p><div class="aut">Artista emergente · Colombia</div><div class="plat">Spotify · +5.336 reproducciones</div></div>
     </div>
   </div>
 </section>
 
-<div class="sdiv"></div>
+<div class="rule"></div>
 
-<div class="sdiv"></div>
-
-<!-- ARTISTAS DESTACADOS -->
-<section id="artistas" style="padding:7rem 0;background:var(--ink2);position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 65% 50% at 50% 50%,rgba(29,185,84,.06) 0%,transparent 65%)"></div>
-  <div class="w" style="position:relative;z-index:1;">
-
-    <div class="sec rv" style="margin-bottom:3.5rem">
-      <div class="pill pill-g" style="margin-bottom:.9rem">🔥 Radar LigaMusic</div>
-      <h2 class="h2">Artistas que<br><em class="grad-g">tienes que conocer</em></h2>
-      <p class="sub" style="margin-top:.7rem">Nuestra selección editorial de artistas independientes que están sonando fuerte. Los escuchamos, los respaldamos y te los presentamos.</p>
+<!-- RADAR DE NOVEDADES -->
+<section id="artistas" class="sec sec-alt">
+  <div class="w">
+    <div class="sec-hd rv">
+      <span class="eyebrow">🔥 Radar LigaMusic</span>
+      <h2 class="h2">Artistas que<br><em>tienes que conocer</em></h2>
+      <p class="sub" style="margin-top:1rem">Nuestra selección editorial de artistas independientes que están sonando fuerte. Los escuchamos, los respaldamos y te los presentamos.</p>
     </div>
-
-    <!-- ARTIST CARDS — añade aquí los artistas cuando tengas los datos -->
-    <div id="radar-gate" style="position:relative;margin-bottom:2rem">
-
-      <!-- Blurred preview -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;filter:blur(7px);pointer-events:none;user-select:none;opacity:.5;max-height:420px;overflow:hidden">
-        <div style="background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:20px;height:380px"></div>
-        <div style="background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:20px;height:380px"></div>
-        <div style="background:rgba(255,255,255,.04);border:1px solid var(--bdr);border-radius:20px;height:380px"></div>
+    <!-- ACCESS GATE -->
+    <div id="radar-gate">
+      <div class="gate-blur">
+        <div></div><div></div><div></div>
       </div>
-
-      <!-- Lock overlay -->
-      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;background:linear-gradient(180deg,transparent 0%,rgba(7,7,26,.75) 35%,rgba(7,7,26,.98) 65%,rgba(7,7,26,1) 100%)">
-        <div style="width:64px;height:64px;background:rgba(37,211,102,.1);border:1.5px solid rgba(37,211,102,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:1.2rem">🔒</div>
-        <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;letter-spacing:.04em;line-height:1;margin-bottom:.7rem">Acceso exclusivo</div>
-        <p style="font-size:.9rem;color:var(--dim);line-height:1.75;max-width:420px;margin:0 auto 2rem">El Radar de Novedades es una sección privada. Solicita acceso por WhatsApp y te enviamos el enlace directo al instante.</p>
-        <a href="https://tally.so/r/aQJBr2" target="_blank"
-          style="display:inline-flex;align-items:center;gap:.7rem;background:linear-gradient(135deg,#25D366,#1da851);color:#000;border-radius:14px;padding:1rem 2.2rem;font-size:.95rem;font-weight:800;text-decoration:none;box-shadow:0 0 30px rgba(37,211,102,.4);transition:.2s"
-          onmouseover="this.style.filter='brightness(1.1)';this.style.transform='translateY(-2px)'"
-          onmouseout="this.style.filter='none';this.style.transform='none'">
-          🔓 Solicitar acceso al Radar
-        </a>
-        <div style="margin-top:1.2rem;font-size:.75rem;color:var(--dim2)">Acceso gratuito · Respuesta inmediata</div>
+      <div class="gate-overlay">
+        <div class="gate-lock">🔒 Acceso exclusivo</div>
+        <div class="gate-title">Sección privada</div>
+        <p class="gate-sub">El Radar de Novedades es una sección privada. Solicita acceso y te enviamos el enlace directo al instante.</p>
+        <a href="https://tally.so/r/aQJBr2" target="_blank" class="btn btn-blk btn-lg">🔓 Solicitar acceso al Radar</a>
       </div>
     </div>
-
-    <!-- ARTISTS GRID -->
-    <div id="artists-grid" style="display:none;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;" class="rv">
-
-      <!-- ARTISTA: ARES -->
-      <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;transition:all .3s ease;position:relative;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(61,127,255,.3)';this.style.boxShadow='0 24px 60px rgba(61,127,255,.08)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)';this.style.boxShadow='none'">
-        <div style="height:220px;overflow:hidden;position:relative;background:#111">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb5e967e9f29e538205645302d" alt="ARES" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,3,10,.85) 0%,rgba(3,3,10,.1) 60%,transparent 100%)"></div>
-          <div style="position:absolute;top:.8rem;left:.9rem;background:rgba(61,127,255,.15);border:1px solid rgba(61,127,255,.35);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:800;color:var(--b);letter-spacing:.1em;text-transform:uppercase">Rap · Hip Hop</div>
-          <div style="position:absolute;top:.8rem;right:.9rem;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:700;color:rgba(255,255,255,.7)">380 oyentes</div>
-        </div>
-        <div style="padding:1.3rem">
-          <div style="font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim2);margin-bottom:.3rem">🎤 Artista</div>
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.7rem;color:#fff;letter-spacing:.04em;line-height:1;margin-bottom:.5rem">ARES</div>
-          <div style="font-size:.82rem;color:var(--dim);line-height:1.65;margin-bottom:1.1rem">Rap y Hip Hop con trayectoria desde 2006. Álbumes como "El Mito y La Leyenda" e "Inmortal" y últimos singles "Bang Bang" y "Tranquilo" en 2026.</div>
-          <div style="display:flex;gap:.6rem">
-            <a href="https://open.spotify.com/album/0r1Qzd5hEqwhgfbo6ar56w" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(255,255,255,.04);border:1px solid var(--bdr);color:var(--dim);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.borderColor='var(--b)';this.style.color='var(--b)'" onmouseout="this.style.borderColor='var(--bdr)';this.style.color='var(--dim)'">▶ Último tema</a>
-            <a href="https://open.spotify.com/artist/5U89ZHxZIjcPKgDw5NonD2" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(29,185,84,.08);border:1px solid rgba(29,185,84,.25);color:var(--g);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(29,185,84,.18)'" onmouseout="this.style.background='rgba(29,185,84,.08)'">Ver en Spotify</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ARTISTA: MikkaMKS -->
-      <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;transition:all .3s ease;position:relative;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(29,185,84,.3)';this.style.boxShadow='0 24px 60px rgba(29,185,84,.08)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)';this.style.boxShadow='none'">
-        <!-- Artist photo from Spotify -->
-        <div style="height:220px;overflow:hidden;position:relative;background:#111">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb6dd4984532af2d67be6869cf" alt="MikkaMKS" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <!-- Gradient overlay -->
-          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,3,10,.85) 0%,rgba(3,3,10,.1) 60%,transparent 100%)"></div>
-          <!-- Genre badge -->
-          <div style="position:absolute;top:.8rem;left:.9rem;background:rgba(29,185,84,.15);border:1px solid rgba(29,185,84,.35);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:800;color:var(--g);letter-spacing:.1em;text-transform:uppercase">Trap · Rap Consciente</div>
-          <!-- Listeners badge -->
-          <div style="position:absolute;top:.8rem;right:.9rem;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:700;color:rgba(255,255,255,.7)">1.5K oyentes</div>
-        </div>
-        <div style="padding:1.3rem">
-          <div style="font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim2);margin-bottom:.3rem">🎤 Artista — España · Bélgica</div>
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.7rem;color:#fff;letter-spacing:.04em;line-height:1;margin-bottom:.5rem">MikkaMKS</div>
-          <div style="font-size:.82rem;color:var(--dim);line-height:1.65;margin-bottom:1.1rem">Trap y rap consciente en español. Nacido en Bélgica, residente en España desde 1991. Más de 106K streams en su tema "Una experiencia más".</div>
-          <div style="display:flex;gap:.6rem">
-            <a href="https://instagram.com/mikkamks" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(255,255,255,.04);border:1px solid var(--bdr);color:var(--dim);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.borderColor='rgba(193,53,132,.5)';this.style.color='#e1306c'" onmouseout="this.style.borderColor='var(--bdr)';this.style.color='var(--dim)'">Instagram</a>
-            <a href="https://open.spotify.com/artist/5tNkfsKpu8af7cHHECLB5O" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(29,185,84,.08);border:1px solid rgba(29,185,84,.25);color:var(--g);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(29,185,84,.18)'" onmouseout="this.style.background='rgba(29,185,84,.08)'">▶ Spotify</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ARTISTA: SoloJohn -->
-      <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;transition:all .3s ease;position:relative;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(124,58,237,.3)';this.style.boxShadow='0 24px 60px rgba(124,58,237,.08)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)';this.style.boxShadow='none'">
-        <div style="height:220px;overflow:hidden;position:relative;background:#111">
-          <img src="https://i.scdn.co/image/ab6761610000e5ebc73e0f7ebcd6e6e5fd9943aa" alt="SoloJohn" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,3,10,.85) 0%,rgba(3,3,10,.1) 60%,transparent 100%)"></div>
-          <div style="position:absolute;top:.8rem;left:.9rem;background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.35);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:800;color:#a78bfa;letter-spacing:.1em;text-transform:uppercase">Rap · Jazz · Funk</div>
-          <div style="position:absolute;top:.8rem;right:.9rem;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:700;color:rgba(255,255,255,.7)">169 oyentes</div>
-        </div>
-        <div style="padding:1.3rem">
-          <div style="font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim2);margin-bottom:.3rem">🎤 Artista — Barcelona, Underground</div>
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.7rem;color:#fff;letter-spacing:.04em;line-height:1;margin-bottom:.5rem">SoloJohn</div>
-          <div style="font-size:.82rem;color:var(--dim);line-height:1.65;margin-bottom:1.1rem">Rap clásico con toques de jazz y funk. Underground de Barcelona. Su tema "Rap marcial" acumula más de 20K streams.</div>
-          <div style="display:flex;gap:.6rem">
-            <a href="https://instagram.com/solojohnrap" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(255,255,255,.04);border:1px solid var(--bdr);color:var(--dim);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.borderColor='rgba(193,53,132,.5)';this.style.color='#e1306c'" onmouseout="this.style.borderColor='var(--bdr)';this.style.color='var(--dim)'">Instagram</a>
-            <a href="https://open.spotify.com/track/3rc3Srq5OjJZvKYJ1VYFvb" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(29,185,84,.08);border:1px solid rgba(29,185,84,.25);color:var(--g);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(29,185,84,.18)'" onmouseout="this.style.background='rgba(29,185,84,.08)'">▶ Último tema</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ARTISTA: Kaesar -->
-      <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;transition:all .3s ease;position:relative;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(232,160,32,.3)';this.style.boxShadow='0 24px 60px rgba(232,160,32,.07)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)';this.style.boxShadow='none'">
-        <div style="height:220px;overflow:hidden;position:relative;background:#111">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb23bc598aededc140e7f929fa" alt="Kaesar" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,3,10,.85) 0%,rgba(3,3,10,.1) 60%,transparent 100%)"></div>
-          <div style="position:absolute;top:.8rem;left:.9rem;background:rgba(232,160,32,.15);border:1px solid rgba(232,160,32,.35);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:800;color:var(--gold2);letter-spacing:.1em;text-transform:uppercase">Rap · Trap</div>
-          <div style="position:absolute;top:.8rem;right:.9rem;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:700;color:rgba(255,255,255,.7)">667 oyentes</div>
-        </div>
-        <div style="padding:1.3rem">
-          <div style="font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim2);margin-bottom:.3rem">🎤 Artista</div>
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.7rem;color:#fff;letter-spacing:.04em;line-height:1;margin-bottom:.5rem">Kaesar</div>
-          <div style="font-size:.82rem;color:var(--dim);line-height:1.65;margin-bottom:1.1rem">Rapea y canta según le apetece. Artista versátil con múltiples singles en 2026. Su tema "Spotlight" supera los 5K streams.</div>
-          <div style="display:flex;gap:.6rem">
-            <a href="https://instagram.com/a.k.a_kaesar" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(255,255,255,.04);border:1px solid var(--bdr);color:var(--dim);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.borderColor='rgba(193,53,132,.5)';this.style.color='#e1306c'" onmouseout="this.style.borderColor='var(--bdr)';this.style.color='var(--dim)'">Instagram</a>
-            <a href="https://open.spotify.com/album/6fPH2wwVirAbmTciOp2L6x" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(29,185,84,.08);border:1px solid rgba(29,185,84,.25);color:var(--g);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(29,185,84,.18)'" onmouseout="this.style.background='rgba(29,185,84,.08)'">▶ Último tema</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ARTISTA: Yoenelmic -->
-      <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;transition:all .3s ease;position:relative;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(6,214,200,.3)';this.style.boxShadow='0 24px 60px rgba(6,214,200,.07)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)';this.style.boxShadow='none'">
-        <div style="height:220px;overflow:hidden;position:relative;background:#111">
-          <img src="https://i.scdn.co/image/ab6761610000f178981fb0d97c8ed45c59e451f8" alt="Yoenelmic" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,3,10,.85) 0%,rgba(3,3,10,.1) 60%,transparent 100%)"></div>
-          <div style="position:absolute;top:.8rem;left:.9rem;background:rgba(6,214,200,.12);border:1px solid rgba(6,214,200,.35);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:800;color:#06d6c8;letter-spacing:.1em;text-transform:uppercase">Rap Consciente</div>
-          <div style="position:absolute;top:.8rem;right:.9rem;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:700;color:rgba(255,255,255,.7)">Nuevo 2026</div>
-        </div>
-        <div style="padding:1.3rem">
-          <div style="font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim2);margin-bottom:.3rem">🎤 Artista</div>
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.7rem;color:#fff;letter-spacing:.04em;line-height:1;margin-bottom:.5rem">Yoenelmic</div>
-          <div style="font-size:.82rem;color:var(--dim);line-height:1.65;margin-bottom:1.1rem">Rap consciente con más de 8.6K streams en "Y esto va...". Último single "Dos limones", lanzado en julio 2026.</div>
-          <div style="display:flex;gap:.6rem">
-            <a href="https://open.spotify.com/artist/2fYBERbClpMAd3RaXJP6jY" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(255,255,255,.04);border:1px solid var(--bdr);color:var(--dim);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.borderColor='rgba(6,214,200,.5)';this.style.color='#06d6c8'" onmouseout="this.style.borderColor='var(--bdr)';this.style.color='var(--dim)'">Ver perfil</a>
-            <a href="https://open.spotify.com/track/08c0AEP1XyGPKlmKIpgpuu" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(29,185,84,.08);border:1px solid rgba(29,185,84,.25);color:var(--g);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(29,185,84,.18)'" onmouseout="this.style.background='rgba(29,185,84,.08)'">▶ Último tema</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ARTISTA: Bayron El Elegido -->
-      <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;transition:all .3s ease;position:relative;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(252,100,120,.3)';this.style.boxShadow='0 24px 60px rgba(252,100,120,.07)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)';this.style.boxShadow='none'">
-        <div style="height:220px;overflow:hidden;position:relative;background:#111">
-          <img src="https://i.scdn.co/image/ab6761610000e5eb12938d8d16bee4a548fff351" alt="Bayron El Elegido" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,3,10,.85) 0%,rgba(3,3,10,.1) 60%,transparent 100%)"></div>
-          <div style="position:absolute;top:.8rem;left:.9rem;background:rgba(252,100,120,.12);border:1px solid rgba(252,100,120,.35);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:800;color:#fc6478;letter-spacing:.1em;text-transform:uppercase">Rap · Trap · Drill</div>
-          <div style="position:absolute;top:.8rem;right:.9rem;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:700;color:rgba(255,255,255,.7)">583 oyentes</div>
-        </div>
-        <div style="padding:1.3rem">
-          <div style="font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim2);margin-bottom:.3rem">🎤 Artista — Cuba · Finlandia</div>
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.7rem;color:#fff;letter-spacing:.04em;line-height:1;margin-bottom:.5rem">Bayron El Elegido</div>
-          <div style="font-size:.82rem;color:var(--dim);line-height:1.65;margin-bottom:1.1rem">De La Habana a Finlandia. Rapero y compositor versátil entre el Hip Hop cubano y el trap latino. "Se Busca" supera los 14K streams.</div>
-          <div style="display:flex;gap:.6rem">
-            <a href="https://instagram.com/bayron_el_elegido_official/" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(255,255,255,.04);border:1px solid var(--bdr);color:var(--dim);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.borderColor='rgba(193,53,132,.5)';this.style.color='#e1306c'" onmouseout="this.style.borderColor='var(--bdr)';this.style.color='var(--dim)'">Instagram</a>
-            <a href="https://open.spotify.com/album/68KNSwkSWOIjFTdG2fffVf" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(29,185,84,.08);border:1px solid rgba(29,185,84,.25);color:var(--g);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(29,185,84,.18)'" onmouseout="this.style.background='rgba(29,185,84,.08)'">▶ Último tema</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ARTISTA: Krl's096 -->
-      <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;transition:all .3s ease;position:relative;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(61,127,255,.3)';this.style.boxShadow='0 24px 60px rgba(61,127,255,.08)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)';this.style.boxShadow='none'">
-        <div style="height:220px;overflow:hidden;position:relative;background:#111">
-          <img src="https://i.scdn.co/image/ab6761610000e5eba40c90733eada7da78c81669" alt="Krl's096" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,3,10,.85) 0%,rgba(3,3,10,.1) 60%,transparent 100%)"></div>
-          <div style="position:absolute;top:.8rem;left:.9rem;background:rgba(61,127,255,.15);border:1px solid rgba(61,127,255,.35);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:800;color:var(--b);letter-spacing:.1em;text-transform:uppercase">Rap · Trap</div>
-          <div style="position:absolute;top:.8rem;right:.9rem;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:700;color:rgba(255,255,255,.7)">208 oyentes</div>
-        </div>
-        <div style="padding:1.3rem">
-          <div style="font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim2);margin-bottom:.3rem">🎤 Artista — Valencia</div>
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.7rem;color:#fff;letter-spacing:.04em;line-height:1;margin-bottom:.5rem">Krl's096</div>
-          <div style="font-size:.82rem;color:var(--dim);line-height:1.65;margin-bottom:1.1rem">Compositor desde 2019. Su track "in door" supera los 3.5K streams y "Buckler" ya suma más de 3K en pocas semanas.</div>
-          <div style="display:flex;gap:.6rem">
-            <a href="https://instagram.com/carls096" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(255,255,255,.04);border:1px solid var(--bdr);color:var(--dim);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.borderColor='rgba(193,53,132,.5)';this.style.color='#e1306c'" onmouseout="this.style.borderColor='var(--bdr)';this.style.color='var(--dim)'">Instagram</a>
-            <a href="https://open.spotify.com/track/3rc3Srq5OjJZvKYJ1VYFvb" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(29,185,84,.08);border:1px solid rgba(29,185,84,.25);color:var(--g);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(29,185,84,.18)'" onmouseout="this.style.background='rgba(29,185,84,.08)'">▶ Último tema</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ARTISTA: NAELIO -->
-      <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;transition:all .3s ease;position:relative;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(252,100,120,.3)';this.style.boxShadow='0 24px 60px rgba(252,100,120,.08)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)';this.style.boxShadow='none'">
-        <div style="height:220px;overflow:hidden;position:relative;background:#111">
-          <img src="https://i.scdn.co/image/ab6761610000e5ebf3d99f2f703bc050d93ab11f" alt="NAELIO" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,3,10,.85) 0%,rgba(3,3,10,.1) 60%,transparent 100%)"></div>
-          <div style="position:absolute;top:.8rem;left:.9rem;background:rgba(252,100,120,.12);border:1px solid rgba(252,100,120,.35);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:800;color:#fc6478;letter-spacing:.1em;text-transform:uppercase">Trap · Urbano Latino</div>
-          <div style="position:absolute;top:.8rem;right:.9rem;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:700;color:rgba(255,255,255,.7)">3.2K oyentes</div>
-        </div>
-        <div style="padding:1.3rem">
-          <div style="font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim2);margin-bottom:.3rem">🎤 Artista — Carolina, Puerto Rico</div>
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.7rem;color:#fff;letter-spacing:.04em;line-height:1;margin-bottom:.5rem">NAELIO</div>
-          <div style="font-size:.82rem;color:var(--dim);line-height:1.65;margin-bottom:1.1rem">Nacido en 2009 en Puerto Rico. "Normal" supera los 50K streams y "Tyson" acumula más de 42K. Una promesa del trap latino.</div>
-          <div style="display:flex;gap:.6rem">
-            <a href="https://instagram.com/naelio00987/" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(255,255,255,.04);border:1px solid var(--bdr);color:var(--dim);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.borderColor='rgba(193,53,132,.5)';this.style.color='#e1306c'" onmouseout="this.style.borderColor='var(--bdr)';this.style.color='var(--dim)'">Instagram</a>
-            <a href="https://open.spotify.com/album/22QytQxtRe6viezPgnr9By" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(29,185,84,.08);border:1px solid rgba(29,185,84,.25);color:var(--g);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(29,185,84,.18)'" onmouseout="this.style.background='rgba(29,185,84,.08)'">▶ Último tema</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ARTISTA: flakotrp -->
-      <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;transition:all .3s ease;position:relative;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(29,185,84,.3)';this.style.boxShadow='0 24px 60px rgba(29,185,84,.07)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)';this.style.boxShadow='none'">
-        <div style="height:220px;overflow:hidden;position:relative;background:#111">
-          <img src="https://i.scdn.co/image/ab6761610000e5ebf107c996a349c9e1b8c6ce78" alt="flakotrp" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,3,10,.85) 0%,rgba(3,3,10,.1) 60%,transparent 100%)"></div>
-          <div style="position:absolute;top:.8rem;left:.9rem;background:rgba(29,185,84,.15);border:1px solid rgba(29,185,84,.35);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:800;color:var(--g);letter-spacing:.1em;text-transform:uppercase">Trap · Rap</div>
-          <div style="position:absolute;top:.8rem;right:.9rem;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:700;color:rgba(255,255,255,.7)">295 oyentes</div>
-        </div>
-        <div style="padding:1.3rem">
-          <div style="font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim2);margin-bottom:.3rem">🎤 Artista · Compositor desde 2019</div>
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.7rem;color:#fff;letter-spacing:.04em;line-height:1;margin-bottom:.5rem">flakotrp</div>
-          <div style="font-size:.82rem;color:var(--dim);line-height:1.65;margin-bottom:1.1rem">Trap emocional y directo. "desde la azotea" supera los 22K streams. Activo en 2025 con varios singles y su álbum "Te estraño".</div>
-          <div style="display:flex;gap:.6rem">
-            <a href="https://open.spotify.com/artist/7JPAcZSgA0zKVwuGDKyhCg" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(255,255,255,.04);border:1px solid var(--bdr);color:var(--dim);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.borderColor='var(--g)';this.style.color='var(--g)'" onmouseout="this.style.borderColor='var(--bdr)';this.style.color='var(--dim)'">Ver perfil</a>
-            <a href="https://open.spotify.com/album/5kp01i9h2BovFyMPcQoUbW" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(29,185,84,.08);border:1px solid rgba(29,185,84,.25);color:var(--g);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(29,185,84,.18)'" onmouseout="this.style.background='rgba(29,185,84,.08)'">▶ Último tema</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ARTISTA: JHAYKOOL -->
-      <div style="background:rgba(255,255,255,.03);border:1px solid var(--bdr);border-radius:20px;overflow:hidden;transition:all .3s ease;position:relative;" onmouseover="this.style.transform='translateY(-6px)';this.style.borderColor='rgba(139,92,246,.3)';this.style.boxShadow='0 24px 60px rgba(139,92,246,.07)'" onmouseout="this.style.transform='none';this.style.borderColor='var(--bdr)';this.style.boxShadow='none'">
-        <div style="height:220px;overflow:hidden;position:relative;background:#111">
-          <img src="https://i.scdn.co/image/ab6761610000e5ebd35588b5d7468d540a29ade7" alt="JHAYKOOL" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s ease" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-          <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,3,10,.85) 0%,rgba(3,3,10,.1) 60%,transparent 100%)"></div>
-          <div style="position:absolute;top:.8rem;left:.9rem;background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.35);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:800;color:#a78bfa;letter-spacing:.1em;text-transform:uppercase">Trap Consciente</div>
-          <div style="position:absolute;top:.8rem;right:.9rem;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);border-radius:100px;padding:.28rem .85rem;font-size:.66rem;font-weight:700;color:rgba(255,255,255,.7)">203 oyentes</div>
-        </div>
-        <div style="padding:1.3rem">
-          <div style="font-size:.65rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--dim2);margin-bottom:.3rem">🎤 Artista · La promesa del Trap</div>
-          <div style="font-family:'Bebas Neue',Impact,sans-serif;font-size:1.7rem;color:#fff;letter-spacing:.04em;line-height:1;margin-bottom:.5rem">JHAYKOOL</div>
-          <div style="font-size:.82rem;color:var(--dim);line-height:1.65;margin-bottom:1.1rem">Letras conscientes que reflejan realidades cotidianas. "no me hables de amor" supera los 7.8K streams. Álbum "del suelo al éxito" en 2026.</div>
-          <div style="display:flex;gap:.6rem">
-            <a href="https://open.spotify.com/artist/5ZJfsrOtdSqAJ6fWvtp63D" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(255,255,255,.04);border:1px solid var(--bdr);color:var(--dim);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.borderColor='rgba(139,92,246,.5)';this.style.color='#a78bfa'" onmouseout="this.style.borderColor='var(--bdr)';this.style.color='var(--dim)'">Ver perfil</a>
-            <a href="https://open.spotify.com/album/7g7xtoqDrDsh85tXL1wdqg" target="_blank" style="flex:1;display:block;text-align:center;background:rgba(29,185,84,.08);border:1px solid rgba(29,185,84,.25);color:var(--g);border-radius:9px;padding:.65rem .5rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:.2s" onmouseover="this.style.background='rgba(29,185,84,.18)'" onmouseout="this.style.background='rgba(29,185,84,.08)'">▶ Último tema</a>
-          </div>
-        </div>
-      </div>
+    <!-- ARTISTS GRID (hidden until access) -->
+    <div id="artists-grid" style="display:none" class="artists-grid">
+      <!-- ARES -->
+      <div class="artist-card"><div class="artist-img"><img src="https://i.scdn.co/image/ab6761610000e5eb5e967e9f29e538205645302d" alt="ARES" loading="lazy"><div class="artist-genre">Rap · Hip Hop</div></div><div class="artist-body"><div class="artist-origin">380 oyentes</div><div class="artist-name">ARES</div><p class="artist-bio">Trayectoria desde 2006. Álbumes "El Mito y La Leyenda" e "Inmortal". Singles "Bang Bang" y "Tranquilo" en 2026.</p><div class="artist-btns"><a href="https://open.spotify.com/album/0r1Qzd5hEqwhgfbo6ar56w" target="_blank" class="artist-btn">Último tema</a><a href="https://open.spotify.com/artist/5U89ZHxZIjcPKgDw5NonD2" target="_blank" class="artist-btn spotify">Spotify</a></div></div></div>
+      <!-- MikkaMKS -->
+      <div class="artist-card"><div class="artist-img"><img src="https://i.scdn.co/image/ab6761610000e5eb6dd4984532af2d67be6869cf" alt="MikkaMKS" loading="lazy"><div class="artist-genre">Trap · Rap Consciente</div></div><div class="artist-body"><div class="artist-origin">1.5K oyentes · España · Bélgica</div><div class="artist-name">MikkaMKS</div><p class="artist-bio">Trap y rap consciente en español. Más de 106K streams en "Una experiencia más".</p><div class="artist-btns"><a href="https://instagram.com/mikkamks" target="_blank" class="artist-btn">Instagram</a><a href="https://open.spotify.com/artist/5tNkfsKpu8af7cHHECLB5O" target="_blank" class="artist-btn spotify">Spotify</a></div></div></div>
+      <!-- SoloJohn -->
+      <div class="artist-card"><div class="artist-img"><img src="https://i.scdn.co/image/ab6761610000e5ebc73e0f7ebcd6e6e5fd9943aa" alt="SoloJohn" loading="lazy"><div class="artist-genre">Rap · Jazz · Funk</div></div><div class="artist-body"><div class="artist-origin">169 oyentes · Barcelona, Underground</div><div class="artist-name">SoloJohn</div><p class="artist-bio">Rap clásico con toques de jazz y funk. "Rap marcial" acumula más de 20K streams.</p><div class="artist-btns"><a href="https://instagram.com/solojohnrap" target="_blank" class="artist-btn">Instagram</a><a href="https://open.spotify.com/track/3rc3Srq5OjJZvKYJ1VYFvb" target="_blank" class="artist-btn spotify">Último tema</a></div></div></div>
+      <!-- Kaesar -->
+      <div class="artist-card"><div class="artist-img"><img src="https://i.scdn.co/image/ab6761610000e5eb23bc598aededc140e7f929fa" alt="Kaesar" loading="lazy"><div class="artist-genre">Rap · Trap</div></div><div class="artist-body"><div class="artist-origin">667 oyentes</div><div class="artist-name">Kaesar</div><p class="artist-bio">Rapea y canta según le apetece. Artista versátil con múltiples singles en 2026. "Spotlight" supera los 5K streams.</p><div class="artist-btns"><a href="https://instagram.com/a.k.a_kaesar" target="_blank" class="artist-btn">Instagram</a><a href="https://open.spotify.com/album/6fPH2wwVirAbmTciOp2L6x" target="_blank" class="artist-btn spotify">Último tema</a></div></div></div>
+      <!-- Yoenelmic -->
+      <div class="artist-card"><div class="artist-img"><img src="https://i.scdn.co/image/ab6761610000f178981fb0d97c8ed45c59e451f8" alt="Yoenelmic" loading="lazy"><div class="artist-genre">Rap Consciente</div></div><div class="artist-body"><div class="artist-origin">Nuevo 2026</div><div class="artist-name">Yoenelmic</div><p class="artist-bio">Rap consciente con más de 8.6K streams en "Y esto va...". Último single "Dos limones", julio 2026.</p><div class="artist-btns"><a href="https://open.spotify.com/artist/2fYBERbClpMAd3RaXJP6jY" target="_blank" class="artist-btn">Perfil</a><a href="https://open.spotify.com/track/08c0AEP1XyGPKlmKIpgpuu" target="_blank" class="artist-btn spotify">Último tema</a></div></div></div>
+      <!-- Bayron El Elegido -->
+      <div class="artist-card"><div class="artist-img"><img src="https://i.scdn.co/image/ab6761610000e5eb12938d8d16bee4a548fff351" alt="Bayron El Elegido" loading="lazy"><div class="artist-genre">Rap · Trap · Drill</div></div><div class="artist-body"><div class="artist-origin">583 oyentes · Cuba · Finlandia</div><div class="artist-name">Bayron El Elegido</div><p class="artist-bio">De La Habana a Finlandia. "Se Busca" supera los 14K streams.</p><div class="artist-btns"><a href="https://instagram.com/bayron_el_elegido_official/" target="_blank" class="artist-btn">Instagram</a><a href="https://open.spotify.com/album/68KNSwkSWOIjFTdG2fffVf" target="_blank" class="artist-btn spotify">Último tema</a></div></div></div>
+      <!-- Krl's096 -->
+      <div class="artist-card"><div class="artist-img"><img src="https://i.scdn.co/image/ab6761610000e5eba40c90733eada7da78c81669" alt="Krl's096" loading="lazy"><div class="artist-genre">Rap · Trap</div></div><div class="artist-body"><div class="artist-origin">208 oyentes · Valencia</div><div class="artist-name">Krl's096</div><p class="artist-bio">Compositor desde 2019. "in door" supera los 3.5K streams y "Buckler" ya suma más de 3K en pocas semanas.</p><div class="artist-btns"><a href="https://instagram.com/carls096" target="_blank" class="artist-btn">Instagram</a><a href="https://open.spotify.com/track/3rc3Srq5OjJZvKYJ1VYFvb" target="_blank" class="artist-btn spotify">Último tema</a></div></div></div>
+      <!-- NAELIO -->
+      <div class="artist-card"><div class="artist-img"><img src="https://i.scdn.co/image/ab6761610000e5ebf3d99f2f703bc050d93ab11f" alt="NAELIO" loading="lazy"><div class="artist-genre">Trap · Urbano Latino</div></div><div class="artist-body"><div class="artist-origin">3.2K oyentes · Puerto Rico</div><div class="artist-name">NAELIO</div><p class="artist-bio">Nacido en 2009. "Normal" supera los 50K streams y "Tyson" acumula más de 42K. Una promesa del trap latino.</p><div class="artist-btns"><a href="https://instagram.com/naelio00987/" target="_blank" class="artist-btn">Instagram</a><a href="https://open.spotify.com/album/22QytQxtRe6viezPgnr9By" target="_blank" class="artist-btn spotify">Último tema</a></div></div></div>
+      <!-- flakotrp -->
+      <div class="artist-card"><div class="artist-img"><img src="https://i.scdn.co/image/ab6761610000e5ebf107c996a349c9e1b8c6ce78" alt="flakotrp" loading="lazy"><div class="artist-genre">Trap · Rap</div></div><div class="artist-body"><div class="artist-origin">295 oyentes · Compositor desde 2019</div><div class="artist-name">flakotrp</div><p class="artist-bio">"desde la azotea" supera los 22K streams. Activo en 2025 con varios singles y álbum "Te estraño".</p><div class="artist-btns"><a href="https://open.spotify.com/artist/7JPAcZSgA0zKVwuGDKyhCg" target="_blank" class="artist-btn">Perfil</a><a href="https://open.spotify.com/album/5kp01i9h2BovFyMPcQoUbW" target="_blank" class="artist-btn spotify">Último tema</a></div></div></div>
+      <!-- JHAYKOOL -->
+      <div class="artist-card"><div class="artist-img"><img src="https://i.scdn.co/image/ab6761610000e5ebd35588b5d7468d540a29ade7" alt="JHAYKOOL" loading="lazy"><div class="artist-genre">Trap Consciente</div></div><div class="artist-body"><div class="artist-origin">203 oyentes</div><div class="artist-name">JHAYKOOL</div><p class="artist-bio">Letras conscientes que reflejan realidades cotidianas. "no me hables de amor" supera los 7.8K streams. Álbum "del suelo al éxito" 2026.</p><div class="artist-btns"><a href="https://open.spotify.com/artist/5ZJfsrOtdSqAJ6fWvtp63D" target="_blank" class="artist-btn">Perfil</a><a href="https://open.spotify.com/album/7g7xtoqDrDsh85tXL1wdqg" target="_blank" class="artist-btn spotify">Último tema</a></div></div></div>
     </div>
-
-    <!-- CTA -->
-    <div id="artists-cta" style="display:none;text-align:center;margin-top:3rem" class="rv">
-      <p style="font-size:.9rem;color:var(--dim);margin-bottom:1.2rem">¿Quieres que tu música suene en nuestras playlists? Elige tu plan y empieza hoy.</p>
-      <a href="#planes" class="btn btn-g btn-lg">🎵 Ver planes y entrar en rotación</a>
+    <div id="artists-cta" style="display:none;text-align:center;margin-top:3rem">
+      <p style="font-size:.9rem;color:var(--dim);margin-bottom:1.2rem">¿Quieres que tu música suene en nuestras playlists? Elige tu servicio y empieza hoy.</p>
+      <a href="https://tally.so/r/aQJBr2" target="_blank" class="btn btn-blk btn-lg">Solicitar Estrategia</a>
     </div>
-
   </div>
 </section>
 
-<div class="sdiv"></div>
+<div class="rule"></div>
 
 <!-- FAQ -->
 <section id="faq">
   <div class="w">
-    <div class="sec rv">
-      <div class="pill pill-b" style="margin-bottom:.9rem">❓ Preguntas frecuentes</div>
-      <h2 class="h2">Lo que nos preguntan<br><em class="grad-g">los artistas</em></h2>
+    <div class="sec-hd rv">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2 class="h2">Lo que nos preguntan<br><em>los artistas</em></h2>
     </div>
     <div class="fl">
-      <div class="fi">
-        <button class="fq" onclick="toggleFaq(this)">¿Por qué es un pago mensual y cómo ayuda a mantener mis oyentes estables?<span class="ficon">+</span></button>
-        <div class="fa"><div class="fai">El algoritmo de Spotify premia la consistencia. Un artista con streams constantes mes a mes tiene muchas más probabilidades de aparecer en Descubrimiento Semanal y Radios de Artista que uno con un pico puntual. El modelo mensual asegura rotación continua: tu canción sigue siendo escuchada, el algoritmo sigue recibiendo señales positivas, y tus oyentes mensuales no caen en picado cuando termina una campaña puntual.</div></div>
-      </div>
-      <div class="fi">
-        <button class="fq" onclick="toggleFaq(this)">¿Cómo funciona la rotación algorítmica de mis canciones?<span class="ficon">+</span></button>
-        <div class="fa"><div class="fai">Cada semana movemos la posición de tu canción dentro de las playlists: cambiamos el orden, la combinamos con diferentes artistas en rotación y variamos la exposición. Esto genera distintos perfiles de oyentes que la descubren, lo que le indica a Spotify que el tema tiene relevancia sostenida y no solo un empuje inicial. En el Plan Oro, además, garantizamos posición Top 10 en las listas principales durante la primera semana de cada canción.</div></div>
-      </div>
-      <div class="fi">
-        <button class="fq" onclick="toggleFaq(this)">¿Cuánto presupuesto necesito para Meta Ads?<span class="ficon">+</span></button>
-        <div class="fa"><div class="fai">Depende de tu objetivo y momento. Podemos trabajar desde 10€ diarios para validar creatividades hasta presupuestos mayores para escalar. Nunca recomendamos invertir sin antes validar que el anuncio convierte. El diagnóstico previo existe exactamente para que no malgastes tu dinero.</div></div>
-      </div>
-      <div class="fi">
-        <button class="fq" onclick="toggleFaq(this)">¿Mis streams generan regalías reales?<span class="ficon">+</span></button>
-        <div class="fa"><div class="fai">Sí. Al tratarse de oyentes reales escuchando desde su cuenta de Spotify, cada stream cuenta para tus regalías distribuidas a través de tu distribuidora (DistroKid, TuneCore, etc.). Los bots no generan regalías porque Spotify los filtra automáticamente. Con LigaMusic, cada reproducción suma.</div></div>
-      </div>
-      <div class="fi">
-        <button class="fq" onclick="toggleFaq(this)">¿Qué géneros musicales trabajáis?<span class="ficon">+</span></button>
-        <div class="fa"><div class="fai">Nuestra red de playlists está especializada en Rap, Trap, Hip Hop, Reggaeton y Urbano Latino. La parte de estrategia y campañas de Meta Ads aplica a cualquier género. Si tienes dudas sobre si encajas, escríbenos y lo valoramos juntos sin ningún compromiso.</div></div>
-      </div>
-      <div class="fi">
-        <button class="fq" onclick="toggleFaq(this)">¿Cómo sé si mis campañas están funcionando realmente?<span class="ficon">+</span></button>
-        <div class="fa"><div class="fai">Te mandamos reportes semanales con métricas reales: coste por resultado, alcance, reproducciones generadas y evolución de oyentes mensuales. Todo verificable desde tu propio Spotify for Artists. Si algo no funciona, lo ajustamos de inmediato.</div></div>
-      </div>
+      <div class="fi"><button class="fq" onclick="toggleFaq(this)">¿En qué se diferencia esto de una plataforma de playlists normal?<span class="ficon">+</span></button><div class="fa"><div class="fai">En todo. Una plataforma de playlists es transaccional: pagas, entras, fin. Aquí tienes un estratega real que analiza tu proyecto antes de recomendar nada, gestiona tus campañas de Meta Ads activamente y te explica en cada paso qué está pasando con tus datos. Las playlists son solo una herramienta dentro de una estrategia más amplia.</div></div></div>
+      <div class="fi"><button class="fq" onclick="toggleFaq(this)">¿Cómo funciona la asesoría 24/7? ¿Realmente podéis responderme siempre?<span class="ficon">+</span></button><div class="fa"><div class="fai">Sí. Trabajamos directamente por WhatsApp. Si lanzas un single y necesitas ajustar una campaña en domingo por la noche, estamos. No somos una empresa con departamentos y tickets de soporte — somos un equipo pequeño muy enfocado en resultados y en la relación directa con cada artista que acompañamos.</div></div></div>
+      <div class="fi"><button class="fq" onclick="toggleFaq(this)">¿Cuánto presupuesto necesito para Meta Ads?<span class="ficon">+</span></button><div class="fa"><div class="fai">Depende de tu objetivo y momento. Podemos trabajar desde 10€ diarios para validar creatividades hasta presupuestos mayores para escalar. Nunca recomendamos invertir sin antes validar que el anuncio convierte. El diagnóstico previo existe exactamente para que no malgastes tu dinero.</div></div></div>
+      <div class="fi"><button class="fq" onclick="toggleFaq(this)">¿Mis streams generan regalías reales?<span class="ficon">+</span></button><div class="fa"><div class="fai">Sí. Al tratarse de oyentes reales escuchando desde su cuenta de Spotify, cada stream cuenta para tus regalías distribuidas a través de tu distribuidora. Los bots no generan regalías porque Spotify los filtra automáticamente. Con LigaMusic, cada reproducción suma.</div></div></div>
+      <div class="fi"><button class="fq" onclick="toggleFaq(this)">¿Qué géneros musicales trabajáis?<span class="ficon">+</span></button><div class="fa"><div class="fai">Nuestra red de playlists está especializada en Rap, Trap, Hip Hop, Reggaeton y Urbano Latino. La parte de estrategia y campañas de Meta Ads aplica a cualquier género. Si tienes dudas sobre si encajas, escríbenos y lo valoramos juntos sin ningún compromiso.</div></div></div>
+      <div class="fi"><button class="fq" onclick="toggleFaq(this)">¿Cómo sé si mis campañas están funcionando realmente?<span class="ficon">+</span></button><div class="fa"><div class="fai">Te mandamos reportes semanales con métricas reales: coste por resultado, alcance, reproducciones generadas y evolución de oyentes mensuales. Todo verificable desde tu propio Spotify for Artists. Si algo no funciona, lo ajustamos de inmediato.</div></div></div>
     </div>
   </div>
 </section>
@@ -1190,25 +703,16 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
 <!-- CTA BOTTOM -->
 <section id="cta-bottom">
   <div class="w">
-    <div class="cta-box rv">
-      <h2>Tu proyecto merece<br>una <em>estrategia real</em>.</h2>
-      <p>Cuéntanos dónde estás y hacia dónde quieres llegar. En 24 horas te respondemos con un análisis honesto de tu situación y qué podemos hacer juntos.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center">
-        <a href="https://tally.so/r/aQJBr2" target="_blank" class="btn btn-g btn-lg">🚀 Solicitar Estudio de Mi Proyecto</a>
-        
-      </div>
-    </div>
+    <p class="cta-h">Tu proyecto merece<br>una <em>estrategia real.</em></p>
+    <p class="cta-sub">Cuéntanos dónde estás y hacia dónde quieres llegar. En 24 horas te respondemos con un análisis honesto y sin compromiso.</p>
+    <a href="https://tally.so/r/aQJBr2" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--ink);border-radius:2px;font-size:.9rem">Solicitar Estudio de Mi Proyecto</a>
   </div>
 </section>
-
 
 <!-- FOOTER -->
 <footer>
   <div class="fo">
-    <div>
-      <div class="flogo">🎧 LigaMusic<em>España</em></div>
-      <div style="font-size:.71rem;color:rgba(255,255,255,.2);margin-top:.3rem">© 2026 Micael Alvarez Guzzetta · NIF: 71518131E</div>
-    </div>
+    <div><div class="flogo">LigaMusic España</div><div style="font-size:.7rem;color:var(--dim2);margin-top:.3rem">© 2026 Micael Alvarez Guzzetta · NIF: 71518131E</div></div>
     <div class="flinks">
       <a href="/privacidad.html">Privacidad</a>
       <a href="/cookies.html">Cookies</a>
@@ -1222,12 +726,59 @@ footer{background:var(--ink);border-top:1px solid var(--bdr);padding:2.5rem 2rem
 <button class="bktop" id="bkt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <!-- COOKIE BANNER -->
-<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(3,3,10,.97);border-top:1px solid rgba(29,185,84,.18);backdrop-filter:blur(22px);padding:1.1rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.9rem;font-family:'Space Grotesk',sans-serif;transition:transform .4s ease">
-  <p style="font-size:.81rem;color:rgba(255,255,255,.62);flex:1;min-width:240px;line-height:1.55">🍪 Usamos cookies para mejorar tu experiencia. <a href="/privacidad.html" style="color:var(--g);font-weight:600">Privacidad</a> · <a href="/cookies.html" style="color:var(--g);font-weight:600">Cookies</a></p>
-  <div style="display:flex;gap:.6rem;flex-shrink:0">
-    <button onclick="rejectCookies()" style="padding:.48rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.45);font-family:'Space Grotesk',sans-serif;font-size:.77rem;font-weight:600;cursor:pointer">Solo necesarias</button>
-    <button onclick="acceptCookies()" style="padding:.48rem 1.2rem;border-radius:8px;border:none;background:linear-gradient(135deg,var(--g),var(--g2));color:#000;font-family:'Space Grotesk',sans-serif;font-size:.77rem;font-weight:800;cursor:pointer">Aceptar todo</button>
+<div id="cookie-banner">
+  <p>🍪 Usamos cookies para mejorar tu experiencia. <a href="/privacidad.html">Privacidad</a> · <a href="/cookies.html">Cookies</a></p>
+  <div class="cb-btns">
+    <button onclick="rejectCookies()" class="cb-btn cb-reject">Solo necesarias</button>
+    <button onclick="acceptCookies()" class="cb-btn cb-accept">Aceptar todo</button>
   </div>
+</div>
+
+<!-- MODALS PROMOS EXTRAS -->
+<!-- Modal: Campañas -->
+<div id="modal-ads" onclick="if(event.target===this)closeExtra('ads')" class="modal-wrap">
+  <div class="modal-box">
+    <div class="modal-top"></div>
+    <button onclick="closeExtra('ads')" class="modal-close">✕</button>
+    <div class="modal-inner">
+      <div class="modal-ey">Servicio adicional · Campañas</div>
+      <div class="modal-title">Campañas Publicitarias</div>
+      <p class="modal-desc">Anuncios segmentados al público exacto que quieres alcanzar, llevándoles directamente a tu canción en Spotify. Envía un vídeo de máximo 20 segundos (formato 9:16) e indícanos ciudades y edades objetivo.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.2rem;font-size:.8rem;background:var(--off);padding:1rem;border:1px solid var(--rule)">
+        <div><strong>📱 Envía tu vídeo</strong><br><span style="color:var(--dim)">Máx. 20 seg. 9:16</span></div>
+        <div><strong>📍 Segmentación</strong><br><span style="color:var(--dim)">Ciudades y edades</span></div>
+        <div><strong>🎯 A Spotify</strong><br><span style="color:var(--dim)">Cada clic directo</span></div>
+      </div>
+      <div class="budget-grid">
+        <div class="budget-cell"><span class="budget-price">10€</span><span class="budget-dur">5 días</span><a href="https://tally.so/r/KYNJEV" target="_blank" class="budget-btn">Contratar</a></div>
+        <div class="budget-cell"><span class="budget-price">19,90€</span><span class="budget-dur">10 días</span><a href="https://tally.so/r/dW4DOK" target="_blank" class="budget-btn">Contratar</a></div>
+        <div class="budget-cell pop"><span class="badge-pop">Popular</span><span class="budget-price">29,90€</span><span class="budget-dur">15 días</span><a href="https://tally.so/r/44DoZX" target="_blank" class="budget-btn">Contratar</a></div>
+        <div class="budget-cell"><span class="budget-price">50€</span><span class="budget-dur">27 días</span><a href="https://tally.so/r/zxRrVR" target="_blank" class="budget-btn">Contratar</a></div>
+        <div class="budget-cell"><span class="budget-price">99€</span><span class="budget-dur">50 días</span><a href="https://tally.so/r/WOkMyN" target="_blank" class="budget-btn">Contratar</a></div>
+      </div>
+      <div class="modal-note">El presupuesto cubre el coste del anuncio. Si necesitas producción de vídeo, consúltanos.</div>
+    </div>
+  </div>
+</div>
+<!-- Modal: YouTube -->
+<div id="modal-youtube" onclick="if(event.target===this)closeExtra('youtube')" class="modal-wrap">
+  <div class="modal-box"><div class="modal-top"></div><button onclick="closeExtra('youtube')" class="modal-close">✕</button><div class="modal-inner"><div class="modal-ey">Servicio adicional</div><div class="modal-title">YouTube</div><p class="modal-desc">Incorporamos tus 3 mejores canciones en nuestras 3 listas de YouTube. Más visibilidad en la plataforma de vídeo más grande del mundo.</p><div class="modal-feats"><div class="mf">3 canciones en 3 listas</div><div class="mf">Oyentes reales</div><div class="mf">Genera regalías</div><div class="mf">Visibilidad global</div></div><a href="https://tally.so/r/Np9Jvp" target="_blank" class="modal-cta">Contratar YouTube — 6,99€/mes</a></div></div>
+</div>
+<!-- Modal: Apple Music -->
+<div id="modal-apple" onclick="if(event.target===this)closeExtra('apple')" class="modal-wrap">
+  <div class="modal-box"><div class="modal-top"></div><button onclick="closeExtra('apple')" class="modal-close">✕</button><div class="modal-inner"><div class="modal-ey">Servicio adicional</div><div class="modal-title">Apple Music</div><p class="modal-desc">5 canciones en 5 de nuestras listas activas de Apple Music. Llega a oyentes premium en los mercados más importantes.</p><div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem"><span style="border:1px solid var(--rule);padding:.2rem .65rem;font-size:.73rem;font-weight:600;color:var(--dim)">🇪🇸 España</span><span style="border:1px solid var(--rule);padding:.2rem .65rem;font-size:.73rem;font-weight:600;color:var(--dim)">🇺🇸 EEUU</span><span style="border:1px solid var(--rule);padding:.2rem .65rem;font-size:.73rem;font-weight:600;color:var(--dim)">🇬🇧 UK</span><span style="border:1px solid var(--rule);padding:.2rem .65rem;font-size:.73rem;font-weight:600;color:var(--dim)">🇨🇴 Colombia</span><span style="border:1px solid var(--rule);padding:.2rem .65rem;font-size:.73rem;font-weight:600;color:var(--dim)">🇦🇷 Argentina</span><span style="border:1px solid var(--rule);padding:.2rem .65rem;font-size:.73rem;font-weight:600;color:var(--dim)">🇨🇱 Chile</span></div><a href="https://tally.so/r/Np9JN0" target="_blank" class="modal-cta">Contratar Apple Music — 22€/mes</a></div></div>
+</div>
+<!-- Modal: Smartlink -->
+<div id="modal-smart" onclick="if(event.target===this)closeExtra('smart')" class="modal-wrap">
+  <div class="modal-box"><div class="modal-top"></div><button onclick="closeExtra('smart')" class="modal-close">✕</button><div class="modal-inner"><div class="modal-ey">Servicio adicional</div><div class="modal-title">Smartlink</div><p class="modal-desc">Un único enlace inteligente que redirige a tus oyentes a la plataforma que prefieran. Sin suscripciones, válido de por vida.</p><div class="modal-feats"><div class="mf">Un enlace para todo</div><div class="mf">Redes + plataformas</div><div class="mf">Sin suscripción mensual</div><div class="mf">Válido de por vida</div></div><a href="https://tally.so/r/oba78O" target="_blank" class="modal-cta">Crear mi Smartlink — 2,50€</a></div></div>
+</div>
+<!-- Modal: DJs -->
+<div id="modal-djs" onclick="if(event.target===this)closeExtra('djs')" class="modal-wrap">
+  <div class="modal-box"><div class="modal-top"></div><button onclick="closeExtra('djs')" class="modal-close">✕</button><div class="modal-inner"><div class="modal-ey">Próximamente</div><div class="modal-title">DJs &amp; Productores</div><p class="modal-desc">Contrata a nuestros DJs y productores profesionales de la escena urbana. Beats, mezclas, masterización y producción a medida.</p><div style="border:1px solid var(--rule2);padding:1rem;font-size:.83rem;color:var(--dim);text-align:center;margin-bottom:1.2rem">Disponible próximamente. Escríbenos y te avisamos.</div><a href="https://tally.so/r/aQJBr2" target="_blank" class="modal-cta">Solicitar información</a></div></div>
+</div>
+<!-- Modal: CD -->
+<div id="modal-cd" onclick="if(event.target===this)closeExtra('cd')" class="modal-wrap">
+  <div class="modal-box"><div class="modal-top"></div><button onclick="closeExtra('cd')" class="modal-close">✕</button><div class="modal-inner"><div class="modal-ey">Próximamente</div><div class="modal-title">CD Físico</div><p class="modal-desc">Tu música en CD profesional con caja jewel impresa. Desde 25 copias. Perfecto para conciertos y merchandising.</p><div class="modal-feats"><div class="mf">Desde 25 copias</div><div class="mf">Caja jewel impresa</div><div class="mf">Envío incluido</div><div class="mf">Calidad profesional</div></div><a href="https://tally.so/r/aQJBr2" target="_blank" class="modal-cta">Solicitar información</a></div></div>
 </div>
 
 <script type="text/javascript">
@@ -1236,46 +787,45 @@ var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();
 </script>
 
 <script>
-// Slideshow
-(function(){const sl=document.querySelectorAll('.sl');let c=0;setInterval(()=>{sl[c].classList.remove('on');c=(c+1)%sl.length;sl[c].classList.add('on')},6000)})();
-
 // Nav scroll
 window.addEventListener('scroll',()=>{
-  const n=document.getElementById('nav');
-  if(n){n.style.background=scrollY>60?'rgba(3,3,10,.97)':'rgba(3,3,10,.9)';n.style.boxShadow=scrollY>60?'0 1px 0 rgba(29,185,84,.1)':'none';}
-  document.getElementById('bkt').classList.toggle('on',scrollY>400);
+  document.getElementById('bkt').classList.toggle('on', scrollY > 400);
 });
 
 // Cookies
-function hideBanner(){const b=document.getElementById('cookie-banner');if(b){b.style.transform='translateY(120%)';setTimeout(()=>b.style.display='none',400)}}
+function hideBanner(){const b=document.getElementById('cookie-banner');if(b){b.style.transform='translateY(110%)';setTimeout(()=>b.style.display='none',400)}}
 function acceptCookies(){localStorage.setItem('lm_cookies','all');hideBanner()}
 function rejectCookies(){localStorage.setItem('lm_cookies','necessary');hideBanner()}
 (function(){if(localStorage.getItem('lm_cookies')){const b=document.getElementById('cookie-banner');if(b)b.style.display='none'}})();
 
-// Tawk body padding fix
+// Tawk padding fix
 window.addEventListener('load',()=>{document.body.style.removeProperty('padding-bottom');new MutationObserver(()=>{if(document.body.style.paddingBottom)document.body.style.paddingBottom='0'}).observe(document.body,{attributes:true,attributeFilter:['style']})});
 
 // FAQ
 function toggleFaq(btn){const i=btn.closest('.fi');document.querySelectorAll('.fi.open').forEach(el=>{if(el!==i)el.classList.remove('open')});i.classList.toggle('open')}
 
-// Radar de Novedades — acceso por código en URL
+// Extras modals
+function openExtra(id){const m=document.getElementById('modal-'+id);if(m){m.style.display='flex';document.body.style.overflow='hidden'}}
+function closeExtra(id){const m=document.getElementById('modal-'+id);if(m){m.style.display='none';document.body.style.overflow=''}}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){['ads','youtube','apple','smart','djs','cd'].forEach(closeExtra)}});
+
+// Radar access via URL code
 (function(){
-  const params = new URLSearchParams(window.location.search);
-  const hash = window.location.hash;
-  // Check both ?acceso= and #artistas?acceso= patterns
-  const code = params.get('acceso') || new URLSearchParams(hash.split('?')[1] || '').get('acceso');
-  if(code && code.toLowerCase() === 'liga2026'){
-    const gate = document.getElementById('radar-gate');
-    const grid = document.getElementById('artists-grid');
-    const cta  = document.getElementById('artists-cta');
-    if(gate) gate.style.display = 'none';
-    if(grid){ grid.style.display = 'grid'; grid.classList.add('v'); }
-    if(cta)  cta.style.display  = 'block';
+  const params=new URLSearchParams(window.location.search);
+  const hash=window.location.hash;
+  const code=params.get('acceso')||new URLSearchParams(hash.split('?')[1]||'').get('acceso');
+  if(code&&code.toLowerCase()==='liga2026'){
+    const gate=document.getElementById('radar-gate');
+    const grid=document.getElementById('artists-grid');
+    const cta=document.getElementById('artists-cta');
+    if(gate)gate.style.display='none';
+    if(grid){grid.style.display='grid';grid.classList.add('v');}
+    if(cta)cta.style.display='block';
   }
 })();
 
-// Reveal
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')}),{threshold:.07,rootMargin:'0px 0px -20px 0px'});
+// Reveal on scroll
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')}),{threshold:.06,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 </script>
 </body>
