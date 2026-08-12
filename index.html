@@ -317,6 +317,49 @@ footer{background:var(--off);border-top:1px solid var(--rule);padding:2.5rem 2.5
   .ss{min-width:calc(50% - 1rem);border-right:none;padding:.5rem 0;text-align:left}
 }
 @media(max-width:480px){.packs{grid-template-columns:1fr}}
+
+/* ── Section photo backgrounds ── */
+#como{position:relative}
+#como::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1600&q=60&auto=format') center/cover no-repeat;opacity:.04;pointer-events:none;z-index:0}
+#como .w{position:relative;z-index:1}
+
+/* Planes — subtle grain texture + faint image */
+#planes{position:relative;overflow:hidden}
+#planes::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=1600&q=55&auto=format') center/cover no-repeat;opacity:.05;pointer-events:none;z-index:0}
+#planes .w{position:relative;z-index:1}
+
+/* Promos Extras — studio vibes */
+#promos-extras{position:relative;overflow:hidden}
+#promos-extras::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1600&q=55&auto=format') right center/cover no-repeat;opacity:.045;pointer-events:none;z-index:0}
+#promos-extras .w{position:relative;z-index:1}
+
+/* Testimonios — concert/crowd */
+#testimonios{position:relative;overflow:hidden}
+#testimonios::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1600&q=55&auto=format') center/cover no-repeat;opacity:.05;pointer-events:none;z-index:0}
+#testimonios .w{position:relative;z-index:1}
+
+/* Artistas — dark room with light */
+#artistas{position:relative;overflow:hidden}
+#artistas::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&q=55&auto=format') center/cover no-repeat;opacity:.04;pointer-events:none;z-index:0}
+#artistas .w{position:relative;z-index:1}
+
+/* FAQ — minimal texture */
+#faq{position:relative;overflow:hidden}
+#faq::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=1600&q=55&auto=format') center/cover no-repeat;opacity:.04;pointer-events:none;z-index:0}
+#faq .w{position:relative;z-index:1}
+
+/* Why Us — reinforce dark editorial */
+#antibots{position:relative;overflow:hidden}
+#antibots::before{content:'';position:absolute;top:0;right:0;width:45%;height:100%;background:url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=900&q=65&auto=format') center/cover no-repeat;opacity:.08;pointer-events:none;z-index:0}
+#antibots .w{position:relative;z-index:1}
+
+/* Full-bleed photo divider between sections */
+.photo-divider{height:340px;background-attachment:fixed;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.photo-divider::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.22)}
+.pd1{background-image:url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1600&q=70&auto=format')}
+.pd2{background-image:url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1600&q=70&auto=format')}
+@media(max-width:700px){.photo-divider{background-attachment:scroll;height:240px}}
+
 </style>
 </head>
 <body>
@@ -407,7 +450,7 @@ footer{background:var(--off);border-top:1px solid var(--rule);padding:2.5rem 2.5
   </div>
 </section>
 
-<div class="rule"></div>
+<div class="photo-divider pd1"></div>
 
 <!-- SERVICIOS -->
 <section id="planes" class="sec sec-alt">
@@ -477,7 +520,7 @@ footer{background:var(--off);border-top:1px solid var(--rule);padding:2.5rem 2.5
   </div>
 </section>
 
-<div class="rule"></div>
+<div class="photo-divider pd2" style="height:280px"></div>
 
 <!-- PROMOS EXTRAS -->
 <section id="promos-extras" class="sec">
@@ -615,6 +658,8 @@ footer{background:var(--off);border-top:1px solid var(--rule);padding:2.5rem 2.5
 
 <!-- TESTIMONIALS -->
 <section id="testimonios" class="sec">
+  <!-- Photo strip -->
+  <div style="height:220px;background:url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1600&q=70&auto=format') center 30%/cover no-repeat;margin-bottom:4rem;position:relative"><div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,1) 0%,rgba(255,255,255,.3) 40%,rgba(255,255,255,0) 70%)"></div></div>
   <div class="w">
     <div class="sec-hd rv">
       <span class="eyebrow">Artistas reales</span>
@@ -701,13 +746,13 @@ footer{background:var(--off);border-top:1px solid var(--rule);padding:2.5rem 2.5
 </section>
 
 <!-- CTA BOTTOM -->
-<section id="cta-bottom">
+<section id="cta-bottom" style="position:relative;overflow:hidden"><div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1600&q=60&auto=format') center/cover no-repeat;opacity:.12;pointer-events:none"></div><div style="position:relative;z-index:1">
   <div class="w">
     <p class="cta-h">Tu proyecto merece<br>una <em>estrategia real.</em></p>
     <p class="cta-sub">Cuéntanos dónde estás y hacia dónde quieres llegar. En 24 horas te respondemos con un análisis honesto y sin compromiso.</p>
     <a href="https://tally.so/r/aQJBr2" target="_blank" class="btn btn-lg" style="background:var(--white);color:var(--ink);border-radius:2px;font-size:.9rem">Solicitar Estudio de Mi Proyecto</a>
   </div>
-</section>
+</div></section>
 
 <!-- FOOTER -->
 <footer>
