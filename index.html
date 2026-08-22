@@ -577,6 +577,24 @@ footer{background:var(--off);border-top:1px solid var(--rule);padding:2.5rem 2.5
         <p class="extra-desc">Tu música en CD profesional con caja jewel impresa. Desde 25 copias. Perfecto para conciertos.</p>
         <div class="extra-cta">Más info</div>
       </div>
+
+      <!-- Portada profesional -->
+      <div class="extra-card" onclick="openExtra('portada')">
+        <span class="extra-icon">🎨</span>
+        <div class="extra-price">6€ · Entrega en 1–24h</div>
+        <div class="extra-name">Portada Profesional</div>
+        <p class="extra-desc">Portada lista para subir directamente a tu distribuidora, con las medidas estándar requeridas. Entrega garantizada en menos de 24 horas.</p>
+        <div class="extra-cta">Ver servicio</div>
+      </div>
+
+      <!-- Guía de redes -->
+      <div class="extra-card" onclick="openExtra('guia')">
+        <span class="extra-icon">📱</span>
+        <div class="extra-price">24,90€ · Pago único</div>
+        <div class="extra-name">Guía y Planificación de Redes</div>
+        <p class="extra-desc">Planificación personalizada para promocionar tu contenido con el mejor resultado algorítmico en redes sociales para tus próximos lanzamientos.</p>
+        <div class="extra-cta">Ver servicio</div>
+      </div>
     </div>
   </div>
 </section>
@@ -936,7 +954,58 @@ footer{background:var(--off);border-top:1px solid var(--rule);padding:2.5rem 2.5
 <!-- Modal: CD -->
 <div id="modal-cd" onclick="if(event.target===this)closeExtra('cd')" class="modal-wrap">
   <div class="modal-box"><div class="modal-top"></div><button onclick="closeExtra('cd')" class="modal-close">✕</button><div class="modal-inner"><div class="modal-ey">Próximamente</div><div class="modal-title">CD Físico</div><p class="modal-desc">Tu música en CD profesional con caja jewel impresa. Desde 25 copias. Perfecto para conciertos y merchandising.</p><div class="modal-feats"><div class="mf">Desde 25 copias</div><div class="mf">Caja jewel impresa</div><div class="mf">Envío incluido</div><div class="mf">Calidad profesional</div></div><a href="https://tally.so/r/aQJBr2" target="_blank" class="modal-cta">Solicitar información</a></div></div>
+<
+<!-- Modal: Portada Profesional -->
+<div id="modal-portada" onclick="if(event.target===this)closeExtra('portada')" class="modal-wrap">
+  <div class="modal-box">
+    <div class="modal-top"></div>
+    <button onclick="closeExtra('portada')" class="modal-close">✕</button>
+    <div class="modal-inner">
+      <div class="modal-ey">Servicio adicional · 6€ · Entrega en 1–24h</div>
+      <div class="modal-title">Portada Profesional</div>
+      <p class="modal-desc">Diseñamos tu portada con las medidas estándar exigidas por las principales distribuidoras (Spotify, Apple Music, Tidal, DistroKid, TuneCore…). Lista para subir directamente, sin errores de formato ni rechazos.</p>
+      <div class="modal-feats">
+        <div class="mf">Medidas estándar 3000×3000px</div>
+        <div class="mf">Formato JPG/PNG listo para distribuidora</div>
+        <div class="mf">Entrega en menos de 24 horas</div>
+        <div class="mf">Revisión incluida</div>
+        <div class="mf">Compatible con todas las distribuidoras</div>
+        <div class="mf">Sin errores de formato garantizado</div>
+      </div>
+      <div style="background:var(--off);border:1px solid var(--rule);padding:1rem 1.2rem;font-size:.82rem;color:var(--dim);margin-bottom:1.2rem;line-height:1.65">
+        💡 <strong style="color:var(--ink)">¿Cómo funciona?</strong> Nos envías tus referencias visuales (colores, estilo, nombre del artista y del tema) y en menos de 24 horas recibes tu portada lista para subir.
+      </div>
+      <a href="PENDIENTE_PORTADA" target="_blank" class="modal-cta">Contratar Portada — 6€</a>
+    </div>
+  </div>
 </div>
+
+<!-- Modal: Guía de Redes -->
+<div id="modal-guia" onclick="if(event.target===this)closeExtra('guia')" class="modal-wrap">
+  <div class="modal-box">
+    <div class="modal-top"></div>
+    <button onclick="closeExtra('guia')" class="modal-close">✕</button>
+    <div class="modal-inner">
+      <div class="modal-ey">Servicio adicional · 24,90€ · Pago único</div>
+      <div class="modal-title">Guía y Planificación de Redes</div>
+      <p class="modal-desc">Planificación personalizada para promocionar tu contenido con el mejor resultado algorítmico en redes sociales para tus próximos lanzamientos. Diseñada específicamente para tu sonido, tu audiencia y tu calendario de lanzamiento.</p>
+      <div class="modal-feats">
+        <div class="mf">Plan de contenido personalizado</div>
+        <div class="mf">Calendario editorial de lanzamiento</div>
+        <div class="mf">Estrategia algorítmica para Reels e Instagram</div>
+        <div class="mf">Tips de TikTok para artistas independientes</div>
+        <div class="mf">Mejores horarios de publicación para tu nicho</div>
+        <div class="mf">Guía de hashtags y formatos que convierten</div>
+      </div>
+      <div style="background:var(--off);border:1px solid var(--rule);padding:1rem 1.2rem;font-size:.82rem;color:var(--dim);margin-bottom:1.2rem;line-height:1.65">
+        💡 <strong style="color:var(--ink)">¿Qué incluye?</strong> Un documento personalizado con tu estrategia de contenido, calendario y guía de acción lista para implementar antes y durante tu próximo lanzamiento.
+      </div>
+      <a href="PENDIENTE_GUIA" target="_blank" class="modal-cta">Contratar Guía — 24,90€</a>
+    </div>
+  </div>
+</div>
+
+/div>
 
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();
@@ -964,7 +1033,7 @@ function toggleFaq(btn){const i=btn.closest('.fi');document.querySelectorAll('.f
 // Extras modals
 function openExtra(id){const m=document.getElementById('modal-'+id);if(m){m.style.display='flex';document.body.style.overflow='hidden'}}
 function closeExtra(id){const m=document.getElementById('modal-'+id);if(m){m.style.display='none';document.body.style.overflow=''}}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){['ads','youtube','apple','smart','djs','cd'].forEach(closeExtra)}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){['ads','youtube','apple','smart','djs','cd','portada','guia'].forEach(closeExtra)}});
 
 // Radar access via URL code
 (function(){
