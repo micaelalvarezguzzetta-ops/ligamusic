@@ -342,6 +342,7 @@ footer{background:var(--off);border-top:1px solid var(--rule);padding:2.5rem 2.5
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
 
 /* ═══ RESPONSIVE ═══ */
+@media(max-width:700px){#planes [style*="grid-template-columns:1fr 1fr;gap:3rem"]{grid-template-columns:1fr!important;gap:2rem!important}#planes [style*="border-left:1px solid var(--rule2);padding-left"]{border-left:none!important;padding-left:0!important;border-top:1px solid var(--rule2);padding-top:1.5rem!important}}
 @media(max-width:900px){
   #transparencia [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important}
   #transparencia [style*="display:flex;align-items:center;gap:3rem"]{flex-direction:column!important;gap:1.5rem!important}
@@ -534,7 +535,7 @@ footer{background:var(--off);border-top:1px solid var(--rule);padding:2.5rem 2.5
           <li style="font-size:.84rem;color:var(--dim);display:flex;align-items:flex-start;gap:.6rem"><span style="color:var(--dim2);flex-shrink:0;font-size:.7rem;margin-top:.15rem">—</span>Rotación de posicionamiento semanal en las listas</li>
           <li style="font-size:.84rem;color:var(--dim);display:flex;align-items:flex-start;gap:.6rem"><span style="color:var(--dim2);flex-shrink:0;font-size:.7rem;margin-top:.15rem">—</span>Smartlink de por vida incluido</li>
         </ul>
-        <a href="https://tally.so/r/aQJBr2" target="_blank" style="display:block;text-align:center;border:1.5px solid var(--ink);color:var(--ink);padding:.9rem;font-size:.83rem;font-weight:600;text-decoration:none;transition:.18s;letter-spacing:.02em;margin-top:1.2rem" onmouseover="this.style.background='var(--ink)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--ink)'">Contratar Plan Bronce</a>
+        <a href="https://tally.so/r/WOqPRL" target="_blank" style="display:block;text-align:center;border:1.5px solid var(--ink);color:var(--ink);padding:.9rem;font-size:.83rem;font-weight:600;text-decoration:none;transition:.18s;letter-spacing:.02em;margin-top:1.2rem" onmouseover="this.style.background='var(--ink)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--ink)'">Solicitar acceso — Plan Bronce</a>
       </div>
 
       <!-- PLATA — featured -->
@@ -543,22 +544,38 @@ footer{background:var(--off);border-top:1px solid var(--rule);padding:2.5rem 2.5
         <div style="position:absolute;top:0;right:0;background:#fff;color:var(--ink);font-size:.58rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .85rem">Más completo</div>
         <div style="font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.2rem;margin-top:.5rem">🥈 Plan Plata</div>
         <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.75rem;color:#fff;line-height:1.05;font-weight:400">Para artistas<br><em style="color:rgba(255,255,255,.55)">en crecimiento</em></div>
-        <div style="display:flex;align-items:baseline;gap:.4rem;margin:.5rem 0">
-          <span style="font-family:'Instrument Serif',Georgia,serif;font-size:4rem;color:#fff;line-height:1;letter-spacing:-.03em">79€</span>
-          <span style="font-size:.78rem;color:rgba(255,255,255,.35);font-style:italic">/ mes</span>
+
+        <!-- 3 price tiers -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);margin:.7rem 0">
+          <div style="background:#1a1a1a;padding:1rem .8rem;text-align:center">
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.8rem;color:#fff;line-height:1;margin-bottom:.2rem">49€</div>
+            <div style="font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.6rem">Ads 2 días</div>
+            <a href="https://tally.so/r/rjYVPX" target="_blank" style="display:block;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.6);padding:.42rem .3rem;font-size:.7rem;font-weight:600;text-decoration:none;transition:.15s" onmouseover="this.style.background='rgba(255,255,255,.1)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.6)'">Contratar</a>
+          </div>
+          <div style="background:#222;padding:1rem .8rem;text-align:center;border-left:1px solid rgba(255,255,255,.06);border-right:1px solid rgba(255,255,255,.06)">
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.8rem;color:#fff;line-height:1;margin-bottom:.2rem">79€</div>
+            <div style="font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.6rem">Ads 5 días</div>
+            <a href="https://tally.so/r/rjYVPX" target="_blank" style="display:block;border:1px solid rgba(255,255,255,.4);color:#fff;padding:.42rem .3rem;font-size:.7rem;font-weight:600;text-decoration:none;transition:.15s;background:rgba(255,255,255,.07)" onmouseover="this.style.background='rgba(255,255,255,.18)'" onmouseout="this.style.background='rgba(255,255,255,.07)'">Contratar</a>
+          </div>
+          <div style="background:#1a1a1a;padding:1rem .8rem;text-align:center">
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.8rem;color:#fff;line-height:1;margin-bottom:.2rem">89€</div>
+            <div style="font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.6rem">Ads 7 días</div>
+            <a href="https://tally.so/r/rjYVPX" target="_blank" style="display:block;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.6);padding:.42rem .3rem;font-size:.7rem;font-weight:600;text-decoration:none;transition:.15s" onmouseover="this.style.background='rgba(255,255,255,.1)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.6)'">Contratar</a>
+          </div>
         </div>
-        <div style="font-size:.78rem;color:rgba(255,255,255,.3);margin-top:-.4rem;margin-bottom:.8rem;border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:.9rem">1 mes · Spotify + Apple Music + Campaña Ads</div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.3);text-align:center;margin-top:-.3rem;margin-bottom:.5rem;font-style:italic">Elige cuántos días quieres el anuncio Ads activo</div>
+
+        <div style="font-size:.78rem;color:rgba(255,255,255,.3);border-bottom:1px solid rgba(255,255,255,.08);padding-bottom:.9rem;margin-bottom:.3rem">1 mes · Spotify + Apple Music + Campaña Ads</div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:.5rem;flex:1">
           <li style="font-size:.84rem;color:rgba(255,255,255,.6);display:flex;align-items:flex-start;gap:.6rem"><span style="color:rgba(255,255,255,.2);flex-shrink:0;font-size:.7rem;margin-top:.15rem">—</span>2 canciones en las 10 principales playlists de Spotify</li>
           <li style="font-size:.84rem;color:rgba(255,255,255,.6);display:flex;align-items:flex-start;gap:.6rem"><span style="color:rgba(255,255,255,.2);flex-shrink:0;font-size:.7rem;margin-top:.15rem">—</span>2 canciones en Apple Music · 3 listas activas</li>
-          <li style="font-size:.84rem;color:rgba(255,255,255,.6);display:flex;align-items:flex-start;gap:.6rem"><span style="color:rgba(255,255,255,.2);flex-shrink:0;font-size:.7rem;margin-top:.15rem">—</span>Campaña Ads 5 días para activar algoritmos</li>
+          <li style="font-size:.84rem;color:rgba(255,255,255,.6);display:flex;align-items:flex-start;gap:.6rem"><span style="color:rgba(255,255,255,.2);flex-shrink:0;font-size:.7rem;margin-top:.15rem">—</span>Campaña Ads activa según días elegidos</li>
           <li style="font-size:.84rem;color:rgba(255,255,255,.6);display:flex;align-items:flex-start;gap:.6rem"><span style="color:rgba(255,255,255,.2);flex-shrink:0;font-size:.7rem;margin-top:.15rem">—</span>Entrega de análisis de datos publicitarios</li>
           <li style="font-size:.84rem;color:rgba(255,255,255,.6);display:flex;align-items:flex-start;gap:.6rem"><span style="color:rgba(255,255,255,.2);flex-shrink:0;font-size:.7rem;margin-top:.15rem">—</span>Smartlink de por vida incluido</li>
         </ul>
-        <a href="https://tally.so/r/aQJBr2" target="_blank" style="display:block;text-align:center;border:1.5px solid #fff;color:#fff;padding:.9rem;font-size:.83rem;font-weight:600;text-decoration:none;transition:.18s;letter-spacing:.02em;margin-top:1.2rem" onmouseover="this.style.background='#fff';this.style.color='var(--ink)'" onmouseout="this.style.background='transparent';this.style.color='#fff'">Contratar Plan Plata</a>
       </div>
 
-      <!-- ORO -->
+            <!-- ORO -->
       <div style="background:var(--white);padding:2.8rem 2.2rem;display:flex;flex-direction:column;gap:.6rem;position:relative;transition:.18s" onmouseover="this.style.background='var(--off)'" onmouseout="this.style.background='var(--white)'">
         <div style="font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#b8960c;margin-bottom:.2rem">🥇 Plan Oro</div>
         <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.75rem;color:var(--ink);line-height:1.05;font-weight:400">Para artistas<br><em>con objetivos claros</em></div>
@@ -572,12 +589,62 @@ footer{background:var(--off);border-top:1px solid var(--rule);padding:2.5rem 2.5
           <li style="font-size:.84rem;color:var(--dim);display:flex;align-items:flex-start;gap:.6rem"><span style="color:var(--dim2);flex-shrink:0;font-size:.7rem;margin-top:.15rem">—</span>Cuéntanos qué quieres conseguir y te damos precio</li>
           <li style="font-size:.84rem;color:var(--dim);display:flex;align-items:flex-start;gap:.6rem"><span style="color:var(--dim2);flex-shrink:0;font-size:.7rem;margin-top:.15rem">—</span>Respuesta por email en menos de 24 horas</li>
         </ul>
-        <a href="https://tally.so/r/aQJBr2" target="_blank" style="display:block;text-align:center;border:1.5px solid var(--ink);color:var(--ink);padding:.9rem;font-size:.83rem;font-weight:600;text-decoration:none;transition:.18s;letter-spacing:.02em;margin-top:1.2rem" onmouseover="this.style.background='var(--ink)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--ink)'">Solicitar presupuesto Oro</a>
+        <a href="https://tally.so/r/aQJBr2" target="_blank" style="display:block;text-align:center;border:1.5px solid var(--ink);color:var(--ink);padding:.9rem;font-size:.83rem;font-weight:600;text-decoration:none;transition:.18s;letter-spacing:.02em;margin-top:1.2rem" onmouseover="this.style.background='var(--ink)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--ink)'">Solicitar acceso — Plan Oro</a>
       </div>
 
     </div>
 
-    <div style="text-align:center;margin-top:1.8rem;font-size:.78rem;color:var(--dim2)" class="rv">
+
+    <!-- PROCESO DE ACCESO -->
+    <div style="border:1px solid var(--rule);background:var(--white);padding:2.8rem 3rem;margin-top:3rem;position:relative;overflow:hidden" class="rv">
+      <div style="position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--ink)"></div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;flex-wrap:wrap">
+
+        <!-- Left: Message -->
+        <div>
+          <div style="font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--dim2);margin-bottom:.8rem">Proceso de acceso</div>
+          <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.6rem;color:var(--ink);line-height:1.1;font-weight:400;margin-bottom:.9rem">No trabajamos<br>con <em>cualquier artista.</em></div>
+          <p style="font-size:.87rem;color:var(--dim);line-height:1.78;margin-bottom:.8rem">Cada solicitud pasa por una revisión interna de nuestro equipo. Analizamos tu música, tu perfil y tu momento artístico antes de confirmar el acceso al servicio.</p>
+          <p style="font-size:.87rem;color:var(--dim);line-height:1.78">Trabajamos con un <strong style="color:var(--ink)">cupo máximo de artistas al mes</strong>. Si el cupo está lleno en el momento de tu solicitud, recibirás por email la primera fecha disponible para acceder.</p>
+        </div>
+
+        <!-- Right: Steps -->
+        <div style="display:flex;flex-direction:column;gap:0;border-left:1px solid var(--rule2);padding-left:2.5rem">
+          <div style="display:flex;gap:1.2rem;align-items:flex-start;padding-bottom:1.4rem;border-bottom:1px solid var(--rule2)">
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.1rem;color:var(--dim2);flex-shrink:0;font-style:italic;min-width:1.5rem">01</div>
+            <div>
+              <div style="font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:.3rem">Envías tu solicitud</div>
+              <div style="font-size:.8rem;color:var(--dim);line-height:1.6">Rellenas el formulario con tu información y tu proyecto musical.</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:1.2rem;align-items:flex-start;padding:1.4rem 0;border-bottom:1px solid var(--rule2)">
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.1rem;color:var(--dim2);flex-shrink:0;font-style:italic;min-width:1.5rem">02</div>
+            <div>
+              <div style="font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:.3rem">Revisión interna · Máx. 7 días</div>
+              <div style="font-size:.8rem;color:var(--dim);line-height:1.6">Nuestro equipo analiza tu música y perfil. Recibes respuesta por email en un máximo de 7 días: aceptado, no aceptado o en lista de espera con la primera fecha disponible.</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:1.2rem;align-items:flex-start;padding:1.4rem 0;border-bottom:1px solid var(--rule2)">
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.1rem;color:var(--dim2);flex-shrink:0;font-style:italic;min-width:1.5rem">03</div>
+            <div>
+              <div style="font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:.3rem">Si eres aceptado: enlace de pago</div>
+              <div style="font-size:.8rem;color:var(--dim);line-height:1.6">Recibes por email el botón de pago para el plan elegido. Simple, directo y sin complicaciones.</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:1.2rem;align-items:flex-start;padding-top:1.4rem">
+            <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.1rem;color:var(--dim2);flex-shrink:0;font-style:italic;min-width:1.5rem">04</div>
+            <div>
+              <div style="font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:.3rem">Tu servicio arranca en menos de 24h</div>
+              <div style="font-size:.8rem;color:var(--dim);line-height:1.6">Una vez confirmado el pago, tu canción entra en rotación y la campaña se activa en menos de 24 horas.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+        <div style="text-align:center;margin-top:1.8rem;font-size:.78rem;color:var(--dim2)" class="rv">
       — Sin permanencia · Sin letras pequeñas · Pago único por mes contratado —
     </div>
 
