@@ -342,7 +342,7 @@ footer{background:var(--off);border-top:1px solid var(--rule);padding:2.5rem 2.5
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
 
 /* ═══ RESPONSIVE ═══ */
-@media(max-width:700px){#planes [style*="grid-template-columns:1fr 1fr;gap:3rem"]{grid-template-columns:1fr!important;gap:2rem!important}#planes [style*="border-left:1px solid var(--rule2);padding-left"]{border-left:none!important;padding-left:0!important;border-top:1px solid var(--rule2);padding-top:1.5rem!important}}
+@media(max-width:1100px){#planes [style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important}} @media(max-width:700px){#planes [style*="grid-template-columns:repeat(2,1fr)"]{grid-template-columns:1fr!important}} @media(max-width:700px){#planes [style*="grid-template-columns:1fr 1fr;gap:3rem"]{grid-template-columns:1fr!important;gap:2rem!important}#planes [style*="border-left:1px solid var(--rule2);padding-left"]{border-left:none!important;padding-left:0!important;border-top:1px solid var(--rule2);padding-top:1.5rem!important}}
 @media(max-width:900px){
   #transparencia [style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important}
   #transparencia [style*="display:flex;align-items:center;gap:3rem"]{flex-direction:column!important;gap:1.5rem!important}
@@ -519,9 +519,26 @@ footer{background:var(--off);border-top:1px solid var(--rule);padding:2.5rem 2.5
       <p style="font-size:.95rem;color:var(--dim);line-height:1.8;margin-top:1rem">Tres opciones claras según tu momento artístico. Sin permanencia, sin letras pequeñas. Solo resultados.</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);" class="rv">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);" class="rv">
 
-      <!-- BRONCE -->
+      <!-- ESENCIAL -->
+      <div style="background:var(--white);padding:2.8rem 2.2rem;display:flex;flex-direction:column;gap:.6rem;position:relative;transition:.18s" onmouseover="this.style.background='var(--off)'" onmouseout="this.style.background='var(--white)'">
+        <div style="font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--dim2);margin-bottom:.2rem">✦ Plan Esencial</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.75rem;color:var(--ink);line-height:1.05;font-weight:400">Para cualquier<br><em>artista</em></div>
+        <div style="display:flex;align-items:baseline;gap:.4rem;margin:.5rem 0">
+          <span style="font-family:'Instrument Serif',Georgia,serif;font-size:4rem;color:var(--ink);line-height:1;letter-spacing:-.03em">14,90€</span>
+          <span style="font-size:.78rem;color:var(--dim2);font-style:italic">/ mes</span>
+        </div>
+        <div style="font-size:.78rem;color:var(--dim2);margin-top:-.4rem;margin-bottom:.8rem;border-bottom:1px solid var(--rule2);padding-bottom:.9rem">1 mes · El más accesible de toda la red</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:.5rem;flex:1">
+          <li style="font-size:.84rem;color:var(--dim);display:flex;align-items:flex-start;gap:.6rem"><span style="color:var(--dim2);flex-shrink:0;font-size:.7rem;margin-top:.15rem">—</span>1 canción en 4 playlists de tu género</li>
+          <li style="font-size:.84rem;color:var(--dim);display:flex;align-items:flex-start;gap:.6rem"><span style="color:var(--dim2);flex-shrink:0;font-size:.7rem;margin-top:.15rem">—</span>Rotación de posición semanal en las listas</li>
+          <li style="font-size:.84rem;color:var(--dim);display:flex;align-items:flex-start;gap:.6rem"><span style="color:var(--dim2);flex-shrink:0;font-size:.7rem;margin-top:.15rem">—</span>Activación progresiva del algoritmo de Spotify</li>
+        </ul>
+        <a href="https://tally.so/r/rjZA52" target="_blank" style="display:block;text-align:center;border:1.5px solid var(--ink);color:var(--ink);padding:.9rem;font-size:.83rem;font-weight:600;text-decoration:none;transition:.18s;letter-spacing:.02em;margin-top:1.2rem" onmouseover="this.style.background='var(--ink)';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='var(--ink)'">Solicitar acceso — Plan Esencial</a>
+      </div>
+
+            <!-- BRONCE -->
       <div style="background:var(--white);padding:2.8rem 2.2rem;display:flex;flex-direction:column;gap:.6rem;position:relative;transition:.18s" onmouseover="this.style.background='var(--off)'" onmouseout="this.style.background='var(--white)'">
         <div style="font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#b87333;margin-bottom:.2rem">🥉 Plan Bronce</div>
         <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.75rem;color:var(--ink);line-height:1.05;font-weight:400">Para artistas<br><em>que están empezando</em></div>
