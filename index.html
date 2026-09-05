@@ -75,8 +75,8 @@ em.it{font-style:italic;font-weight:300}
 .nav-r{flex-shrink:0}
 .nc{background:var(--ink);color:var(--bg);font-size:.72rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;padding:.52rem 1.4rem;transition:.2s}
 .nc:hover{background:var(--ink2)}
-.ham{display:none;background:none;border:1px solid var(--rule);cursor:pointer;padding:.42rem .52rem;gap:5px;flex-direction:column}
-.ham span{display:block;width:18px;height:1px;background:var(--ink)}
+.ham{display:none;background:none;border:1px solid var(--rule);cursor:pointer;padding:.45rem .6rem;gap:5px;flex-direction:column;position:relative;z-index:10;flex-shrink:0}
+.ham span{display:block;width:20px;height:2px;background:var(--ink);border-radius:1px}
 #mob{display:none;position:fixed;top:56px;left:0;right:0;z-index:999;background:var(--bg);border-bottom:1px solid var(--rule);padding:1.5rem 3rem 2rem}
 #mob.open{display:flex;flex-direction:column;gap:.4rem}
 #mob a{font-size:.85rem;font-weight:500;color:var(--dim);padding:.55rem 0;border-bottom:1px solid var(--rule2);letter-spacing:.03em;text-transform:uppercase}
@@ -374,7 +374,7 @@ footer{background:var(--bg2);border-top:1px solid var(--rule);padding:3rem}
 @media(max-width:700px){
   .w,.ni,.strip-inner,#cookie-banner,.fo,footer{padding-left:1.5rem;padding-right:1.5rem}
   .hc{padding-left:1.5rem;padding-right:1.5rem;padding-bottom:4rem}
-  .nl{display:none}.ham{display:flex}
+  .nl{display:none!important}.ham{display:flex!important}.nav-r{display:none!important}
   h1.ht{font-size:clamp(3rem,14vw,5.5rem)}
   .h-btns{flex-direction:column}.h-btns .btn{width:100%;text-align:center;justify-content:center}
   .h-stats{flex-direction:column;gap:1.2rem}
